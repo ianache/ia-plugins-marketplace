@@ -1,10 +1,10 @@
 {
-  "name": "comsatel-skills-catalog",
+  "name": "IA-plugins-catalog",
   "owner": {
-    "name": "COMSATEL Engineering"
+    "name": "Ilver Anache"
   },
   "metadata": {
-    "description": "Catálogo COMSATEL de plugins y skills para ingeniería de software: requisitos, negocio, arquitectura, DDD, datos, microservicios, web, mobile, UX/UI, QA, gestión de entrega y calidad de KB.",
+    "description": "Catálogo IAP de plugins y skills para ingeniería de software: requisitos, negocio, arquitectura, DDD, datos, microservicios, web, mobile, UX/UI, QA, gestión de entrega y calidad de KB.",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -16,7 +16,7 @@
     {
       "name": "architecture-design",
       "source": "./plugins/architecture-design",
-      "description": "Governed architecture engineering with 6 specialized skills and an orchestrator, OKF v0.2 COMSATEL"
+      "description": "Governed architecture engineering with 6 specialized skills and an orchestrator, OKF v0.2 IAP"
     },
     {
       "name": "bi-analytics",
@@ -94,14 +94,14 @@
       "description": "DTC Web: diseño técnico Web Angular Shell MicroUIs BFF, gobernado por gates y contratos OKF."
     },
     {
-      "name": "comsatel-desarrollo",
+      "name": "IAP-desarrollo",
       "description": "Orquestador de desarrollo y sus cinco especialistas (DS, producto, UX a código, construcción y verificación), con el guardia de GitLab incluido",
-      "source": "./plugins/comsatel-desarrollo"
+      "source": "./plugins/IAP-desarrollo"
     },
     {
-      "name": "comsatel-desarrollo-movil",
-      "description": "Desarrollo móvil en Flutter: un orquestador y tres especialistas (biblioteca de componentes, app y verificación en el emulador). Se instala junto a comsatel-desarrollo, que trae el guardia de GitLab",
-      "source": "./plugins/comsatel-desarrollo-movil"
+      "name": "IAP-desarrollo-movil",
+      "description": "Desarrollo móvil en Flutter: un orquestador y tres especialistas (biblioteca de componentes, app y verificación en el emulador). Se instala junto a IAP-desarrollo, que trae el guardia de GitLab",
+      "source": "./plugins/IAP-desarrollo-movil"
     },
     {
       "name": "ux-design",
