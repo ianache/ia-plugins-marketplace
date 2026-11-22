@@ -51,7 +51,7 @@ skills/<skill>/
 - **OBLIGATORIO:** `skills/<skill>/templates/` contiene las plantillas de los documentos que produce ese skill, y solo esas.
 - **OBLIGATORIO:** `templates/` de la raíz del plugin contiene solo plantillas de documentos OKF comunes a más de un skill. Hoy no hay ninguna. Una plantilla de un único productor no va ahí, ni como copia en los skills.
 - **OBLIGATORIO (registros operativos):** `gate-report.yaml`, `task-result.yaml`, `execution-plan.yaml`, `task-ledger.yaml` y `gate-register.yaml` viven en `skills/<orquestador>/templates/`, aunque los escriba un skill especialista. Son documentos de control del flujo del workflow y los mantiene el orquestador de cada plugin. Ningún otro skill ni la raíz del plugin guarda copias.
-- **OBLIGATORIO (tipo documental):** toda plantilla de documento OKF (Markdown conceptual) declara un `type` definido en el `STD-OKF-001-v*-stable.md` vigente (hoy `v1.9.0-stable`; confirma la versión vigente del maestro en `plugins/`). El tipo va en el frontmatter. Antes de crear una plantilla, verifica la sigla en la tabla de tipos del estándar; si no existe, no la inventes ni uses alias. Un tipo nuevo exige cambiar el estándar con aprobación HIL.
+- **OBLIGATORIO (tipo documental):** toda plantilla de documento OKF (Markdown conceptual) declara un `type` definido en el `STD-OKF-001-v*-stable.md` vigente (hoy `v0.1.0-stable`; confirma la versión vigente del maestro en `plugins/`). El tipo va en el frontmatter. Antes de crear una plantilla, verifica la sigla en la tabla de tipos del estándar; si no existe, no la inventes ni uses alias. Un tipo nuevo exige cambiar el estándar con aprobación HIL.
 - **Registros operativos (sin `type`):** los YAML de estado y control no son OKF y no llevan `type`. Así lo fija el estándar: las salidas del orquestador (planes, estado, contratos de ruta y registros de gate) son operativas. Son `execution-plan.yaml`, `task-ledger.yaml`, `gate-register.yaml`, `gate-report.yaml` y `task-result.yaml`. Los dos últimos los escriben los skills especialistas, pero sus plantillas viven en la carpeta del orquestador (ver 1.2). Se documentan en `DOCUMENTACION.md` como registros operativos.
 - **OBLIGATORIO:** no dupliques lógica en los `validate.py` de los skills; importa la del plugin.
 - **RECOMENDADO** (estilo `qa-design`): `contracts/*.schema.json` por skill, gates en YAML y checkers `check_*.py` con pruebas propias.
@@ -70,7 +70,7 @@ skills/<skill>/
 - **OBLIGATORIO:** `SKILL.md` corto (hoy 20–62 líneas). El detalle va en `references/` (progressive disclosure) y el `SKILL.md` lista las rutas de esos recursos.
 - **RECOMENDADO:** secciones fijas, como en RE y BK: `Activación`, `Entradas obligatorias`, `Procedimiento` (pasos numerados), `Salidas`, `Reglas`, `Gate Gn`, `Restricciones`.
 - **RECOMENDADO:** redactar en español, como el resto del catálogo. `qa-design` usa secciones en inglés; no lo repliques en plugins nuevos.
-- `metadata.version` en el frontmatter lo usa solo `qa-design`; no lo añadas en otros plugins sin aprobación (ver AGENTS.md).
+- `metadata.version` en el frontmatter declara la versión de cada skill del catálogo.
 - **OBLIGATORIO:** un skill nunca lanza otros skills ni edita el plan.
 
 ## 4. Orquestador, gates y control humano
@@ -92,7 +92,7 @@ skills/<skill>/
 - `index.md` y `log.md` son archivos reservados y no llevan la plantilla general.
 - **OBLIGATORIO (plugins con pathmap):** la ruta de salida se resuelve por `type` en `assets/pathmap.md`, no por el nombre del skill. Un `type` sin mapeo queda en `BLOCKED`. Solo una instrucción explícita del usuario cambia la ruta, y se registra la excepción.
 - **OBLIGATORIO:** no escribas documentos especializados en `comsatel/`; esa carpeta es solo para estado de ejecución.
-- Los tipos del catálogo v1.8.0-stable están aprobados; `--publication` rechaza solo los tipos no registrados.
+- Los tipos del catálogo v0.1.0-stable están aprobados; `--publication` rechaza solo los tipos no registrados.
 - Cambiar el estándar: seguir el flujo del maestro y HIL de [AGENTS.md](AGENTS.md); nunca editar las copias.
 
 ## 6. Portabilidad (reglas del packager)

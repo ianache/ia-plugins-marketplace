@@ -3,7 +3,7 @@
 
 Comprueba, sin aprobar contenido: frontmatter OKF de cada documento, ruta y tipo según el pathmap, índices de
 reglas (BR) y glosario (TRM), enlaces Markdown entre documentos, IDs de `related` y huecos de trazabilidad.
-Con STD-OKF-001 v1.9.0-stable estos tipos están aprobados y ya no se emiten avisos `type propuesto`.
+Con STD-OKF-001 v0.1.0-stable estos tipos están aprobados y ya no se emiten avisos `type propuesto`.
 Salida: JSON. Código 1 si hay errores.
 """
 import argparse

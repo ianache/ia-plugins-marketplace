@@ -9,7 +9,7 @@ PLUGIN = Path(__file__).resolve().parents[1]
 def main() -> int:
     try:
         pathmap = json.loads((PLUGIN / "assets/pathmap.json").read_text(encoding="utf-8-sig"))
-        standard = (PLUGIN / "standards/STD-OKF-001-v1.11.0-stable.md").read_text(encoding="utf-8-sig")
+        standard = (PLUGIN / "standards/STD-OKF-001-v0.1.0-stable.md").read_text(encoding="utf-8-sig")
         approved = set(re.findall(r"(?m)^\| `?([A-Z]{2,5})`? \|", standard))
         mapped = set(pathmap["document_types"])
         for role, mapping in pathmap["catalog_role_routes"].items():

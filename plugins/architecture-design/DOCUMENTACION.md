@@ -2,7 +2,7 @@
 
 Plugin de Claude Code para ingeniería de arquitectura gobernada: contexto y evidencia, ASR y solución, decisiones (ADR), conformidad, evolución y handoff a desarrollo. Funciona con **un orquestador y seis skills especialistas**, y cada etapa termina en un **gate con aprobación humana**.
 
-- **Versión:** 1.2.0 · **Estándar de documentos:** STD-OKF-001 v1.11.0-stable
+- **Versión:** 1.2.0 · **Estándar de documentos:** STD-OKF-001 v0.1.0-stable
 - **Origen:** rediseño de 30 skills originales en 6 especialistas más 1 orquestador (ver `COVERAGE-MATRIX.md`).
 - **Invocación:** `/architecture-design:architecture-design-orchestrator`
 

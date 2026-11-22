@@ -1,6 +1,8 @@
 ---
 name: web-application-reconstruction-analyzer
 description: Usar para reconstruir as-is en el diseño técnico de plataformas Web Angular Shell y MicroUIs; produce artefactos trazables bajo design/web y no altera UX/UI.
+metadata:
+  version: "0.1.0"
 ---
 # web-application-reconstruction-analyzer
 
@@ -21,7 +23,7 @@ Repositorio Angular, rutas, dependencias, deployment, BFF, logs y documentación
 ## Salidas obligatorias
 as-is/application-inventory.md; as-is/architecture.md; as-is/dependency-map.md; as-is/evidence-register.yaml.
 
-Escribir **solo** dentro de `design/web/<run-id>/`, manteniendo subcarpetas indicadas. Cada Markdown conceptual debe cumplir STD-OKF-001 v1.11.0-stable (Google OKF v0.2), con `type`, `id`, `version`, `status`, `generated`, `sources`, `pack`, `skill` y enlaces trazables. Si el tipo no está registrado, solicitar aprobación para ampliarlo; no etiquetar falsamente como API/FDT/ADR.
+Escribir **solo** dentro de `design/web/<run-id>/`, manteniendo subcarpetas indicadas. Cada Markdown conceptual debe cumplir STD-OKF-001 v0.1.0-stable (Google OKF v0.2), con `type`, `id`, `version`, `status`, `generated`, `sources`, `pack`, `skill` y enlaces trazables. Si el tipo no está registrado, solicitar aprobación para ampliarlo; no etiquetar falsamente como API/FDT/ADR.
 
 ## Procedimiento
 1. Leer el manifiesto de alcance y la evidencia disponible, y distinguir hechos de supuestos.
@@ -46,12 +48,12 @@ Activa este skill cuando el orchestrator lo seleccione para su tarea especializa
 - Produce los artefactos de ingeniería en `design/web/<run-id>/` y no escribas allí estado de ejecución.
 - Conserva planes, registro de gates, decisiones operativas y trazas en `.comsatel/web-platform-design/runs/<run-id>/`.
 - Si faltan contratos de UX/UI, DDD, OpenAPI o FDT requeridos, registra la brecha y solicita resolución; no reconstruyas UX/UI desde suposiciones.
-- Los Markdown conceptuales deben ajustarse a Google OKF v0.2 y STD-OKF-001 v1.11.0-stable; usar solo tipos registrados en el estándar (`WEB` está aprobado en v1.11.0-stable).
+- Los Markdown conceptuales deben ajustarse a Google OKF v0.2 y STD-OKF-001 v0.1.0-stable; usar solo tipos registrados en el estándar (`WEB` está aprobado en v0.1.0-stable).
 - Devuelve un resumen con archivos generados, fuentes utilizadas, riesgos, bloqueos y gate solicitado.
 
 ## Recursos obligatorios del skill (Claude Code)
 - `references/technical-guidance.md`: método especializado y criterios técnicos.
-- `templates/deliverable-specific.md`: estructura de salida especializada; `type: WEB` (aprobado en STD-OKF-001 v1.11.0-stable).
+- `templates/deliverable-specific.md`: estructura de salida especializada; `type: WEB` (aprobado en STD-OKF-001 v0.1.0-stable).
 - `templates/gate-evidence.json`: contrato de evidencia, pendiente de aprobación humana.
 - `examples/sample-input.json` y `examples/sample-output.json`: contratos de ejemplo, no evidencia real.
 - `assets/diagram-conventions.md`: convenciones de diagramas editables.

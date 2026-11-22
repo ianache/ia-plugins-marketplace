@@ -4,7 +4,7 @@ import sys,re,datetime,argparse
 from pathlib import Path
 import yaml
 APPROVED=set('ACP ADH ADR AGG API ASIS ASR AT BC BCAP BCP BIC BIQ BO BR BSN C4 CFR CHG CLS CMP CTLG CTX DBM DBR DDR DMD DSH DSM DSP ENT EPC EPS ERR EVD EVT EXEC FDT FLW GOV HCB HOF IAC IAR IBL ICM ICP IDP IDS IFO IGR IHO IIA IMD IMP IOB IRB IRL IRP IRQ ISA ISD ITA ITP IXL IXP KPI LDM MOB PCH PDM QAR QDC QER QFA QQI QTD QTE QTP QTR QTS RCP RMP RSK RUN SCR SEQ SOL SSP STD STK STR SVC TC TDA TDR TKN TRM TSN UAP UCB UCM UCX UOW US UWR UXR VO WEB'.split())
-PROPOSED=set()  # STD-OKF-001 v1.11.0-stable aprueba todos los tipos; se conserva la rama por compatibilidad
+PROPOSED=set()  # STD-OKF-001 v0.1.0-stable aprueba todos los tipos; se conserva la rama por compatibilidad
 REQUIRED=('type','id','title','description','version','status','owner','classification','tags','generated','sources')
 def validate(path,allow_draft_types=False):
  p=Path(path);errors=[]

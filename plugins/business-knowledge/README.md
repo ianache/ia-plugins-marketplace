@@ -27,7 +27,7 @@ El run se controla con `scripts/workflow.py` (`init`, `check`, `status`, `transi
 | `biz-scenario-modeler` | nuevo en 2.1.0: tipo `BSN` (escenario de negocio), con contrato de contenido en `templates/scenario.md` y verificación con `scripts/check_scenario.py` |
 
 ## Conformidad OKF
-Los documentos cumplen STD-OKF-001 v1.9.0-stable. Tipos aprobados en esa versión y usados aquí: `TRM`, `BCP`, `BO`, `STK`, `BCAP`, `IMD`, `BR` y `BSN` (escenario de negocio, aprobado en v1.8.0). `python scripts/validate_okf.py documento.md` valida el frontmatter; `--publication` es la revisión estricta y rechaza los tipos no registrados.
+Los documentos cumplen STD-OKF-001 v0.1.0-stable. Tipos aprobados en esa versión y usados aquí: `TRM`, `BCP`, `BO`, `STK`, `BCAP`, `IMD`, `BR` y `BSN` (escenario de negocio, aprobado en v1.8.0). `python scripts/validate_okf.py documento.md` valida el frontmatter; `--publication` es la revisión estricta y rechaza los tipos no registrados.
 
 ## Output Pathmap v1.0.0
 Ver `assets/pathmap.md` y `OUTPUT-PATH-POLICY.md`. Todos los entregables van bajo `./business/`; los registros operativos, en `.comsatel/business-knowledge/runs/<run-id>/`. Validar con `scripts/validate_pathmap.py` y, para el conjunto, `skills/biz-pack-validator-publisher/scripts/check_pack.py`.

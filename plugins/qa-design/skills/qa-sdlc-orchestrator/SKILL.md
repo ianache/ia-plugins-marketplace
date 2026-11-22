@@ -2,7 +2,7 @@
 name: qa-sdlc-orchestrator
 description: Usar para planificar, controlar y reanudar un workflow QA completo sobre un DSP, resolviendo contratos, gates fail-closed, dependencias, paralelismo, intervención humana y publicación de Test Cases en GitLab sin ejecutar lógica QA de dominio.
 metadata:
-  version: "2.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

@@ -1,0 +1,9 @@
+{
+  "name": "ux-ui-design",
+  "version": "0.1.0",
+  "description": "DiseÃ±o UX/UI gobernado y multiplataforma con 6 skills especializados y un orchestrator",
+  "skills": "./skills/",
+  "author": {
+    "name": "COMSATEL Engineering"
+  }
+}

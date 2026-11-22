@@ -1,7 +1,7 @@
 ﻿# ux-design — Diseño UX/UI gobernado
 
 **Versión:** 3.0.0 (preparada; cambio mayor de contratos y rutas)
-**Estándar documental:** STD-OKF-001 v1.11.0-stable
+**Estándar documental:** STD-OKF-001 v0.1.0-stable
 **Composición:** un orchestrator y nueve skills especializados.
 
 El pack parte de requisitos/historias aprobados y coordina el diseño desde UXR hasta el handoff HOF, con exploración de herramientas, verificación de accesibilidad, diseño gobernado y trazabilidad por pantalla.
@@ -45,4 +45,4 @@ Brownfield/Evolution requieren `--baseline` al iniciar el run. Si falta una lín
 - Ningún gate READY equivale a aprobación humana; ningún script asigna `verified`.
 - El pack no publica en Figma/Stitch ni crea proyectos externos sin autorización explícita.
 
-Consulta `assets/pathmap.md`, `VALIDATION.md` y la copia de `standards/STD-OKF-001-v1.11.0-stable.md`.
+Consulta `assets/pathmap.md`, `VALIDATION.md` y la copia de `standards/STD-OKF-001-v0.1.0-stable.md`.

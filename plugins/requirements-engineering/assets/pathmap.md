@@ -10,7 +10,7 @@
 3. La ruta no se deduce del nombre del skill ni de la extensión; se deriva del tipo documental. No se admite un tipo sin mapping: **BLOCKED** hasta resolverlo y registrar la decisión.
 4. Únicamente una instrucción explícita del usuario permite sobrescribir la ruta. El orchestrator registra texto original, ruta resuelta, actor, justificación y alcance; los skills no pueden autoautorizar excepciones.
 5. No sobrescribir documentos existentes sin decisión explícita de evolución/versionado. Preservar links, IDs y provenance.
-6. Cada skill debe validar `type`, `output_dir`, existencia y conformidad de frontmatter según `STD-OKF-001-v1.9.0-stable` antes de reportar un entregable listo. Solo se admiten tipos registrados en el estándar.
+6. Cada skill debe validar `type`, `output_dir`, existencia y conformidad de frontmatter según `STD-OKF-001-v0.1.0-stable` antes de reportar un entregable listo. Solo se admiten tipos registrados en el estándar.
 7. Los archivos JSON/YAML de evidencia o contratos de entrega de un skill especializado no son necesariamente documentos OKF; deben guardarse junto al entregable correspondiente bajo `./requirements/`, con una ruta explícita acordada en el contrato. Los registros de gates y planificación pertenecen al orchestrator.
 
 ## Mapeo por document type
@@ -38,7 +38,7 @@ Los JSON de análisis intermedio (`evidence-register`, `source-inventory`, `back
   "override": null,
   "gate": "G3",
   "inputs": ["RCP-001"],
-  "required_standard": "STD-OKF-001-v1.9.0-stable"
+  "required_standard": "STD-OKF-001-v0.1.0-stable"
 }
 ```
 

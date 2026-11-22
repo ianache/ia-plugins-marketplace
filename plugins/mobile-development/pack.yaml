@@ -1,0 +1,112 @@
+pack_name: desarrollo-movil
+version: 1.0.0
+purpose: Llevar un cambio de la biblioteca de componentes o de la app móvil de CL2 Flotas (Flutter) desde la documentación de UX hasta la entrega por MR, con una puerta verificable en cada paso
+# Estándar de referencia: comsatel-skill-pack-factory v1.2 (un orquestador y como máximo seis especialistas).
+skills:
+- name: orquestador-desarrollo-movil
+  role: orchestrator
+  description: Clasifica el pedido (biblioteca o app), lee el estado real, reparte entre los especialistas y exige la puerta de cada paso
+- name: flujo-ds-movil
+  role: specialist
+  description: Cambia, versiona y entrega la biblioteca de componentes móvil (tokens desde Angular, roles accesibles, catálogo)
+- name: flujo-app-movil
+  role: specialist
+  description: Construye y cambia pantallas y flujos de la app móvil con la biblioteca, detrás de contratos de datos
+- name: verificar-movil
+  role: specialist
+  description: Análisis, pruebas, contraste, compilación del APK y capturas de cada estado en el emulador
+# Etapa previa, fuera del pack: si falta documentación de UX o el handoff no pasó, el orquestador deriva aquí y espera.
+upstream:
+- ux-ui-orchestrator
+# Apoyo opcional: si no está instalado el flujo sigue con las reglas resumidas de las referencias.
+optional_support:
+- ux-a-desarrollo
+- mobile-application-design
+- comsatel-design-system
+- orquestacion-multi-harness
+# El guardia de GitLab viaja en el plugin web-development: instalarlo junto a este.
+companion_plugins:
+- web-development
+gates:
+- id: G0
+  name: Alcance
+  criteria:
+  - Qué cambia, en qué repositorio (biblioteca o app) y qué depende de qué
+  - El usuario valida el alcance si toca la biblioteca o los dos repositorios
+- id: G1
+  name: Fuente de UX
+  criteria:
+  - Existen requisitos, flujo y pantalla, y el handoff pasó su puerta
+  - Lo pendiente del PO queda en un documento y no como rótulo en la interfaz
+- id: G2
+  name: Construcción
+  criteria:
+  - Solo componentes Cs*, tokens y roles accesibles, sin colores ni medidas sueltas
+  - Si falta un componente se pregunta antes de construirlo
+- id: G3
+  name: Verificación
+  criteria:
+  - Análisis y pruebas en verde con cifras reales; contraste AA en claro y oscuro
+  - Probado en el emulador con una captura por estado, y lo no verificado declarado
+- id: G4
+  name: Confirmación
+  criteria:
+  - El usuario valida lo visual; nada se sube sin ese visto bueno
+- id: G5
+  name: Entrega
+  criteria:
+  - Rama feature desde develop y MR a develop asignado a César, sin fusionar
+  - Si cambian biblioteca y app, dos MR y la biblioteca se fusiona primero
+- id: G6
+  name: Versión
+  criteria:
+  - La etiqueta flutter-vX.Y.Z la crea César después de fusionar
+  - La app cambia su referencia a la etiqueta
+- id: G7
+  name: Documentación
+  criteria:
+  - README, notas de versión y registro de decisiones al día
+tasks:
+- id: T-01
+  skill: orquestador-desarrollo-movil
+  depends_on: []
+  gate: G0
+  outputs:
+  - Plan con flujo elegido y alcance
+- id: T-02
+  skill: flujo-ds-movil
+  depends_on:
+  - T-01
+  gate: G2
+  condition: el cambio es de la biblioteca de componentes
+  outputs:
+  - Componente, token o tema construido, con su catálogo
+- id: T-03
+  skill: flujo-app-movil
+  depends_on:
+  - T-01
+  gate: G2
+  condition: el cambio es de la app
+  outputs:
+  - Pantalla o flujo construido
+- id: T-04
+  skill: verificar-movil
+  depends_on:
+  - T-02
+  - T-03
+  gate: G3
+  outputs:
+  - Informe de verificación con capturas
+# Acciones que ningún skill ejecuta: las bloquea el guardia del plugin web-development.
+human_only:
+- Fusionar un MR
+- Crear o borrar etiquetas (flutter-v*)
+- Push directo a develop, main o release
+- Mostrar el token de GitLab
+- Subir un APK u otro binario al repositorio
+# Cada skill con evals/evals.json.
+evals:
+- orquestador-desarrollo-movil
+- flujo-ds-movil
+- flujo-app-movil
+- verificar-movil

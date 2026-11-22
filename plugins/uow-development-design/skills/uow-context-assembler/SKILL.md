@@ -2,7 +2,7 @@
 name: uow-context-assembler
 description: "Usar cuando una User Story y sus insumos (DSP o SSP, FDT, contratos API, modelos de BD, UX, ADR y handoffs existentes) deban reunirse y versionarse como contexto de partida, separando hechos, inferencias, supuestos y desconocidos, antes de derivar Unidades de Trabajo."
 metadata:
-  version: "1.3.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "development"
 ---

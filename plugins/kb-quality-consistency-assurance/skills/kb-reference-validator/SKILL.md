@@ -1,6 +1,8 @@
 ---
 name: kb-reference-validator
 description: Validar enlaces, relaciones, provenance y referencias de artefactos. Usar cuando se requiera esta función en un workflow de aseguramiento de KB.
+metadata:
+  version: "0.1.0"
 ---
 # kb-reference-validator
 
@@ -22,7 +24,7 @@ Resolver referencias contra snapshot y registrar faltantes, rotas, ambiguas, obs
 - Adjuntar evidencia verificable (ruta, revisión SHA, sección/línea o excerpt y hash cuando esté disponible).
 - Separar `confirmed`, `suspected` y `unverified`; el análisis LLM por sí solo no convierte una sospecha en bloqueo definitivo.
 - Ejecutar el gate de salida solo tras producir sus entradas. Los gates no son prerrequisitos de las tareas que evalúan.
-- Tratar `STD-OKF-001` como perfil corporativo versionado: la copia vigente es `standards/STD-OKF-001-v1.11.0-stable.md` (estable, aprobada).
+- Tratar `STD-OKF-001` como perfil corporativo versionado: la copia vigente es `standards/STD-OKF-001-v0.1.0-stable.md` (estable, aprobada).
 
 ## Recursos
 - `../../references/contracts.md`

@@ -1,6 +1,8 @@
 ---
 name: figma-design-validator
 description: Usar cuando un diseño en Figma deba validarse contra el bundle OKF y registrarse como diseño gobernado de un SCR-*, o cuando Stitch y Figma difieran para una misma pantalla.
+metadata:
+  version: "0.1.0"
 ---
 
 # figma-design-validator

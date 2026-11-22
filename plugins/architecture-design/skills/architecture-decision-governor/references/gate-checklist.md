@@ -2,7 +2,7 @@
 
 - [ ] Inputs y versiones identificados
 - [ ] Fuentes reales y afirmaciones clasificadas
-- [ ] Artefactos Markdown pasan validador STD-OKF-001 v1.11.0-stable
+- [ ] Artefactos Markdown pasan validador STD-OKF-001 v0.1.0-stable
 - [ ] Contradicciones, riesgos y preguntas abiertas visibles
 - [ ] Dependencias y decisiones humanas registradas
 - [ ] Cada ADR tiene diagrama Mermaid o "Visual: no aplica — <motivo>" aceptado por el arquitecto

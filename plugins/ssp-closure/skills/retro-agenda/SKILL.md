@@ -2,7 +2,7 @@
 name: retro-agenda
 description: Enmarcar problemas y acciones de la Sprint Retrospective, separar hechos de hipótesis y preparar el CLS de cierre del SSP con resultados confirmados.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "specialist"
 ---

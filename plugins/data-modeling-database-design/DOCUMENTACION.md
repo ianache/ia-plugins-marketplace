@@ -2,7 +2,7 @@
 
 Diseña el modelo de datos y la base de datos de un servicio: reconstrucción As-Is, ownership de datos por contexto, modelo lógico, modelo físico, migraciones Flyway y validación. Usa **un orquestador y seis skills especialistas**, con gates de aprobación humana.
 
-- **Versión:** 1.3.0 · **Documentos:** STD-OKF-001 v1.11.0-stable
+- **Versión:** 1.3.0 · **Documentos:** STD-OKF-001 v0.1.0-stable
 - **Entrada:** modelo conceptual, RCP/DSP/SSP, DDD (`BC`, `CTX`, `AGG`, `VO`, `EVT`), FDT, contratos OpenAPI, ADR y codebase con DDL/Flyway.
 - **Salida:** documentos en `design/database/<run-id>/`; controles en `.comsatel/data-modeling-database-design/runs/<run-id>/`.
 

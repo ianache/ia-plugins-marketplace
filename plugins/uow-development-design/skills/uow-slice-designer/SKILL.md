@@ -2,7 +2,7 @@
 name: uow-slice-designer
 description: "Usar cuando un UCX aprobado deba partirse en una o más Unidades de Trabajo (slice vertical por US) que un solo developer con su agente pueda completar, con alcance, límites, dependencias, criterios cubiertos y dimensión."
 metadata:
-  version: "1.3.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "development"
 ---

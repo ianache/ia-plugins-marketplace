@@ -107,7 +107,7 @@
     "execution-log": "IXL",
     "gate-register": "IGR"
   },
-  "okf_types_note": "Equivalencia entre la clave de cada artefacto (slug) y su tipo OKF aprobado en STD-OKF-001 v1.11.0-stable. Los tres últimos son documentos del orchestrator y viven bajo orchestrator_root, no bajo output_root.",
+  "okf_types_note": "Equivalencia entre la clave de cada artefacto (slug) y su tipo OKF aprobado en STD-OKF-001 v0.1.0-stable. Los tres últimos son documentos del orchestrator y viven bajo orchestrator_root, no bajo output_root.",
   "orchestrator_root": ".comsatel/infra-architecture-design/runs/",
   "orchestrator_files": {
     "plan": "{run_id}/plan.json",

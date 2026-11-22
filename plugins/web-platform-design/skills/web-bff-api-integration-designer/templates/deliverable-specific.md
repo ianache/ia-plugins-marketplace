@@ -1,5 +1,5 @@
 ---
-type: WEB # aprobado en STD-OKF-001 v1.11.0-stable
+type: WEB # aprobado en STD-OKF-001 v0.1.0-stable
 id: WEB-EXAMPLE
 title: "web-bff-api-integration-designer: entregable"
 description: "Diseñar BFF, contratos OpenAPI, sesión Keycloak/OAuth2 PKCE, errores, resiliencia y observabilidad"

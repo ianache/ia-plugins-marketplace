@@ -1,6 +1,8 @@
 ---
 name: ui-screen-specification-designer
 description: Usar cuando se necesite especificar pantallas y navegación ux/ui en el proceso UX/UI gobernado de COMSATEL; coordinar con el orchestrator y aprobación humana G2.
+metadata:
+  version: "0.1.0"
 ---
 # ui-screen-specification-designer
 
@@ -32,8 +34,8 @@ Especificar pantallas y navegación UX/UI. Ejecutar: derivar SCR, interacciones,
 
 ## Restricciones
 - Gestionar plan, gates, evidencias y estado exclusivamente en `.comsatel/ux-ui-design/runs/<run-id>/`.
-- Producir documentos con STD-OKF-001 v1.8.0-stable; nunca inventar `verified`, fuentes, aprobación o acceso a Figma/Stitch/Claude Design.
-- Tipos UXR/FLW/SCR/CMP/TKN/HOF están **aprobados** en STD-OKF-001 v1.8.0-stable.
+- Producir documentos con STD-OKF-001 v0.1.0-stable; nunca inventar `verified`, fuentes, aprobación o acceso a Figma/Stitch/Claude Design.
+- Tipos UXR/FLW/SCR/CMP/TKN/HOF están **aprobados** en STD-OKF-001 v0.1.0-stable.
 - El diseño es multiplataforma; Web y Mobile realizan el mapeo técnico posterior.
 - Si hay contradicción de fuentes o falta evidencia crítica, registrar pregunta abierta y bloquear gate.
 

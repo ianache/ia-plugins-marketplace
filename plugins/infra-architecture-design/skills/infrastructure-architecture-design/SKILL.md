@@ -1,6 +1,8 @@
 ---
 name: infrastructure-architecture-design
 description: Topology, networking, sizing and FinOps. Internal specialist. Use only when dispatched by infrastructure-orchestrator with a task contract (task_id, execution_id, mode). For a user request to design or review infrastructure, use infrastructure-orchestrator instead.
+metadata:
+  version: "0.1.0"
 ---
 # infrastructure-architecture-design
 

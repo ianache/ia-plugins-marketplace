@@ -1,6 +1,8 @@
 ---
 name: biz-stakeholder-capability-mapper
 description: Mapear partes interesadas, capacidades, cadenas de valor y procesos de negocio AS-IS vinculados a objetivos. Usar para STK; BCAP; capability-map; value-stream.
+metadata:
+  version: "0.1.0"
 ---
 
 # Stakeholder & Capability Mapper
@@ -37,7 +39,7 @@ READY, CONDITIONAL y NOT_READY **no equivalen a aprobación**. Una persona autor
 
 ## Contrato de conformidad documental
 - Antes de entregar Markdown conceptual, ejecutar `python scripts/validate.py <archivo.md>` (usa `scripts/validate_okf.py` de la raíz del plugin).
-- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v1.9.0-stable, `TRM BCP BO STK BCAP BR IMD` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
+- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v0.1.0-stable, `TRM BCP BO STK BCAP BR IMD` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
 - Para JSON/YAML operativos en `comsatel/` usar contratos operativos; no forzar frontmatter OKF.
 
 ## Mapeo obligatorio de rutas

@@ -27,7 +27,7 @@ Escenarios (`scripts/workflow.py init`): `initiative` (G0–G6), `iteration` (om
 Consume `business-knowledge` (BCP, BO, BCAP, BRISK), `requirements-engineering` (DSP, US, RCP, IMP), `architecture-design` (ASR, ADR) y `qa-design` (QDC). Solo GitLab como gestor de trabajo.
 
 ## Conformidad OKF
-Los documentos cumplen STD-OKF-001 v1.9.0-stable. Tipos aprobados y usados aquí: `PCH`, `RMP`, `SSP`, `STR`, `RSK`, `CHG`, `CLS`. `python scripts/validate_okf.py documento.md` valida el frontmatter; `--publication` es la revisión estricta y rechaza los tipos no registrados.
+Los documentos cumplen STD-OKF-001 v0.1.0-stable. Tipos aprobados y usados aquí: `PCH`, `RMP`, `SSP`, `STR`, `RSK`, `CHG`, `CLS`. `python scripts/validate_okf.py documento.md` valida el frontmatter; `--publication` es la revisión estricta y rechaza los tipos no registrados.
 
 ## Output Pathmap v1.0.0
 Ver `assets/pathmap.md` y `OUTPUT-PATH-POLICY.md`. Entregables bajo `./management/`; registros operativos en `.comsatel/project-management/runs/<run-id>/`. Validar con `scripts/validate_pathmap.py` y, para el conjunto, `skills/mgt-release-closure-auditor/scripts/check_management.py`.

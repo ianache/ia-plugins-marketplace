@@ -2,7 +2,7 @@
 name: uow-codebase-mapper
 description: "Usar cuando una UOW deba aterrizarse en un repositorio: referencia base, rutas permitidas, zonas prohibidas, ADR y convenciones aplicables, y análisis del código existente en Brownfield y Evolution."
 metadata:
-  version: "1.3.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "development"
 ---

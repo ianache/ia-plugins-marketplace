@@ -33,7 +33,7 @@ Cada tarea entra por el gate anterior al que cierra, y pasar a `NEEDS_REVIEW` o 
 ## Archivos
 - Operativos: `.comsatel/architecture-design/runs/<run-id>/`
 - Conceptuales OKF v0.2: `architecture/`
-- Estándar: `standards/STD-OKF-001-v1.11.0-stable.md`
+- Estándar: `standards/STD-OKF-001-v0.1.0-stable.md`
 
 ## Validación
 `python scripts/validate_okf.py <document.md>` valida frontmatter estructural. Los tipos de v1.3.0 están aprobados; `--allow-draft-types` se conserva solo por compatibilidad. Los templates contienen placeholders y **no deben publicarse sin completarlos**.

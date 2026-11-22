@@ -1,6 +1,8 @@
 ---
 name: biz-scenario-modeler
 description: Modelar escenarios de negocio (BSN) como secuencias de reglas BR con precondiciones, pasos, excepciones y resultado, trazados a BR, TRM, BCAP y BO. Usar para BSN; escenario de negocio; business scenario.
+metadata:
+  version: "0.1.0"
 ---
 
 # Business Scenario Modeler
@@ -33,7 +35,7 @@ Cada paso del escenario referencia una `BR` por ID. El escenario declara en `rel
 - Si falta un insumo, registrar el bloqueo y una pregunta.
 
 ## Contrato de conformidad documental
-- El tipo `BSN` está registrado en STD-OKF-001 v1.9.0-stable.
+- El tipo `BSN` está registrado en STD-OKF-001 v0.1.0-stable.
 - La validación no equivale a aprobación humana ni a publicación.
 
 ## Mapeo obligatorio de rutas

@@ -1,6 +1,8 @@
 ---
 name: innovation-opportunity-scout
 description: Usar para explorar oportunidades y señales en iniciativas Greenfield, Brownfield o Evolution; producir opportunity-map.md y evidencia de G1 sin inventar validaciones.
+metadata:
+  version: "0.1.0"
 ---
 
 # Explorar oportunidades y señales
@@ -20,7 +22,7 @@ Mapa de oportunidades, tendencias, capacidades existentes, restricciones, señal
 Buscar señales de clientes, mercado, producto, telemetría, procesos y tecnología; diferenciar evidencias, hipótesis y extrapolaciones. Evaluar valor estratégico y riesgos de privacidad; no confundir tendencia con necesidad demostrada.
 
 ## Salidas
-- Documento conceptual `opportunity-map.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v1.11.0-stable; tipo `SOL` (aprobado en v1.11.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
+- Documento conceptual `opportunity-map.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v0.1.0-stable; tipo `SOL` (aprobado en v0.1.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
 - `gate-evidence.json` con resultado técnico y referencias, sin `approved: true` automático.
 - Inventario de señales y oportunidades con procedencia, grado de confianza y preguntas abiertas.
 
@@ -28,7 +30,7 @@ Buscar señales de clientes, mercado, producto, telemetría, procesos y tecnolog
 Leer `references/gate-checklist.md`; `READY` no significa aprobado. El orchestrator bloquea dependientes hasta aprobación humana registrada.
 
 ## Validación y gobierno
-Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v1.11.0-stable.md` de la raíz del plugin; `v1.11.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
+Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v0.1.0-stable.md` de la raíz del plugin; `v0.1.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
 
 ## Recursos del skill
 - `references/contract.md`: contrato de datos y dependencias.

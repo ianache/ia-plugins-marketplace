@@ -2,7 +2,7 @@
 name: qa-agentic-test-reviewer
 description: Usar para revisar independientemente implementación, ejecución y evidencia de Test Cases aprobados contra el Test Design, el DSP, el Development Context y el entorno.
 metadata:
-  version: "1.6.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

@@ -2,7 +2,9 @@
 name: architecture-asr-and-solution-designer
 description: Use when asr, escenarios de calidad, alternativas y solución is required
   in a governed architecture workflow; consumes evidence and produces traceable architecture
-  artifacts under STD-OKF-001 v1.11.0-stable.
+  artifacts under STD-OKF-001 v0.1.0-stable.
+metadata:
+  version: "0.1.0"
 ---
 
 # architecture-asr-and-solution-designer

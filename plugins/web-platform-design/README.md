@@ -24,4 +24,4 @@ La conformidad de cada `SKILL.md` con la estructura básica Claude Code se valid
 ## v0.4.0 — Recursos completos por skill
 Los siete skills contienen SKILL.md, references (contrato, gate, guía técnica), templates (OKF, entregable específico, evidencia gate), scripts (validación del entregable y de recursos), examples (inputs/outputs), assets (diagramas). Ejecutar `python scripts/validate_plugin.py`.
 
-El tipo OKF `WEB` está aprobado en STD-OKF-001 v1.11.0-stable (Web Platform Technical Design). La validación estructural no equivale a ejecución real en Claude Code ni aprobación humana de gates.
+El tipo OKF `WEB` está aprobado en STD-OKF-001 v0.1.0-stable (Web Platform Technical Design). La validación estructural no equivale a ejecución real en Claude Code ni aprobación humana de gates.

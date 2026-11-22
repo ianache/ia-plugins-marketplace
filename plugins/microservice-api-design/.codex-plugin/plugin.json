@@ -1,0 +1,9 @@
+{
+  "name": "microservice-api-design",
+  "version": "0.1.0",
+  "description": "COMSATEL Microservice & API Design: Greenfield, Brownfield, Evolution, FDT and Codebase Handoff (6+1)",
+  "skills": "./skills/",
+  "author": {
+    "name": "COMSATEL Architecture"
+  }
+}

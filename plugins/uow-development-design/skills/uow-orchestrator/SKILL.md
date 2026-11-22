@@ -2,7 +2,7 @@
 name: uow-orchestrator
 description: "Usar para planificar, controlar y reanudar la conversión de una User Story, el diseño de API y el diseño de BD en Unidades de Trabajo (UOW) asignables a un developer con agente IA, con gates fail-closed, intervención humana y aprobación del paquete ligada a su digest, sin diseñar ni redactar el contenido de la UOW."
 metadata:
-  version: "1.3.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "development"
 ---

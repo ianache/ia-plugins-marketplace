@@ -47,4 +47,4 @@ python skills/uow-orchestrator/scripts/uow_package.py build --root ./management/
 
 Los checks deterministas de cada gate: `python skills/<skill>/scripts/check_uow_package.py --root <dir> --profile <context|slice|binding|codebase|agent-plan|readiness|ready> [--uow UOW-001]`.
 
-Más detalle en [DOCUMENTACION.md](DOCUMENTACION.md). Estándar: `standards/STD-OKF-001-v1.11.0-stable.md` (los tipos `UOW`, `UCX`, `UCB`, `UCM`, `UAP` y `UWR` están aprobados en v1.11.0-stable).
+Más detalle en [DOCUMENTACION.md](DOCUMENTACION.md). Estándar: `standards/STD-OKF-001-v0.1.0-stable.md` (los tipos `UOW`, `UCX`, `UCB`, `UCM`, `UAP` y `UWR` están aprobados en v0.1.0-stable).

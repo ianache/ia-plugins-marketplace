@@ -2,7 +2,7 @@
 name: web-automation
 description: Usar cuando los TC aprobados de superficie WEB de un AUT (Shell de micro-frontends o aplicación web) deban implementarse como pruebas Playwright o Selenium en test/functional/, con un reporte por AUT y sin datos ni credenciales en el repositorio.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

@@ -2,6 +2,7 @@
 name: course-builder
 description: "Actívame con el comando /course:course-builder o cuando el usuario quiera crear, definir o documentar la ficha técnica de un curso de capacitación, e-learning o formación profesional. Esto incluye: definir el código del curso, nombre, sumilla, objetivos de aprendizaje (con taxonomía de Bloom), habilidades a desarrollar, duración, modalidad, público objetivo y prerrequisitos. También activa este skill cuando el usuario mencione \"crear un curso\", \"ficha de curso\", \"diseñar un curso\", \"sílabo\", \"sumilla\", \"objetivos de aprendizaje\", \"público objetivo\", o cuando quiera estructurar un programa de formación desde cero. Una vez completada la ficha, este skill la exporta a .docx y señala al usuario que puede continuar con course-lesson-builder para crear las lecciones. "
 metadata:
+  version: "0.1.0"
   type: docs
   triggers:
     - /course:builder

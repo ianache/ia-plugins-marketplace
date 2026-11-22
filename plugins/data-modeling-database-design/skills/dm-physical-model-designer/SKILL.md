@@ -1,6 +1,8 @@
 ---
 name: dm-physical-model-designer
 description: Diseñar estructuras específicas del motor: tipos, tablas, índices, claves, constraints, rendimiento y seguridad.
+metadata:
+  version: "0.1.0"
 ---
 # dm-physical-model-designer
 
@@ -24,6 +26,6 @@ Diseñar estructuras específicas del motor: tipos, tablas, índices, claves, co
 - Referencias trazables, riesgos, incertidumbres, preguntas y propuesta de gate.
 
 ## Reglas
-- Documentos OKF (`STD-OKF-001 v1.11.0-stable`): metadatos obligatorios, SemVer, `generated.by`, `generated.at`, `sources`, `pack`, `skill`, `bounded_context_id` y `schema_id` cuando apliquen.
+- Documentos OKF (`STD-OKF-001 v0.1.0-stable`): metadatos obligatorios, SemVer, `generated.by`, `generated.at`, `sources`, `pack`, `skill`, `bounded_context_id` y `schema_id` cuando apliquen.
 - No publicar ni modificar repositorios sin aprobación humana; no asumir BC=esquema ni AGG=tabla.
 - La ubicación final de migraciones depende de ADR y convenciones verificadas de la codebase.

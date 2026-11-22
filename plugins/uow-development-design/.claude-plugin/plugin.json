@@ -1,6 +1,6 @@
 {
   "name": "uow-development-design",
-  "version": "1.4.0",
+  "version": "0.1.0",
   "description": "Convierte una User Story, el diseño de API y el diseño de BD en Unidades de Trabajo (UOW) asignables a un developer con agente IA: un orquestador y seis especialistas con gates fail-closed y aprobación humana del paquete.",
   "author": {
     "name": "Ilver Anache"

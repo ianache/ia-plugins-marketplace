@@ -1,6 +1,8 @@
 ---
 name: biz-knowledge-orchestrator
 description: Planifica, coordina y controla los seis skills de conocimiento de negocio (contexto y objetivos, actores y capacidades, glosario, reglas, modelo de información, validación y handoff), sus contratos, dependencias, gates y rutas bajo ./business.
+metadata:
+  version: "0.1.0"
 ---
 
 # Business Knowledge Orchestrator

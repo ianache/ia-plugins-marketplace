@@ -1,6 +1,8 @@
 ---
 name: biz-pack-validator-publisher
 description: Validar coherencia y trazabilidad del conocimiento de negocio (OKF, rutas, índices, enlaces, IDs) y preparar el handoff gobernado. Usar para BCP final; trazabilidad; resultado de gate.
+metadata:
+  version: "0.1.0"
 ---
 
 # Business Pack Validator & Publisher
@@ -22,7 +24,7 @@ Todos los entregables de G1 a G5 en `business/` y sus gates aprobados. Revisar `
 Actualiza el BCP tipado en `business/context-packs/` con inventario, trazabilidad, huecos, consumidores y readiness; devuelve resultados de gate estructurados al orchestrator, que es el unico que persiste gate-report y evidencias operativas.
 
 ## Límites de la validación
-`check_pack.py` verifica estructura, rutas, índices, enlaces e IDs; no certifica veracidad de fuentes, semántica ni aprobación humana. Con STD-OKF-001 v1.9.0-stable estos tipos están aprobados y ya no se emiten avisos `type propuesto`.
+`check_pack.py` verifica estructura, rutas, índices, enlaces e IDs; no certifica veracidad de fuentes, semántica ni aprobación humana. Con STD-OKF-001 v0.1.0-stable estos tipos están aprobados y ya no se emiten avisos `type propuesto`.
 
 ## Gate G6
 READY, CONDITIONAL y NOT_READY **no equivalen a aprobación**. Una persona autorizada aprueba el gate; sin aprobación no se habilitan tareas dependientes. Consultar `references/gate-checklist.md`.
@@ -36,7 +38,7 @@ READY, CONDITIONAL y NOT_READY **no equivalen a aprobación**. Una persona autor
 
 ## Contrato de conformidad documental
 - Antes de entregar Markdown conceptual, ejecutar `python scripts/validate.py <archivo.md>` (usa `scripts/validate_okf.py` de la raíz del plugin).
-- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v1.9.0-stable, `TRM BCP BO STK BCAP BR IMD` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
+- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v0.1.0-stable, `TRM BCP BO STK BCAP BR IMD` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
 - Para JSON/YAML operativos en `comsatel/` usar contratos operativos; no forzar frontmatter OKF.
 
 ## Mapeo obligatorio de rutas

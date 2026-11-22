@@ -1,0 +1,9 @@
+{
+  "name": "ddd-domain-design",
+  "version": "0.1.0",
+  "description": "DDD-first domain design with auditable orchestration, validation and human gates",
+  "skills": "./skills/",
+  "author": {
+    "name": "COMSATEL Engineering"
+  }
+}

@@ -3,7 +3,7 @@
 > Sección para incorporar al BCP existente. No es un documento independiente.
 
 ## 1. Alcance y versión
-- **Run:** <run-id> · **Producto:** <PRODUCTO> · **Pathmap:** 1.0.0 · **Estándar:** STD-OKF-001 v1.9.0-stable
+- **Run:** <run-id> · **Producto:** <PRODUCTO> · **Pathmap:** 1.0.0 · **Estándar:** STD-OKF-001 v0.1.0-stable
 
 ## 2. Inventario de entregables
 | Tipo | ID | Ruta | Versión | Estado |

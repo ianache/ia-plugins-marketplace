@@ -1,0 +1,9 @@
+{
+  "name": "courses",
+  "version": "0.1.0",
+  "description": "Asistente para el diseño y generación de cursos",
+  "skills": "./skills/",
+  "author": {
+    "name": "Ilver Anache"
+  }
+}

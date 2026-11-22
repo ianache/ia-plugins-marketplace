@@ -6,7 +6,7 @@ Antes de crear o modificar un plugin o skill, lee [GUIA-BUENAS-PRACTICAS.md](GUI
 
 ## Fuente de verdad
 
-- **Maestro:** `plugins/STD-OKF-001-v*.md` (hoy `STD-OKF-001-v1.9.0-stable.md`).
+- **Maestro:** `plugins/STD-OKF-001-v*.md` (hoy `STD-OKF-001-v0.1.0-stable.md`).
 - **Sincronización:** `python plugins/scripts/sync_std.py --check` informa las copias, las listas de tipos de los validadores y las referencias a versiones anteriores; `--apply` las propaga desde el maestro. La prueba `plugins/scripts/test_sync_std.py` falla si hay discrepancias.
 - Cualquier cambio al estándar se hace **primero** en el maestro. Las copias dentro de los plugins nunca se editan directamente.
 
@@ -42,7 +42,7 @@ Los hashes distintos al del maestro indican copias desactualizadas. Informarlo s
 
 ## Estado conocido
 
-- Las copias de `qa-design` se alinearon con el maestro v1.3.0-stable (`96134047…`) tras analizar su impacto: sus tests pasan y los tipos QA ya constan como aprobados.
+- El maestro vigente es `STD-OKF-001-v0.1.0-stable.md`; las copias y referencias se sincronizan desde este archivo con `plugins/scripts/sync_std.py`.
 
 ## Versionado SemVer de plugins y skills (trazabilidad)
 
@@ -52,17 +52,13 @@ Todo cambio a un plugin o a sus skills **debe** subir la versión según [SemVer
 
 | Elemento | Ubicación | Estado actual |
 | :--- | :--- | :--- |
-| Plugin | `<plugin>/.claude-plugin/plugin.json` → `"version"` | Existe en los 11 plugins. |
-| Skill | `SKILL.md` → frontmatter `metadata.version` | Solo `qa-design` lo usa hoy; en los demás plugins la versión del skill se rige por la del plugin. No añadir `metadata.version` a otros plugins sin aprobación. |
+| Plugin | `<plugin>/.claude-plugin/plugin.json` → `"version"` | Existe en los 21 plugins. |
+| Skill | `SKILL.md` -> frontmatter `metadata.version` | Todos los skills declaran `metadata.version` y siguen la linea base vigente. |
 | Estándar OKF | Nombre del maestro `STD-OKF-001-v<ver>.md` | Ver flujo de propagación arriba. |
 
-### Línea base 1.0.0 (2026-10-29)
+### Linea base 0.1.0 (2026-11-22)
 
-El **2026-10-29** todos los plugins se reiniciaron a **1.0.0**, que es la **línea base absoluta** del catálogo. Las versiones anteriores de los `CHANGELOG.md` están marcadas «(pre-línea base)» y son solo historial. Esta es la única excepción a la regla de no retroceder la versión; no se repite sin decisión explícita del responsable.
-
-- **Línea vigente (autorizada por el responsable el 2026-11-07):** la línea base de 1.0.0 no se mantuvo en el repo. Desde esa fecha la versión vigente de cada plugin es la de su `plugin.json` (p. ej. `1.2.x`, `2.0.0`), y cada cambio sube SemVer desde ahí según las reglas de incremento. No se retrocede ninguna versión.
-- Los cambios que aún no tengan versión asignada se registran en `[Sin publicar]` del `CHANGELOG.md` hasta que se decida su número.
-- Los artefactos generados con versiones anteriores (ZIP en `dist/`, `.pptx` y `.pdf` de `plugins/`) se regeneran en el reempaquetado.
+El catalogo completo (plugins, skills, estandar OKF y documentacion de release) se reinicio a 0.1.0 por decision explicita del responsable. Se retiraron los historiales previos para iniciar desde cero. Los cambios futuros se versionan con SemVer desde esta linea base; no se reinicia otra vez sin una decision explicita.
 
 ### Reglas de incremento
 

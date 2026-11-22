@@ -1,0 +1,6 @@
+{
+  "name": "architecture-design",
+  "version": "0.1.0",
+  "description": "Governed architecture engineering with 6 specialized skills and an orchestrator, OKF v0.2 COMSATEL",
+  "skills": "./skills/"
+}

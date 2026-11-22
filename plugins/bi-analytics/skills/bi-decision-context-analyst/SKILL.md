@@ -1,6 +1,8 @@
 ---
 name: bi-decision-context-analyst
 description: Define preguntas de negocio, decisiones soportadas, audiencias y alcance analítico. Produce BIC.
+metadata:
+  version: "0.1.0"
 ---
 
 # BI Decision Context Analyst

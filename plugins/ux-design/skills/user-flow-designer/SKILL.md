@@ -1,6 +1,8 @@
 ---
 name: user-flow-designer
 description: Usar cuando los UX Requirements (UXR-*) deban convertirse en flujos de usuario con happy path, excepciones, permisos y estados, y haya que declarar qué pantallas (SCR-*) pertenecen a cada flujo.
+metadata:
+  version: "0.1.0"
 ---
 
 # user-flow-designer

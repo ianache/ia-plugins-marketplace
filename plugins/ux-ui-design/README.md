@@ -9,7 +9,7 @@ Descomprimir y cargar desde un marketplace de plugins Claude Code o probar local
 ## Política de carpetas
 
 - `.comsatel/ux-ui-design/runs/<run-id>/`: plan, estados, evidencias y aprobaciones; no son OKF conceptuales.
-- `design/ux-ui/<run-id>/`: entregables conceptuales OKF v0.2 según STD-OKF-001 v1.8.0-stable.
+- `design/ux-ui/<run-id>/`: entregables conceptuales OKF v0.2 según STD-OKF-001 v0.1.0-stable.
 - Para publicación a KB gobernada, usar Merge Request y autorización humana. No modificar directamente `design/web/` ni `design/mobile/`.
 
 ## Workflows
@@ -24,7 +24,7 @@ El plugin define experiencia, flujos, pantallas, Atomic Design, tokens y prototi
 
 ## Catálogo de tipos OKF
 
-`UXR`, `FLW`, `SCR`, `CMP`, `TKN`, `HOF` **son tipos aprobados en STD-OKF-001 v1.8.0-stable** (no estaban en el catálogo v1.2.0). Para decisiones arquitectónicas existentes puede utilizarse `ADR` si aplica.
+`UXR`, `FLW`, `SCR`, `CMP`, `TKN`, `HOF` **son tipos aprobados en STD-OKF-001 v0.1.0-stable** (no estaban en el catálogo v1.2.0). Para decisiones arquitectónicas existentes puede utilizarse `ADR` si aplica.
 
 ## Recursos
 

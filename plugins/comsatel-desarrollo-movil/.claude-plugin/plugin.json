@@ -1,9 +1,0 @@
-{
-  "name": "comsatel-desarrollo-movil",
-  "version": "1.0.0",
-  "description": "Flujo de desarrollo móvil de CL2 Flotas (Flutter): un orquestador y tres especialistas para la biblioteca de componentes, la app y la verificación en el emulador. Instalar junto a comsatel-desarrollo, que trae el guardia de GitLab.",
-  "author": {
-    "name": "Comsatel"
-  },
-  "keywords": ["comsatel", "flutter", "movil", "design-system", "android", "flujo-de-desarrollo"]
-}

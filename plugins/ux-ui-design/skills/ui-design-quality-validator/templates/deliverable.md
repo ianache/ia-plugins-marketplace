@@ -1,5 +1,5 @@
 ---
-type: UXR # aprobado en v1.8.0-stable; usar el tipo del entregable concreto (UXR, FLW, SCR, CMP, TKN o HOF)
+type: UXR # aprobado en v0.1.0-stable; usar el tipo del entregable concreto (UXR, FLW, SCR, CMP, TKN o HOF)
 id: "<ID-ESTABLE>"
 title: "<Título>"
 description: "<Descripción breve>"
@@ -32,4 +32,4 @@ sources:
 
 ## Evidencia y criterios de revisión
 
-> Nota: UXR, FLW, SCR, CMP, TKN y HOF están aprobados en STD-OKF-001 v1.8.0-stable; conservar el `type` que corresponda al entregable y sustituir todos los placeholders.
+> Nota: UXR, FLW, SCR, CMP, TKN y HOF están aprobados en STD-OKF-001 v0.1.0-stable; conservar el `type` que corresponda al entregable y sustituir todos los placeholders.

@@ -1,6 +1,8 @@
 ---
 name: claude-design-orchestrator
 description: Usar cuando haya que explorar y criticar alternativas de diseño en Claude Design para pantallas SCR-* de un flujo FLW-*, o cuando una decisión humana deba elegir entre Stitch y Figma.
+metadata:
+  version: "0.1.0"
 ---
 
 # claude-design-orchestrator

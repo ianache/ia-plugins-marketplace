@@ -2,7 +2,7 @@
 name: loadtest-automation
 description: Usar cuando los TC de carga o rendimiento aprobados de un microservicio deban implementarse como suite Grafana k6 en su carpeta test/load, con un archivo principal k6.js, un módulo por caso, datos y configuración, sin umbrales inventados.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

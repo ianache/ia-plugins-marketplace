@@ -2,7 +2,7 @@
 name: qa-agentic-test-engineer
 description: Usar cuando un QA Test Design Pack aprobado y Development Context deban convertirse en Test Execution Plan, harness, tests automatizados, ejecuciones y evidencia por test surface.
 metadata:
-  version: "1.8.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

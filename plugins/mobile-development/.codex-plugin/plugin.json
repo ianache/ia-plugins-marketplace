@@ -1,0 +1,17 @@
+{
+  "name": "mobile-development",
+  "version": "0.1.0",
+  "description": "Flujo de desarrollo móvil de CL2 Flotas (Flutter): un orquestador y tres especialistas para la biblioteca de componentes, la app y la verificación en el emulador. Instalar junto a web-development, que trae el guardia de GitLab.",
+  "skills": "./skills/",
+  "author": {
+    "name": "Comsatel"
+  },
+  "keywords": [
+    "comsatel",
+    "flutter",
+    "movil",
+    "design-system",
+    "android",
+    "flujo-de-desarrollo"
+  ]
+}

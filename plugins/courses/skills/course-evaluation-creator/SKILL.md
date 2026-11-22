@@ -2,6 +2,7 @@
 name: course-evaluation-creator
 description: "Actívame con el comando /course:evaluation-creator o cuando el usuario quiera crear evaluaciones, cuestionarios, exámenes, pruebas o instrumentos de evaluación para cursos o lecciones. Esto incluye: evaluaciones con preguntas de selección simple, selección múltiple, respuesta abierta, verdadero/falso, completar espacios y casos prácticos con rúbrica."
 metadata:
+  version: "0.1.0"
   type: docs
   triggers:
     - /course:evaluation

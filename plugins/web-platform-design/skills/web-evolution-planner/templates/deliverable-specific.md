@@ -1,5 +1,5 @@
 ---
-type: WEB # aprobado en STD-OKF-001 v1.11.0-stable
+type: WEB # aprobado en STD-OKF-001 v0.1.0-stable
 id: WEB-EXAMPLE
 title: "web-evolution-planner: entregable"
 description: "Planificar cambios compatibles, migración, feature flags, pruebas de regresión y rollback"

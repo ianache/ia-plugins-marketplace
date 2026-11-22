@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""STD-OKF-001 v1.9.0-stable validator. Profile checks are deterministic; publication checks are conservative."""
+"""STD-OKF-001 v0.1.0-stable validator. Profile checks are deterministic; publication checks are conservative."""
 import argparse,datetime,pathlib,re,sys
 import yaml
-APPROVED=set('ACP ADH ADR AGG API ASIS ASR AT BC BCAP BCP BIC BIQ BO BR BSN C4 CFR CHG CLS CMP CTLG CTX DBM DBR DDR DMD DSH DSM DSP ENT EPC EPS ERR EVD EVT EXEC FDT FLW GOV HCB HOF IAC IAR IBL ICM ICP IDP IDS IFO IGR IHO IIA IMD IMP IOB IRB IRL IRQ ISA ISD ITA ITP IXL IXP KPI LDM MOB PCH PDM QAR QDC QER QFA QQI QTD QTE QTP QTR QTS RCP RMP RSK RUN SCR SEQ SOL SSP STD STK STR SVC TC TDA TDR TKN TRM TSN UAP UCB UCM UCX UOW US UWR UXR VO WEB'.split())
-PROPOSED=set()  # STD-OKF-001 v1.9.0-stable aprueba todos los tipos; se conserva la rama por compatibilidad
+APPROVED=set('ACP ADH ADR AGG API ASIS ASR AT BC BCAP BCP BIC BIQ BO BR BSN C4 CFR CHG CLS CMP CTLG CTX DBM DBR DDR DMD DSH DSM DSP ENT EPC EPS ERR EVD EVT EXEC FDT FLW GOV HCB HOF IAC IAR IBL ICM ICP IDP IDS IFO IGR IHO IIA IMD IMP IOB IRB IRL IRP IRQ ISA ISD ITA ITP IXL IXP KPI LDM MOB PCH PDM QAR QDC QER QFA QQI QTD QTE QTP QTR QTS RCP RMP RSK RUN SCR SEQ SOL SSP STD STK STR SVC TC TDA TDR TKN TRM TSN UAP UCB UCM UCX UOW US UWR UXR VO WEB'.split())
+PROPOSED=set()  # STD-OKF-001 v0.1.0-stable aprueba todos los tipos; se conserva la rama por compatibilidad
 REQUIRED='type id title description version status owner classification tags generated sources'.split()
 SEMVER=re.compile(r'^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$')
 ACTOR=re.compile(r'^(human:[^\s/]+|process:[^\s/]+|[^\s/]+/\d+\.\d+\.\d+(?:-[\w.-]+)?)$')
@@ -27,7 +27,7 @@ def validate(path,level='profile',run=None):
  for k in ('artifact_type','source_refs','reviewed_by','lifecycle_status'):
   if k in meta:errors.append('Forbidden alias '+k)
  if meta.get('type') in PROPOSED:
-  if level=='publish':errors.append('Proposed type pending approval (STD-OKF-001 v1.9.0-stable): '+str(meta.get('type')))
+  if level=='publish':errors.append('Proposed type pending approval (STD-OKF-001 v0.1.0-stable): '+str(meta.get('type')))
  elif meta.get('type') not in APPROVED:errors.append('Unregistered type (corporate catalog): '+str(meta.get('type')))
  for k in ('id','title','description','owner'):
   if not isinstance(meta.get(k),str) or not meta[k].strip():errors.append(k+' must be nonempty string')

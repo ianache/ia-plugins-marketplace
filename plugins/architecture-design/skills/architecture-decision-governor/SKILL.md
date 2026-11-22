@@ -2,7 +2,9 @@
 name: architecture-decision-governor
 description: Use when decisiones, investigación, adr y ciclo de vida is required in
   a governed architecture workflow; consumes evidence and produces traceable architecture
-  artifacts under STD-OKF-001 v1.11.0-stable.
+  artifacts under STD-OKF-001 v0.1.0-stable.
+metadata:
+  version: "0.1.0"
 ---
 
 # architecture-decision-governor

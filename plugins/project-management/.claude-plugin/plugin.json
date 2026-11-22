@@ -1,6 +1,6 @@
 {
   "name": "project-management",
-  "version": "2.1.0",
+  "version": "0.1.0",
   "description": "Gestión de entrega con 6 skills especializados y orchestrator: acta y roadmap, backlog e iteraciones, publicación en GitLab, riesgos y cambios, avance e informes, cierre",
   "author": {
     "name": "COMSATEL"

@@ -2,7 +2,7 @@
 
 Plugin Claude compatible en estructura; ejecución real en Claude Code pendiente.
 
-**6 skills + 1 orchestrator.** Escenarios Greenfield/Brownfield/Evolution. Entradas: modelo conceptual AF, RCP/DSP/SSP, DDD BC/CTX/AGG/VO/EVT, FDT, ADR, codebase/DDL/Flyway. Salidas OKF: DBR/LDM/PDM/DBM/DDR. T01 agrega ownership al LDM; T05 produce el DDR tipado. No se crean nuevos `type` fuera de STD-OKF-001 v1.11.0-stable.
+**6 skills + 1 orchestrator.** Escenarios Greenfield/Brownfield/Evolution. Entradas: modelo conceptual AF, RCP/DSP/SSP, DDD BC/CTX/AGG/VO/EVT, FDT, ADR, codebase/DDL/Flyway. Salidas OKF: DBR/LDM/PDM/DBM/DDR. T01 agrega ownership al LDM; T05 produce el DDR tipado. No se crean nuevos `type` fuera de STD-OKF-001 v0.1.0-stable.
 
 Los skills producen resultados bajo `design/database/<run-id>` y el orchestrator mantiene controles bajo `.comsatel/data-modeling-database-design/runs/<run-id>` (`execution-plan.json`, `gate-register.json`, `scope-manifest.json`). Cada tarea pasa por `PENDING`, `IN_PROGRESS`, `NEEDS_REVIEW` y `DONE` (más `BLOCKED` y `FAILED`), con historial de transiciones. Documentación completa en [DOCUMENTACION.md](DOCUMENTACION.md).
 

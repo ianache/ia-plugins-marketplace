@@ -1,6 +1,8 @@
 ---
 name: bi-quality-governance-validator
 description: Valida trazabilidad KPI-modelo-dashboard, calidad de datos, acceso por rol y completitud del handoff. Produce BIQ.
+metadata:
+  version: "0.1.0"
 ---
 
 # BI Quality and Governance Validator

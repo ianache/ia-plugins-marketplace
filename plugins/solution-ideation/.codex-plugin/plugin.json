@@ -1,0 +1,9 @@
+{
+  "name": "solution-ideation",
+  "version": "0.1.0",
+  "description": "Ideación e innovación de soluciones con 6 skills especializados y orchestrator; handoff gobernado a requirements-engineering",
+  "skills": "./skills/",
+  "author": {
+    "name": "COMSATEL"
+  }
+}

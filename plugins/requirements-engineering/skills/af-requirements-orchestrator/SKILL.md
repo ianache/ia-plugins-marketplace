@@ -1,6 +1,8 @@
 ---
 name: af-requirements-orchestrator
 description: Planifica, coordina y controla los cinco skills de ingeniería de requisitos, sus contratos, dependencias, gates y handoff, preservando cobertura AF-101/102/103.
+metadata:
+  version: "0.1.0"
 ---
 
 # Requirements Engineering Orchestrator
@@ -39,7 +41,7 @@ Operativo: `.comsatel/requirements-engineering/runs/<run-id>/`. Entregables: `re
 ## Contrato de conformidad documental
 - Antes de entregar Markdown conceptual, ejecutar `python scripts/validate_okf.py <archivo.md>` desde la raíz del plugin (o el wrapper local `scripts/validate.py`).
 - El resultado de validación no equivale a aprobación humana ni a publicación. En `--publication`, rechazar tipos no aprobados y metadatos inválidos.
-- Aplicar STD-OKF-001 v1.9.0-stable como perfil objetivo; usar el catálogo aprobado de la versión vigente.
+- Aplicar STD-OKF-001 v0.1.0-stable como perfil objetivo; usar el catálogo aprobado de la versión vigente.
 - Para outputs operativos JSON/YAML en `.comsatel/`, usar contratos operativos; no forzar frontmatter OKF.
 
 ## Enrutamiento obligatorio por `assets/pathmap.md` (v1.5.0)

@@ -1,6 +1,8 @@
 ---
 name: mobile-development-handoff
 description: Usar cuando se requiera consolidar mobile development context pack listo para implementación con agentes y qa en DTC-105 Mobile Flutter, bajo control del orchestrator y gates humanos.
+metadata:
+  version: "0.1.0"
 ---
 # mobile-development-handoff
 
@@ -34,8 +36,8 @@ Todos los entregables de ingeniería van en design/mobile/<run-id>/ respetando l
 
 ## Reglas de gobierno
 - `.comsatel/mobile-application-design/runs/<run-id>/`: plan, estado, evidencias, aprobaciones y bloqueos.
-- `design/mobile/<run-id>/`: entregables técnicos OKF v0.2; STD-OKF-001 v1.11.0-stable si está disponible en el workspace.
-- Usar `type: MOB` (Mobile Application Technical Design), aprobado en STD-OKF-001 v1.11.0-stable.
+- `design/mobile/<run-id>/`: entregables técnicos OKF v0.2; STD-OKF-001 v0.1.0-stable si está disponible en el workspace.
+- Usar `type: MOB` (Mobile Application Technical Design), aprobado en STD-OKF-001 v0.1.0-stable.
 - No generar ni modificar prototipos Stitch/Figma/Claude Design, pantallas visuales, Atomic Design o Design Tokens.
 - No equiparar automáticamente features Mobile con MicroUIs, Bounded Contexts, microservicios o APIs.
 - No inventar aprobación humana, resultados de tests, acceso a repositorios, publicación ni cumplimiento de stores.

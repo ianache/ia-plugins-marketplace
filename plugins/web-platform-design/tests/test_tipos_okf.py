@@ -4,7 +4,7 @@ APROBADOS = {'UXR', 'FLW', 'SCR', 'CMP', 'TKN', 'HOF', 'WEB', 'MOB'}
 
 
 def test_plantillas_usan_tipo_aprobado_sin_marcas_de_provisional():
-    # D-11: UXR/FLW/SCR/CMP/TKN/HOF/WEB/MOB están aprobados en STD-OKF-001 v1.11.0-stable
+    # D-11: UXR/FLW/SCR/CMP/TKN/HOF/WEB/MOB están aprobados en STD-OKF-001 v0.1.0-stable
     plantillas = list(ROOT.glob('skills/*/templates/deliverable*.md'))
     assert plantillas
     for f in plantillas:

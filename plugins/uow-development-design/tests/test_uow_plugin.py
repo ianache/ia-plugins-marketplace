@@ -82,12 +82,12 @@ class Structure(unittest.TestCase):
 
 class Standard(unittest.TestCase):
     def test_types_are_in_the_master_standard_and_copies_are_identical(self):
-        master = REPO / "plugins/STD-OKF-001-v1.11.0-stable.md"
+        master = REPO / "plugins/STD-OKF-001-v0.1.0-stable.md"
         txt = master.read_text(encoding="utf8")
         for sig in TYPES:
             self.assertIn(f"| `{sig}` |", txt, sig)
             self.assertIn(f"| {sig} |", txt, sig)
-        copies = [ROOT / "standards/STD-OKF-001-v1.11.0-stable.md"] + [p / "resources/STD-OKF-001.md" for p in SK.iterdir()]
+        copies = [ROOT / "standards/STD-OKF-001-v0.1.0-stable.md"] + [p / "resources/STD-OKF-001.md" for p in SK.iterdir()]
         self.assertEqual({sha(c) for c in copies} | {sha(master)}, {sha(master)})
 
     def test_shared_files_are_identical_across_skills(self):

@@ -1,0 +1,9 @@
+{
+  "name": "requirements-engineering",
+  "version": "0.1.0",
+  "description": "Ingeniería de requisitos con 5 skills especializados y orchestrator, contratos, gates y trazabilidad",
+  "skills": "./skills/",
+  "author": {
+    "name": "COMSATEL"
+  }
+}

@@ -1,6 +1,8 @@
 ---
 name: creative-concept-explorer
 description: Usar para generar alternativas divergentes en iniciativas Greenfield, Brownfield o Evolution; producir concept-portfolio.md y evidencia de G3 sin inventar validaciones.
+metadata:
+  version: "0.1.0"
 ---
 
 # Generar alternativas divergentes
@@ -20,7 +22,7 @@ Portafolio diverso de conceptos, analogías, escenarios y combinaciones; no conv
 Aplicar al menos tres técnicas entre How Might We, SCAMPER, analogías cross-industry, inversión de supuestos, Crazy 8s, combinatoria y futuros alternativos. Producir >=8 ideas distintas por defecto, incluidas una incremental, una disruptiva y una de bajo costo. No presentar IA como solución obligatoria. Registrar originalidad hipotética sin afirmar novedad mundial.
 
 ## Salidas
-- Documento conceptual `concept-portfolio.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v1.11.0-stable; tipo `SOL` (aprobado en v1.11.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
+- Documento conceptual `concept-portfolio.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v0.1.0-stable; tipo `SOL` (aprobado en v0.1.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
 - `gate-evidence.json` con resultado técnico y referencias, sin `approved: true` automático.
 - Portafolio de conceptos con valor, riesgos, dependencias, diferencias y contraargumentos.
 
@@ -28,7 +30,7 @@ Aplicar al menos tres técnicas entre How Might We, SCAMPER, analogías cross-in
 Leer `references/gate-checklist.md`; `READY` no significa aprobado. El orchestrator bloquea dependientes hasta aprobación humana registrada.
 
 ## Validación y gobierno
-Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v1.11.0-stable.md` de la raíz del plugin; `v1.11.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
+Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v0.1.0-stable.md` de la raíz del plugin; `v0.1.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
 
 ## Recursos del skill
 - `references/contract.md`: contrato de datos y dependencias.

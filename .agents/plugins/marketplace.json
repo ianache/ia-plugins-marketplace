@@ -1,0 +1,365 @@
+{
+  "name": "comsatel-skills-catalog",
+  "interface": {
+    "displayName": "COMSATEL Skills Catalog"
+  },
+  "plugins": [
+    {
+      "name": "architecture-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/architecture-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "architecture-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "bi-analytics",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/bi-analytics",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "bi-analytics"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "business-knowledge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/business-knowledge",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "business-knowledge"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "web-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/web-development",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "web-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "mobile-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/mobile-development",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "mobile-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "courses",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/courses",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "courses"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "data-modeling-database-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/data-modeling-database-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "data-modeling-database-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "ddd-domain-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/ddd-domain-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "ddd-domain-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "infra-architecture-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/infra-architecture-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "infra-architecture-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "kb-quality-consistency-assurance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/kb-quality-consistency-assurance",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "kb-quality-consistency-assurance"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "microservice-api-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/microservice-api-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "microservice-api-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "mobile-application-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/mobile-application-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "mobile-application-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "project-management",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/project-management",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "project-management"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "qa-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/qa-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "qa-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "requirements-engineering",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/requirements-engineering",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "requirements-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "solution-ideation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/solution-ideation",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "solution-ideation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "ssp-closure",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/ssp-closure",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "ssp-closure"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "uow-development-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/uow-development-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "uow-development-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "ux-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/ux-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "ux-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "ux-ui-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/ux-ui-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "ux-ui-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    },
+    {
+      "name": "web-platform-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ianache/ia-plugins-marketplace.git",
+        "path": "./plugins/web-platform-design",
+        "ref": "main"
+      },
+      "interface": {
+        "displayName": "web-platform-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer tools"
+    }
+  ]
+}

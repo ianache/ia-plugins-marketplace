@@ -1,6 +1,8 @@
 ---
 name: bi-data-source-mapper
 description: Inventaría fuentes de datos, sistemas origen, linaje, frecuencia y calidad esperada sin conectarse a sistemas. Produce DSM.
+metadata:
+  version: "0.1.0"
 ---
 
 # BI Data Source Mapper

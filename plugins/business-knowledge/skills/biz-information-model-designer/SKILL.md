@@ -1,6 +1,8 @@
 ---
 name: biz-information-model-designer
 description: Crear y mantener el modelo de información conceptual de negocio (conceptos, relaciones, cardinalidades, reglas y estados) previo a cualquier modelo lógico o físico. Usar para IMD; modelo conceptual; ER de negocio.
+metadata:
+  version: "0.1.0"
 ---
 
 # Business Information Model Designer
@@ -48,7 +50,7 @@ READY, CONDITIONAL y NOT_READY **no equivalen a aprobación**. Una persona autor
 
 ## Contrato de conformidad documental
 - Antes de entregar Markdown conceptual, ejecutar `python scripts/validate.py <archivo.md>` (usa `scripts/validate_okf.py` de la raíz del plugin).
-- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v1.9.0-stable, `TRM BCP BO STK BCAP BR IMD` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
+- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v0.1.0-stable, `TRM BCP BO STK BCAP BR IMD` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
 - Para JSON/YAML operativos en `comsatel/` usar contratos operativos; no forzar frontmatter OKF.
 
 ## Mapeo obligatorio de rutas

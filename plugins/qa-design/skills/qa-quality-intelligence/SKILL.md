@@ -2,7 +2,7 @@
 name: qa-quality-intelligence
 description: Usar para correlacionar evidencia QA (packs, ejecuciones, defectos, CI/CD, observabilidad e historia) y recomendar una decisión de calidad sin aprobar el release.
 metadata:
-  version: "1.6.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

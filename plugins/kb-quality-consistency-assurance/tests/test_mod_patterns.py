@@ -12,7 +12,7 @@ class ModRiskPatterns(unittest.TestCase):
 
     def test_readme_cita_archivos_que_existen(self):
         txt = (ROOT / "README.md").read_text(encoding="utf-8")
-        for rel in ("hooks/hooks.json", "hooks/register.js", "standards/STD-OKF-001-v1.11.0-stable.md", "tests/mod-risk-patterns.test.mjs"):
+        for rel in ("hooks/hooks.json", "hooks/register.js", "standards/STD-OKF-001-v0.1.0-stable.md", "tests/mod-risk-patterns.test.mjs"):
             self.assertIn(rel, txt, rel)
             self.assertTrue((ROOT / rel).is_file(), rel)
 

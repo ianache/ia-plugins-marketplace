@@ -1,6 +1,8 @@
 ---
 name: bi-analytics-orchestrator
 description: Planifica, coordina y controla los seis skills de BI y analítica (contexto de decisiones, KPI, fuentes, modelo dimensional, dashboards y gobierno), sus contratos y dependencias; guarda la gestion del run en `.comsatel/bi-analytics/runs/<run-id>/` y los entregables de dominio bajo `./bi/`.
+metadata:
+  version: "0.1.0"
 ---
 
 # BI Analytics Orchestrator

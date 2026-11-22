@@ -94,14 +94,14 @@
       "description": "DTC Web: diseño técnico Web Angular Shell MicroUIs BFF, gobernado por gates y contratos OKF."
     },
     {
-      "name": "IAP-desarrollo",
+      "name": "web-development",
       "description": "Orquestador de desarrollo y sus cinco especialistas (DS, producto, UX a código, construcción y verificación), con el guardia de GitLab incluido",
-      "source": "./plugins/IAP-desarrollo"
+      "source": "./plugins/web-development"
     },
     {
-      "name": "IAP-desarrollo-movil",
-      "description": "Desarrollo móvil en Flutter: un orquestador y tres especialistas (biblioteca de componentes, app y verificación en el emulador). Se instala junto a IAP-desarrollo, que trae el guardia de GitLab",
-      "source": "./plugins/IAP-desarrollo-movil"
+      "name": "mobile-development",
+      "description": "Desarrollo móvil en Flutter: un orquestador y tres especialistas (biblioteca de componentes, app y verificación en el emulador). Se instala junto a web-development, que trae el guardia de GitLab",
+      "source": "./plugins/mobile-development"
     },
     {
       "name": "ux-design",

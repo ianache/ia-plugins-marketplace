@@ -1,6 +1,8 @@
 ---
 name: mgt-release-closure-auditor
 description: Auditar el hito o la iniciativa contra el acta, verificar preparación de entrega y emitir el cierre con lecciones aprendidas. Usar para CLS; cierre; auditoría de hito; release readiness; lecciones aprendidas.
+metadata:
+  version: "0.1.0"
 ---
 
 # Release & Closure Auditor
@@ -22,7 +24,7 @@ Todos los entregables de G1 a G5, la decisión de calidad (`QDC`) del pack de QA
 CLS. `management/closure/CLS-NNN-<slug>.md`. Los entregables van en `management/` (no en `.comsatel/`); las evidencias de ejecución y de gate, en `.comsatel/project-management/runs/<run-id>/`.
 
 ## Límites de la validación
-`check_management.py` verifica estructura, rutas, enlaces e IDs; no certifica veracidad de las cifras, la calidad ni la aprobación humana. Con STD-OKF-001 v1.9.0-stable estos tipos están aprobados y ya no se emiten avisos `type propuesto`.
+`check_management.py` verifica estructura, rutas, enlaces e IDs; no certifica veracidad de las cifras, la calidad ni la aprobación humana. Con STD-OKF-001 v0.1.0-stable estos tipos están aprobados y ya no se emiten avisos `type propuesto`.
 
 ## Gate G6
 READY, CONDITIONAL y NOT_READY **no equivalen a aprobación**. Una persona autorizada aprueba el gate; sin aprobación no se habilitan tareas dependientes. Consultar `references/gate-checklist.md`.
@@ -36,7 +38,7 @@ READY, CONDITIONAL y NOT_READY **no equivalen a aprobación**. Una persona autor
 
 ## Contrato de conformidad documental
 - Antes de entregar Markdown conceptual, ejecutar `python scripts/validate.py <archivo.md>` (usa `scripts/validate_okf.py` de la raíz del plugin).
-- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v1.9.0-stable, `PCH RMP SSP STR RSK CHG CLS` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
+- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v0.1.0-stable, `PCH RMP SSP STR RSK CHG CLS` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
 - Para JSON/YAML operativos en `.comsatel/` usar contratos operativos; no forzar frontmatter OKF.
 
 ## Mapeo obligatorio de rutas

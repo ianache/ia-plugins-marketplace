@@ -2,6 +2,7 @@
 name: course-lesson-builder
 description: "Actívame con el comando /course:lesson-builder o cuando el usuario quiera crear, diseñar o documentar lecciones de un curso de capacitación. Esto incluye: crear la ficha de lección (código, título, duración, objetivos, habilidades, contenido/agenda, metodología), generar la presentación PPT de la lección, crear la guía de laboratorio, y generar imágenes ilustrativas. También activa este skill cuando el usuario mencione \"lección\", \"clase\", \"módulo\", \"sesión\", \"PPT del curso\", \"presentación de la lección\", \"guía de laboratorio\", \"práctica\", \"lab\", o cuando quiera crear materiales para una lección específica. Funciona de forma independiente (sin necesidad de course-builder) o vinculado a un curso existente — pregunta solo código y nombre del curso si no están disponibles. NO genera evaluaciones — para eso usar course-evaluation-creator. IMPORTANTE: antes de generar cualquier entregable siempre ejecuta course-content-validator."
 metadata:
+  version: "0.1.0"
   type: docs
   triggers:
     - /course:lesson

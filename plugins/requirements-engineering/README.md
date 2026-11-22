@@ -14,7 +14,7 @@ G0 alcance y fuentes → G1 RCP (`af-evidence-context-designer`) → G2 línea b
 El run se controla con `scripts/workflow.py` (`init`, `check`, `status`, `transition`, `approve-gate`). Cada tarea tiene un gate de entrada (el gate previo) y un gate de cierre; `check` falla con "gate cycle" si el de entrada no es anterior al de cierre. Escenarios: `greenfield`, `brownfield`, `evolution` (G0–G6) e `impact-only` (omite G3 y G4 con justificación obligatoria). `approve-gate` exige un actor `human:<nombre>` y evidencia.
 
 ## Conformidad OKF
-Los documentos conceptuales cumplen STD-OKF-001 v1.9.0-stable. Tipos usados: `RCP`, `US`, `DSP` (aprobados en v1.2.0), `IMP` (aprobado en v1.3.0) y `EPC` (épica; sigla aprobada por el responsable, registrada en STD-OKF-001 v1.7.0). `BR`, `IMD` y `TRM` los produce `business-knowledge`.
+Los documentos conceptuales cumplen STD-OKF-001 v0.1.0-stable. Tipos usados: `RCP`, `US`, `DSP` (aprobados en v1.2.0), `IMP` (aprobado en v1.3.0) y `EPC` (épica; sigla aprobada por el responsable, registrada en STD-OKF-001 v1.7.0). `BR`, `IMD` y `TRM` los produce `business-knowledge`.
 
 ## Output Pathmap v1.5.0
 Ver `assets/pathmap.md` y `OUTPUT-PATH-POLICY.md`. Mapeados: RCP, US, IMP y DSP (`requirements/scope-packs/`). La línea base de negocio (`business/`: BR, IMD, TRM) es de solo lectura para este pack. Validar con `scripts/validate_pathmap.py`.

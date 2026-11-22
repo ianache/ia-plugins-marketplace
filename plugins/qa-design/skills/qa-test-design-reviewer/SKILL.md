@@ -2,7 +2,7 @@
 name: qa-test-design-reviewer
 description: Usar como quality gate independiente para revisar un QA Test Design Pack, cobertura, trazabilidad, oracles, redundancia y cobertura por test surface antes de automatización o ejecución.
 metadata:
-  version: "1.6.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

@@ -2,7 +2,7 @@
 name: postman-automation
 description: Usar cuando los casos de prueba aprobados de un microservicio API deban consolidarse en una colección Postman organizada por funcionalidad (endpoint) y por caso de prueba, con los criterios de aceptación en la documentación de cada request.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

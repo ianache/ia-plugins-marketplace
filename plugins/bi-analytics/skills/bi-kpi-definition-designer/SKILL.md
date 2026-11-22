@@ -1,6 +1,8 @@
 ---
 name: bi-kpi-definition-designer
 description: Define KPI con fórmula, grano, dimensiones, owner, umbrales y trazabilidad a decisiones. Produce un documento KPI por indicador y un catálogo CTLG ordenado alfabéticamente.
+metadata:
+  version: "0.1.0"
 ---
 
 # BI KPI Definition Designer

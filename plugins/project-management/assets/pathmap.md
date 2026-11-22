@@ -10,7 +10,7 @@
 3. La ruta no se deduce del nombre del skill ni de la extensión; se deriva del tipo documental. Un tipo sin mapping queda **BLOCKED** hasta resolverlo y registrar la decisión.
 4. Solo una instrucción explícita del usuario permite sobrescribir la ruta; se registra texto original, ruta resuelta, actor, justificación y alcance. Los skills no pueden autoautorizar excepciones.
 5. No sobrescribir documentos existentes sin decisión explícita de evolución o versionado. Preservar links, IDs y provenance.
-6. Cada skill valida `type`, `output_dir`, existencia y conformidad de frontmatter según `STD-OKF-001-v1.9.0-stable` antes de reportar un entregable listo.
+6. Cada skill valida `type`, `output_dir`, existencia y conformidad de frontmatter según `STD-OKF-001-v0.1.0-stable` antes de reportar un entregable listo.
 7. Los JSON/YAML de evidencia y los contratos operativos no son documentos OKF; se guardan en `<orchestrator_root>/<run-id>/`.
 
 ## Mapeo por document type

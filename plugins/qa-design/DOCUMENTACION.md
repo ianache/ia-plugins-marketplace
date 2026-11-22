@@ -2,7 +2,7 @@
 
 Plugin de Claude Code que lleva un Development Scope Pack (DSP) validado hasta una decisión de calidad: análisis de la funcionalidad, diseño de pruebas, revisión independiente, publicación de Test Cases, ingeniería de pruebas por superficie y recomendación de calidad. Usa **un orquestador y seis skills especialistas**, con gates que fallan por defecto y puntos de aprobación humana.
 
-- **Versión:** 2.2.0 (`plugin.json`) · **Autor:** COMSATEL · **Estándar de referencia:** STD-OKF-001 `v1.11.0-stable` (las copias del plugin aún no están propagadas, ver §8)
+- **Versión:** 2.2.0 (`plugin.json`) · **Autor:** COMSATEL · **Estándar de referencia:** STD-OKF-001 `v0.1.0-stable` (las copias del plugin aún no están propagadas, ver §8)
 - **Entrada:** DSP (id, versión, ruta), `gitlab_id`, superficies a probar, artefactos disponibles. Alternativamente, solo un SSP (`--ssp-id` y `--ssp-path`): el DSP se toma de su `dsp_id` y se localiza en la KB. Con SSP, el alcance de los TC queda limitado al sprint.
 - **Cadena canónica:** `DSP → US → RISK → TSN → TC → AT → EXEC → EVD → DEFECT → QUALITY_DECISION`
 - **Estado operativo:** `.comsatel/qa-design/runs/<run-id>/` (solo lo escribe el orquestador). Los entregables van en `testing/<DSP-ID>/` (y `testing/<DSP-ID>/<SSP-ID>/` si hay SSP).
@@ -212,7 +212,7 @@ Los comandos completos están en `skills/qa-sdlc-orchestrator/scripts/README.md`
 2. **Los gates no tienen código numérico.** Solo `G0` lo tiene. El resto se identifica por nombre, a diferencia de los otros plugins.
 3. **README desactualizado.** Habla de "QA SDLC Pack", de la ruta `qa-sdlc-anthropic-plugin` y de habilitar `qa-sdlc-pack`, pero el plugin se llama `qa-design`.
 4. **Versiones.** `plugin.json` está en 2.2.0 y los siete skills llevan `metadata.version` 1.6.0. Las pruebas `test_skill_frontmatter_and_version` (por skill) y `test_22_version_is_consistent_everywhere` (plugin) comparan esas versiones y fallan porque el plugin ya va en la línea 2.x y los skills no se alinearon. `skill-metadata-contract.yaml` exige `version`, `author` y `type: qa` (si faltan, `BLOCKED`). La numeración 5.x de §7 es histórica.
-5. **Tipos documentales.** `QFA`, `QTD`, `QTP`, `QTR`, `TSN`, `QTE`, `AT`, `QER`, `QQI`, `QDC`, `TDR`, `TDA`, `EXEC` y `EVD` están aprobados en el STD-OKF-001 vigente. `QTD` se acota a cobertura, trazabilidad, TSN y TC; estrategia y plan pasan a `QTP` (aprobado en `v1.11.0-stable`). Las copias de este plugin siguen en la versión anterior hasta su propagación.
+5. **Tipos documentales.** `QFA`, `QTD`, `QTP`, `QTR`, `TSN`, `QTE`, `AT`, `QER`, `QQI`, `QDC`, `TDR`, `TDA`, `EXEC` y `EVD` están aprobados en el STD-OKF-001 vigente. `QTD` se acota a cobertura, trazabilidad, TSN y TC; estrategia y plan pasan a `QTP` (aprobado en `v0.1.0-stable`). Las copias de este plugin siguen en la versión anterior hasta su propagación.
 6. **Plantillas.** Cada skill guarda sus plantillas en `skills/<skill>/templates/`. La raíz del plugin no tiene `templates/` porque no hay documentos comunes a varios skills. Los registros operativos (`gate-report.yaml`) viven en `skills/qa-sdlc-orchestrator/templates/`, aunque los escriban los especialistas como `gate_proposal`.
 
 7. **Gate `WAIVED` frente a la regla de la sección 4.** El comando `waive` existe y el orquestador acepta `WAIVED` como cierre (`GATE_OK`), pero la sección 4 dice que ningún gate permite `waiver`. Hay que decidir cuál vale.
@@ -247,4 +247,4 @@ Estos cambios están aprobados en la conversación del 2026-11-21, pero **no est
 - **Manual sin documento MT.** El plan de ejecución manual vive en el `QTE`. No se crea ningún tipo `MT`.
 - **Carga.** Solo API, porque las plantillas de CI cubren k6 solo para API.
 - **Ruta de pruebas.** `test/` en singular, como en las plantillas de CI (`test/functional/`, `test/load/`).
-- **Copias del estándar.** Las copias de este plugin siguen en `v1.3.0`. La propagación de `v1.11.0-stable` requiere clasificar su impacto, porque incluye el cambio de `QTD`.
+- **Copias del estándar.** Las copias de este plugin siguen en `v1.3.0`. La propagación de `v0.1.0-stable` requiere clasificar su impacto, porque incluye el cambio de `QTD`.

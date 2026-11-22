@@ -2,7 +2,7 @@
 name: ssp-closure-orchestrator
 description: Coordina el cierre de un SSP: agenda Review, estado del periodo, Retrospective, seguimiento de experimentos y readiness, manteniendo plan, resultados, gates y evidencia bajo .comsatel/ssp-closure/runs/<run-id>.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "orchestrator"
 ---

@@ -1,18 +1,18 @@
-﻿{
-    "name":  "ux-design",
-    "version": "3.1.0",
-    "description":  "Diseño UX/UI gobernado desde UXR hasta HOF: un orchestrator y nueve especialistas, con tipos STD-OKF-001 v1.9.0, modos Greenfield/Brownfield/Evolution y runs en .comsatel.",
-    "author":  {
-                   "name":  "Comsatel"
-               },
-    "keywords":  [
-                     "comsatel",
-                     "ux",
-                     "ui",
-                     "diseÃ±o",
-                     "handoff",
-                     "accesibilidad",
-                     "stitch",
-                     "figma"
-                 ]
+{
+  "name": "ux-design",
+  "version": "0.1.0",
+  "description": "Diseño UX/UI gobernado desde UXR hasta HOF: un orchestrator y nueve especialistas, con tipos STD-OKF-001 v1.9.0, modos Greenfield/Brownfield/Evolution y runs en .comsatel.",
+  "author": {
+    "name": "Comsatel"
+  },
+  "keywords": [
+    "comsatel",
+    "ux",
+    "ui",
+    "diseÃ±o",
+    "handoff",
+    "accesibilidad",
+    "stitch",
+    "figma"
+  ]
 }

@@ -1,6 +1,8 @@
 ---
 name: dm-schema-reconstruction-analyzer
 description: Reconstruir modelo As-Is desde DDL, catálogos, Flyway, ORM y código; registrar evidencia, incertidumbre y drift.
+metadata:
+  version: "0.1.0"
 ---
 # dm-schema-reconstruction-analyzer
 
@@ -24,6 +26,6 @@ Solo en Brownfield y Evolution (no hay As-Is en Greenfield). Reconstruir modelo 
 - Referencias trazables, riesgos, incertidumbres, preguntas y propuesta de gate.
 
 ## Reglas
-- Documentos OKF (`STD-OKF-001 v1.11.0-stable`): metadatos obligatorios, SemVer, `generated.by`, `generated.at`, `sources`, `pack`, `skill`, `bounded_context_id` y `schema_id` cuando apliquen.
+- Documentos OKF (`STD-OKF-001 v0.1.0-stable`): metadatos obligatorios, SemVer, `generated.by`, `generated.at`, `sources`, `pack`, `skill`, `bounded_context_id` y `schema_id` cuando apliquen.
 - No publicar ni modificar repositorios sin aprobación humana; no asumir BC=esquema ni AGG=tabla.
 - La ubicación final de migraciones depende de ADR y convenciones verificadas de la codebase.

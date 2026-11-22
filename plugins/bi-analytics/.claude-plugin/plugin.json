@@ -1,6 +1,6 @@
 {
   "name": "bi-analytics",
-  "version": "2.0.0",
+  "version": "0.1.0",
   "description": "Business Intelligence y analítica con 6 skills especializados y orchestrator: contexto de decisiones, definición de KPI, fuentes de datos, modelo dimensional, dashboards e informes, y calidad y gobierno, con gates G0-G6",
   "author": {
     "name": "COMSATEL"

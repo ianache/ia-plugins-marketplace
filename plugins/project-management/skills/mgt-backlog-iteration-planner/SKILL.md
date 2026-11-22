@@ -1,6 +1,8 @@
 ---
 name: mgt-backlog-iteration-planner
 description: Priorizar el backlog, estimar esfuerzo y costo (humano y agente de IA, con QA manual y automatizado) y producir el Sprint Scope Pack (SSP) a partir de un DSP aprobado: Sprint Goal, historias, dependencias, riesgos, compromiso y control del Milestone. Usar para SSP; sprint; backlog; Sprint Goal.
+metadata:
+  version: "0.1.0"
 ---
 
 # Backlog & Sprint Planner
@@ -38,7 +40,7 @@ READY, CONDITIONAL y NOT_READY **no equivalen a aprobación**. Una persona autor
 
 ## Contrato de conformidad documental
 - Antes de entregar Markdown conceptual, ejecutar `python scripts/validate.py <archivo.md>` (usa `scripts/validate_okf.py` de la raíz del plugin).
-- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v1.9.0-stable, `PCH RMP SSP STR RSK CHG CLS` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
+- La validación no equivale a aprobación humana ni a publicación. Con STD-OKF-001 v0.1.0-stable, `PCH RMP SSP STR RSK CHG CLS` son tipos aprobados; en `--publication` se rechazan los tipos no registrados en el catálogo.
 - Para JSON/YAML operativos en `.comsatel/` usar contratos operativos; no forzar frontmatter OKF.
 
 ## Mapeo obligatorio de rutas

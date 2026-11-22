@@ -23,6 +23,6 @@ Todo paso devuelve `inputs`, `outputs`, `readiness`, `gate`, `evidence`, `open_q
   "override": null,
   "gate": "G4",
   "inputs": ["PCH-001", "SSP-001"],
-  "required_standard": "STD-OKF-001-v1.9.0-stable"
+  "required_standard": "STD-OKF-001-v0.1.0-stable"
 }
 ```

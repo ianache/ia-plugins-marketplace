@@ -1,7 +1,7 @@
 # ssp-closure — Plugin de cierre de Sprint
 
 **Versión:** 1.0.0
-**Estándar:** STD-OKF-001 v1.11.0-stable
+**Estándar:** STD-OKF-001 v0.1.0-stable
 
 Prepara Sprint Review, Sprint Retrospective y resumen de readiness para un SSP existente. El pack contiene **un orchestrator y cinco skills especializados**, dentro del máximo recomendado de seis: cada especialista tiene una función separada y sus contratos se documentan en su `SKILL.md`.
 
@@ -27,7 +27,7 @@ El plugin soporta los **ámbitos de ceremonia** Review, Retrospective y Release 
 - Documento de estado del periodo: `STR`, en `management/status-reports/`.
 - Documento de cierre del Sprint (resultado, desviaciones y lecciones): `CLS`, en `management/closure/`.
 - Agendas, propuestas de gate, resultados de tarea y payloads de integración se guardan como información operativa del run; no se etiquetan con tipos OKF inventados.
-- Los tipos provienen del catálogo aprobado de STD-OKF-001 v1.11.0-stable. El plugin no crea alias para reuniones, experimentos o readiness.
+- Los tipos provienen del catálogo aprobado de STD-OKF-001 v0.1.0-stable. El plugin no crea alias para reuniones, experimentos o readiness.
 
 Consultar `assets/pathmap.json` y `assets/pathmap.md` para rutas. Las plantillas `skills/ssp-closure-orchestrator/templates/status-report.md` (STR) y `skills/retro-agenda/templates/closure-report.md` (CLS) contienen los metadatos OKF requeridos.
 

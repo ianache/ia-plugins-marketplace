@@ -1,6 +1,6 @@
-# Perfil OKF v0.2 + STD-OKF-001 v1.9.0-stable
+# Perfil OKF v0.2 + STD-OKF-001 v0.1.0-stable
 
-Tipos de este skill: BCP, BO. `TRM BCP BO STK BCAP BR IMD` son tipos **aprobados** en v1.9.0-stable.
+Tipos de este skill: BCP, BO. `TRM BCP BO STK BCAP BR IMD` son tipos **aprobados** en v0.1.0-stable.
 
 Usar las plantillas de `templates/` como punto de partida y sustituir TODOS los placeholders con valores verificados antes de ejecutar el validador. No fabricar fuentes, fechas ni aprobaciones. Si no hay evidencia suficiente, detener la publicación y registrar el bloqueo en `.comsatel/business-knowledge/runs/<run-id>/`.
 

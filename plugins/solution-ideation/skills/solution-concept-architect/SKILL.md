@@ -1,6 +1,8 @@
 ---
 name: solution-concept-architect
 description: Usar para sintetizar conceptos y opciones en iniciativas Greenfield, Brownfield o Evolution; producir solution-concepts.md y evidencia de G4 sin inventar validaciones.
+metadata:
+  version: "0.1.0"
 ---
 
 # Sintetizar conceptos y opciones
@@ -20,7 +22,7 @@ Concept cards, storyboards, service blueprint ligero, mapa de capacidades y opci
 Agrupar y refinar ideas sin forzar selección; bosquejar experiencia, propuesta de valor, capabilities, integraciones probables y dependencias; distinguir arquitectura hipotética de decisiones ADR. Para Brownfield describir impacto preliminar y compatibilidad.
 
 ## Salidas
-- Documento conceptual `solution-concepts.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v1.11.0-stable; tipo `SOL` (aprobado en v1.11.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
+- Documento conceptual `solution-concepts.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v0.1.0-stable; tipo `SOL` (aprobado en v0.1.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
 - `gate-evidence.json` con resultado técnico y referencias, sin `approved: true` automático.
 - Conceptos viables comparables y escenarios de uso, sin fingir diseño detallado ni requisitos aprobados.
 
@@ -28,7 +30,7 @@ Agrupar y refinar ideas sin forzar selección; bosquejar experiencia, propuesta 
 Leer `references/gate-checklist.md`; `READY` no significa aprobado. El orchestrator bloquea dependientes hasta aprobación humana registrada.
 
 ## Validación y gobierno
-Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v1.11.0-stable.md` de la raíz del plugin; `v1.11.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
+Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v0.1.0-stable.md` de la raíz del plugin; `v0.1.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
 
 ## Recursos del skill
 - `references/contract.md`: contrato de datos y dependencias.

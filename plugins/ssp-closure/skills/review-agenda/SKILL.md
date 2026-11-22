@@ -2,7 +2,7 @@
 name: review-agenda
 description: Preparar una agenda y payload de acta de Sprint Review desde historias de un SSP; separar aceptación humana de preparación técnica y devolver propuesta de gate.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "specialist"
 ---

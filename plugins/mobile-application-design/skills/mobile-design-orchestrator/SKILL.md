@@ -1,6 +1,8 @@
 ---
 name: mobile-design-orchestrator
 description: Usar cuando se requiera planificar, delegar, supervisar gates y encadenar skills de dtc-105 sin aprobarse a sí mismo en DTC-105 Mobile Flutter, bajo control del orchestrator y gates humanos.
+metadata:
+  version: "0.1.0"
 ---
 # mobile-design-orchestrator
 
@@ -34,8 +36,8 @@ Los outputs operativos son exclusivamente comsatel/ y no son documentos OKF.
 
 ## Reglas de gobierno
 - `.comsatel/mobile-application-design/runs/<run-id>/`: plan, estado, evidencias, aprobaciones y bloqueos.
-- `design/mobile/<run-id>/`: entregables técnicos OKF v0.2; STD-OKF-001 v1.11.0-stable si está disponible en el workspace.
-- Usar `type: MOB` (Mobile Application Technical Design), aprobado en STD-OKF-001 v1.11.0-stable.
+- `design/mobile/<run-id>/`: entregables técnicos OKF v0.2; STD-OKF-001 v0.1.0-stable si está disponible en el workspace.
+- Usar `type: MOB` (Mobile Application Technical Design), aprobado en STD-OKF-001 v0.1.0-stable.
 - No generar ni modificar prototipos Stitch/Figma/Claude Design, pantallas visuales, Atomic Design o Design Tokens.
 - No equiparar automáticamente features Mobile con MicroUIs, Bounded Contexts, microservicios o APIs.
 - No inventar aprobación humana, resultados de tests, acceso a repositorios, publicación ni cumplimiento de stores.

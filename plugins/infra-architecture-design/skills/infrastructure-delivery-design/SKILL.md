@@ -1,6 +1,8 @@
 ---
 name: infrastructure-delivery-design
 description: IaC, Terraform, Helm, CI/CD, GitOps, deployment and rollback. Internal specialist. Use only when dispatched by infrastructure-orchestrator with a task contract (task_id, execution_id, mode). For a user request to design or review infrastructure, use infrastructure-orchestrator instead.
+metadata:
+  version: "0.1.0"
 ---
 # infrastructure-delivery-design
 

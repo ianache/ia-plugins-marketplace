@@ -2,6 +2,7 @@
 name: course-content-validator
 description: "Actívame con el comando /course:content-validator o cuando course-lesson-builder, course-builder o course-evaluation-creator necesiten validar contenido antes de generar entregables. Este skill revisa que el contenido de cursos y lecciones no contenga información inventada (URLs inexistentes, frameworks ficticios, librerías inventadas, herramientas que no existen), que los objetivos sean coherentes con el contenido, y que las lecciones sean consistentes entre sí dentro del mismo curso. Bloquea la generación de entregables si detecta problemas y solicita corrección al usuario. También activa este skill cuando el usuario mencione \"validar\", \"revisar contenido\", \"verificar lección\", \"chequear referencias\" o cuando sospeche que hay datos técnicos incorrectos en los materiales del curso."
 metadata:
+  version: "0.1.0"
   type: docs
   triggers:
     - /course:validator

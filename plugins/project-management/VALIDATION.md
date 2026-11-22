@@ -1,7 +1,7 @@
 # Validación v2.1.0
 
 - Siete skills (1 orchestrator y 6 especializados) con recursos propios y wrappers de validación.
-- Perfil OKF y plantillas alineados a STD-OKF-001 v1.9.0-stable, incluidos los tipos aprobados `PCH`, `RMP`, `SSP`, `STR`, `RSK`, `CHG`, `CLS`.
+- Perfil OKF y plantillas alineados a STD-OKF-001 v0.1.0-stable, incluidos los tipos aprobados `PCH`, `RMP`, `SSP`, `STR`, `RSK`, `CHG`, `CLS`.
 - Validador común: YAML, campos, enums, SemVer, `generated.at`, `sources`, tipo, campos condicionales (`product`, `pack`, `skill`) y cuerpo no vacío.
 - `check_management.py` verifica el conjunto: OKF, rutas, enlaces, IDs de `related`, `CHG` sin decisión y `RSK` sin dueño.
 - Tests: `python -m unittest discover -s tests -v` (requiere PyYAML).

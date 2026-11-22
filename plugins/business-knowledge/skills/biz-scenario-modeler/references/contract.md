@@ -1,6 +1,6 @@
 # Contrato biz-scenario-modeler
 
-- Tipo documental: `BSN` (Business Scenario), registrado en STD-OKF-001 v1.9.0-stable.
+- Tipo documental: `BSN` (Business Scenario), registrado en STD-OKF-001 v0.1.0-stable.
 - Gate de cierre: no asignado. Pendiente de decisión del orchestrator sobre su encadenamiento.
 - Inputs: reglas `BR` (en `business/rules/`), términos `TRM` (en `business/terms/`), `BCAP` y `BO` del alcance.
 - Precondición: las reglas y términos citados existen en `business/` con su ID; el escenario tiene actor, capacidad y disparador.

@@ -1,6 +1,8 @@
 ---
 name: af-functional-impact-mapper
 description: Analizar impacto funcional y mapear superficie de cambio con grado de certeza. Usar para documento OKF `IMP` con análisis de impacto y superficie de cambio.
+metadata:
+  version: "0.1.0"
 ---
 
 # af-functional-impact-mapper
@@ -36,8 +38,8 @@ Estado `READY`, `CONDITIONAL` o `NOT_READY` **no equivale a aprobación**. Una p
 ## Contrato de conformidad documental
 - Antes de entregar Markdown conceptual, ejecutar `python scripts/validate_okf.py <archivo.md>` desde la raíz del plugin (o el wrapper local `scripts/validate.py`).
 - El resultado de validación no equivale a aprobación humana ni a publicación. En `--publication`, rechazar tipos no aprobados y metadatos inválidos.
-- Aplicar STD-OKF-001 v1.9.0-stable como perfil objetivo; usar el catálogo aprobado de la versión vigente.
+- Aplicar STD-OKF-001 v0.1.0-stable como perfil objetivo; usar el catálogo aprobado de la versión vigente.
 - Para outputs operativos JSON/YAML en `.comsatel/`, usar contratos operativos; no forzar frontmatter OKF.
 
 ## Mapeo obligatorio de rutas (v1.5.0)
-Leer `../../assets/pathmap.md` desde el directorio del skill (o `assets/pathmap.md` desde la raíz del plugin). Antes de producir archivos, recibir del orchestrator `workspace_root`, `document_type`, `output_dir`, `pathmap_version`, `run_id` y `override`. Verificar `type` del frontmatter contra el contrato y guardar en el destino resuelto. Reportar rutas reales en el manifiesto de salida; detenerse ante tipo desconocido, ruta divergente o falta de contrato. Nunca escribir documentos especializados en `.comsatel/`. Ejecutar validación OKF v1.9.0-stable.
+Leer `../../assets/pathmap.md` desde el directorio del skill (o `assets/pathmap.md` desde la raíz del plugin). Antes de producir archivos, recibir del orchestrator `workspace_root`, `document_type`, `output_dir`, `pathmap_version`, `run_id` y `override`. Verificar `type` del frontmatter contra el contrato y guardar en el destino resuelto. Reportar rutas reales en el manifiesto de salida; detenerse ante tipo desconocido, ruta divergente o falta de contrato. Nunca escribir documentos especializados en `.comsatel/`. Ejecutar validación OKF v0.1.0-stable.

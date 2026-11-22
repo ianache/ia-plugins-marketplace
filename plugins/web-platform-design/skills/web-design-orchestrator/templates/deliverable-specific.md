@@ -1,5 +1,5 @@
 ---
-type: WEB # aprobado en STD-OKF-001 v1.11.0-stable
+type: WEB # aprobado en STD-OKF-001 v0.1.0-stable
 id: WEB-EXAMPLE
 title: "web-design-orchestrator: entregable"
 description: "Seleccionar escenario, planificar tareas, controlar dependencias, registrar evidencias y bloquear gates no aprobados"

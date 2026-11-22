@@ -111,7 +111,7 @@ Si Superpowers no está instalado, el perfil neutral sigue siendo válido.
 
 ## 7. Limitaciones conocidas
 
-- Los tipos `UOW`, `UCX`, `UCB`, `UCM`, `UAP` y `UWR` están aprobados en STD-OKF-001 v1.11.0-stable.
+- Los tipos `UOW`, `UCX`, `UCB`, `UCM`, `UAP` y `UWR` están aprobados en STD-OKF-001 v0.1.0-stable.
 - Los checks `independent-review` requieren un `reviewer` (`human:<id>` o `agent:<skill>`) distinto del autor de la tarea y del orquestador; el plugin no puede verificar quién es esa persona, solo registra la declaración.
 - El orquestador **no acepta PASS declarados** para los checks `script`: `uow_orchestrator.py gate --task <T> --checks <archivo.json> --pack <raíz> [--human-approval <archivo.json>]` ejecuta `check_uow_package.py` con el perfil del gate (`runners` de `gate-policies.yaml`) y su resultado manda; el PASS declarado que lo contradiga se ignora (`declared_result_ignored` en la evidencia). Sin `--pack`, un check `script` solo pasa con `attested_by: human:<id>` (`source: human-attested`). Un FAIL o UNCERTAIN declarado siempre se acepta. `--checks` acepta la lista o la salida de `check_uow_package.py` (`{"checks": [...]}`).
 - No se probó contra una invocación real de agentes en Claude Code: los scripts y el estado se prueban de forma aislada.

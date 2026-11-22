@@ -11,7 +11,7 @@
 - [ ] Semantic DDD quality and CL2 DSP-001 case review
 
 
-## STD-OKF-001 v1.9.0-stable
+## STD-OKF-001 v0.1.0-stable
 El script `scripts/okf_validate.py` aplica validaciones estructurales y corporativas; no sustituye revisión humana ni pruebas de render Mermaid. Los ejemplos son sintéticos y no demuestran aprobación del DSP.
 
 

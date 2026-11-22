@@ -16,7 +16,7 @@ Descomprimir el ZIP y agregar la carpeta raíz como plugin local mediante el mec
 
 ## Rutas de salida
 - `.comsatel/mobile-application-design/runs/<run-id>/`: planificación, gates, decisiones y evidencias operativas.
-- `design/mobile/<run-id>/`: entregables técnicos OKF v0.2, sujetos a STD-OKF-001 v1.11.0-stable.
+- `design/mobile/<run-id>/`: entregables técnicos OKF v0.2, sujetos a STD-OKF-001 v0.1.0-stable.
 
 ## Inicialización y control de gates
 ```bash

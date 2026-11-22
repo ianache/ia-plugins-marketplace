@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validación compartida STD-OKF-001 v1.9.0-stable (delegada en scripts/validate_okf.py de la raíz del plugin)."""
+"""Validación compartida STD-OKF-001 v0.1.0-stable (delegada en scripts/validate_okf.py de la raíz del plugin)."""
 from pathlib import Path
 import sys
 ROOT = Path(__file__).resolve().parents[3]

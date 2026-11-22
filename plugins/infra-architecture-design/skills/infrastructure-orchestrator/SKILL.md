@@ -1,6 +1,8 @@
 ---
 name: infrastructure-orchestrator
 description: Entry point for infrastructure architecture work. Use when the user asks to design, assess, review, migrate or evolve infrastructure (cloud, on-premise or hybrid, covering topology, networking, Kubernetes, security, observability, DR, IaC and CI/CD, costs) for a greenfield, brownfield or evolution initiative. Plans the workflow, dispatches the six specialist skills, validates results, enforces human gates and recovers.
+metadata:
+  version: "0.1.0"
 ---
 # infrastructure-orchestrator
 

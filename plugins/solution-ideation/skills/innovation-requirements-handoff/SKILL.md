@@ -1,6 +1,8 @@
 ---
 name: innovation-requirements-handoff
 description: Usar para preparar transferencia a requirements engineering en iniciativas Greenfield, Brownfield o Evolution; producir requirements-handoff.md y evidencia de G6 sin inventar validaciones.
+metadata:
+  version: "0.1.0"
 ---
 
 # Preparar transferencia a Requirements Engineering
@@ -20,7 +22,7 @@ Opportunity brief, concepto seleccionado, hipótesis, límites, evidencia, riesg
 Producir propuesta SOL draft conforme OKF y handoff JSON consumible por af-requirements-orchestrator / af-evidence-context-designer. Mantener las ideas no seleccionadas en backlog. No producir User Stories ni Business Rules como si estuvieran validadas. Explicitar preguntas abiertas y criterios de entrada al Requirements Context Pack.
 
 ## Salidas
-- Documento conceptual `requirements-handoff.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v1.11.0-stable; tipo `SOL` (aprobado en v1.11.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
+- Documento conceptual `requirements-handoff.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v0.1.0-stable; tipo `SOL` (aprobado en v0.1.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
 - `gate-evidence.json` con resultado técnico y referencias, sin `approved: true` automático.
 - Paquete de entrada versionado con provenance, trazabilidad, decisiones humanas y pendientes.
 
@@ -28,7 +30,7 @@ Producir propuesta SOL draft conforme OKF y handoff JSON consumible por af-requi
 Leer `references/gate-checklist.md`; `READY` no significa aprobado. El orchestrator bloquea dependientes hasta aprobación humana registrada.
 
 ## Validación y gobierno
-Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v1.11.0-stable.md` de la raíz del plugin; `v1.11.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
+Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v0.1.0-stable.md` de la raíz del plugin; `v0.1.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
 
 ## Recursos del skill
 - `references/contract.md`: contrato de datos y dependencias.

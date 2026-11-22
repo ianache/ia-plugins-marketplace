@@ -15,7 +15,7 @@ Plugin experimental compatible con estructura de plugins de Claude Code: `.claud
 ## Límites
 - No incluye conectores configurados ni acceso automático a GitLab/MCP/WebDAV; requieren permisos y endpoints reales.
 - Los scripts validan la integridad del grafo; la validación OKF y semántica se ejecuta como instrucciones de skills y requiere documentos y políticas disponibles.
-- `standards/STD-OKF-001-v1.11.0-stable.md` es la copia del estándar vigente (estable, aprobada). El informe usa el tipo `QAR` (KB Quality Report), aprobado en esa versión.
+- `standards/STD-OKF-001-v0.1.0-stable.md` es la copia del estándar vigente (estable, aprobada). El informe usa el tipo `QAR` (KB Quality Report), aprobado en esa versión.
 - Los ejemplos usan valores ficticios. El despliegue productivo requiere pruebas de integración y seguridad.
 
 ## Mod experimental (observe-only; versión propia del Mod 1.1.0, distinta de la del plugin)

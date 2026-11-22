@@ -2,7 +2,7 @@
 name: review-status-report
 description: Recuperar y clasificar hechos de estado de historias y casos de prueba del SSP, con referencias verificables, sin métricas de tiempo.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "specialist"
 ---

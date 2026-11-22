@@ -1,6 +1,8 @@
 ---
 name: mgt-delivery-orchestrator
 description: Planifica, coordina y controla los seis skills de gestión de entrega (acta y roadmap, backlog e iteraciones, publicación en GitLab, riesgos y cambios, avance e informes, cierre), sus contratos, dependencias, gates y rutas bajo ./management.
+metadata:
+  version: "0.1.0"
 ---
 
 # Delivery Management Orchestrator

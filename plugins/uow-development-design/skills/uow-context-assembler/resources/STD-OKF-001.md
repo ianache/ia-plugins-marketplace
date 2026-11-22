@@ -3,14 +3,14 @@ type: STD
 title: Estándar corporativo de metadatos Markdown
 description: Perfil uniforme de frontmatter OKF v0.2 para los Skills Packs y Knowledge Bases de COMSATEL.
 id: STD-OKF-001
-version: "1.11.0"
+version: "0.1.0"
 status: stable
 owner: team:architecture
 classification: internal
 tags: [okf, metadata, governance]
 generated:
   by: process:standard-authoring
-  at: "2026-10-22T21:24:00-05:00"
+  at: "2026-11-22T11:53:49-05:00"
 sources:
   - id: okf-spec
     resource: https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md
@@ -18,7 +18,7 @@ sources:
 ---
 # STD-OKF-001 — Perfil COMSATEL de metadatos Markdown
 
-**Estado de esta revisión:** `v1.11.0-stable`, que incluye las ampliaciones v1.3.0 a v1.7.0 (ver sus registros de aprobación al final). La aclaración v1.9.0 elimina las excepciones documentales de especialistas sin tipo. La aclaración v1.9.0 elimina las excepciones documentales de especialistas sin tipo. La ampliación v1.3.0 fue aprobada por autorización expresa del responsable en esta conversación (2026-10-26). Sustituye normativamente a `v1.2.0-stable` como catálogo de referencia. La publicación en GitLab mediante Merge Request y el despliegue de validadores son tareas independientes pendientes de ejecución.
+**Estado de esta revision:** `v0.1.0-stable`. Esta es la linea base vigente; se retiraron los historiales previos para iniciar desde cero.
 
 **Decisión de gobierno (2026-10-18):** catálogo inicial aprobado y estado documental establecido en `stable` por autorización del responsable. La publicación en repositorio y la homologación de tipos históricos son actividades independientes.
 
@@ -83,7 +83,7 @@ pack: data-modeling-database-design
 skill: dm-logical-model-designer
 tags: [cl2, data-modeling, logical-model]
 generated:
-  by: dm-logical-model-designer/1.3.0
+  by: dm-logical-model-designer/0.1.0
   at: "2026-10-18T16:10:00Z"
 sources:
   - id: req-001
@@ -93,19 +93,25 @@ related: [CL2-BC-001]
 ---
 ```
 
-## Ampliación aprobada v1.1.0
+## Aggregate, Value Object and Event types
+
+El catalogo vigente define `AGG`, `VO` y `EVT` como tipos documentales. La aprobacion del tipo no aprueba automaticamente los artefactos producidos.
 
 Por autorización explícita del responsable se incorporan `AGG`, `VO` y `EVT` como tipos documentales. Los tipos preexistentes permanecen vigentes. La decisión no constituye aprobación automática de los artefactos producidos.
 
-## Ampliación aprobada v1.2.0
+## Ficha de Diseno Tecnico de Funcionalidad
+
+`FDT` representa una capacidad funcional o caso de uso tecnico, no necesariamente un unico endpoint. Su perfil requiere `service_id`, `bounded_context_id`, `pack` y `skill`; referencias trazables a requerimientos, reglas, contratos, datos y pruebas; interacciones hexagonales; y diagrama SEQ o justificacion de reutilizacion. No se deben inventar evidencias, casos de prueba ni decisiones ADR. La aprobacion del tipo no aprueba fichas particulares.
 
 Se incorpora **FDT — Ficha de Diseño Técnico de Funcionalidad** como tipo documental oficial. Una FDT representa una capacidad funcional o caso de uso técnico, no necesariamente un único endpoint. Puede vincular múltiples operaciones OpenAPI, eventos o procesos internos. Su perfil requiere `service_id`, `bounded_context_id`, `pack` y `skill`; referencias trazables a requerimientos, reglas, contratos, datos y pruebas; interacciones hexagonales; y diagrama SEQ o justificación de reutilización. No se deben inventar evidencias, casos de prueba ni decisiones ADR. La aprobación del tipo no implica aprobación de fichas particulares.
 
-## Ampliación aprobada v1.3.0
+## Tipos documentales ampliados
 
-Se incorporan sesenta y nueve tipos: ocho para especificaciones UX/UI, Web y Mobile, cinco para DDD y Microservicios (`ENT`, `ASIS`, `SVC`, `IMP`, `HCB`) y catorce para QA (`QFA`, `QTD`, `QTP`, `QTR`, `TSN`, `QTE`, `AT`, `QER`, `QQI`, `QDC`, `TDR`, `TDA`, `EXEC`, `EVD`) uno para Requisitos (`IMD`) cinco para Conocimiento de Negocio (`TRM`, `BCP`, `BO`, `STK`, `BCAP`) siete para Gestión de Entrega (`PCH`, `RMP`, `SSP`, `STR`, `RSK`, `CHG`, `CLS`), uno para Ideación (`SOL`) y uno para Calidad de KB (`QAR`) y veinte para Infraestructura (`IDS`, `IRQ`, `IBL`, `IIA`, `ITP`, `ICP`, `IFO`, `ISA`, `ICM`, `ITA`, `IOB`, `IRL`, `ISD`, `IAC`, `IDP`, `IRB`, `IAR`, `IHO`, `IXP`, `IXL`, `IGR`) y seis para Unidades de Trabajo de desarrollo asistido (`UOW`, `UCX`, `UCB`, `UCM`, `UAP`, `UWR`). Son **tipos documentales**, no equivalen a nombres de carpetas, funcionalidades, pantallas físicas ni tecnologías. Las siglas nuevas quedan aprobadas en esta versión estable. `HOF` es un tipo aprobado de carácter transversal para un contrato de handoff versionado y consumible por Web/Mobile; no debe duplicarse como `WEB-HOF` y `MOB-HOF`. Los tipos `ADR`, `C4`, `SEQ`, `API`, `FDT`, `ASR` y `DSP` (y `ADR` también en Infraestructura) se reutilizan sin crear alias.
+El catalogo vigente incluye tipos documentales para UX/UI, Web, Mobile, DDD, microservicios, QA, requisitos, conocimiento de negocio, gestion de entrega, ideacion, calidad de KB, infraestructura y unidades de trabajo. Las tablas siguientes definen su semantica y reglas de uso.
 
-### Tipos propuestos y semántica
+Se incorporan sesenta y nueve tipos: ocho para especificaciones UX/UI, Web y Mobile, cinco para DDD y Microservicios (`ENT`, `ASIS`, `SVC`, `IMP`, `HCB`) y catorce para QA (`QFA`, `QTD`, `QTP`, `QTR`, `TSN`, `QTE`, `AT`, `QER`, `QQI`, `QDC`, `TDR`, `TDA`, `EXEC`, `EVD`) uno para Requisitos (`IMD`) cinco para Conocimiento de Negocio (`TRM`, `BCP`, `BO`, `STK`, `BCAP`) siete para Gestión de Entrega (`PCH`, `RMP`, `SSP`, `STR`, `RSK`, `CHG`, `CLS`), uno para Ideación (`SOL`) y uno para Calidad de KB (`QAR`) y veinte para Infraestructura (`IDS`, `IRQ`, `IBL`, `IIA`, `ITP`, `ICP`, `IFO`, `ISA`, `ICM`, `ITA`, `IOB`, `IRL`, `ISD`, `IAC`, `IDP`, `IRB`, `IAR`, `IHO`, `IXP`, `IXL`, `IGR`) y seis para Unidades de Trabajo de desarrollo asistido (`UOW`, `UCX`, `UCB`, `UCM`, `UAP`, `UWR`). Son **tipos documentales**, no equivalen a nombres de carpetas, funcionalidades, pantallas físicas ni tecnologías. Las siglas nuevas quedan incluidas en el catálogo vigente. `HOF` es un tipo aprobado de carácter transversal para un contrato de handoff versionado y consumible por Web/Mobile; no debe duplicarse como `WEB-HOF` y `MOB-HOF`. Los tipos `ADR`, `C4`, `SEQ`, `API`, `FDT`, `ASR` y `DSP` (y `ADR` también en Infraestructura) se reutilizan sin crear alias.
+
+### Tipos y semántica
 
 | Tipo | Nombre | Unidad documental | Productor preferente | Consumidor típico |
 |---|---|---|---|---|
@@ -209,7 +215,7 @@ Se incorporan sesenta y nueve tipos: ocho para especificaciones UX/UI, Web y Mob
 - Una `UOW` es la unidad que se asigna a un developer: un slice vertical de una US (puede haber varias por US) que un solo developer con su agente puede completar. Referencia por ID y versión los documentos de origen (`US`, `DSP`, `SSP`, `FDT`, `API`, `LDM`, `PDM`, `DBM`, `HOF`, `WEB`, `MOB`, `HCB`, `ADR`, `ASR`) sin copiarlos ni redefinirlos; no define requisitos, diseño de API ni modelo de datos. Su paquete (`UOW`, `UCB`, `UCM`, `UAP`, `UWR` y `uow-package.yaml`) se aprueba como una unidad con decisión humana ligada a su digest; la asignación es de Gestión. Se ubica en `management/uows/`.
 - Un `UCX` distingue `FACT`, `INFERENCE`, `ASSUMPTION` y `UNKNOWN` y cita la fuente versionada de cada hecho; no decide el diseño. Un `UCB` solo enlaza contratos existentes y declara las brechas: no inventa operaciones, campos ni tablas. Un `UCM` fija la referencia base y los límites de escritura del agente; las rutas de código se resuelven por ADR y repositorio. Un `UAP` ordena pasos con prueba primero y verificación, y no incluye secretos ni acciones destructivas o en PROD sin autorización. Un `UWR` lo emite un revisor distinto del autor y es una propuesta: no aprueba la UOW.
 - Un `IMD` describe conceptos de negocio y sus relaciones en lenguaje de negocio, con trazabilidad a reglas (`BR`) y términos del glosario; no define tipos de dato, claves ni tablas, que corresponden a `LDM`/`PDM`. Se ubica en `business/information-model/IMD-NNN-<slug>.md`.
-- Un `TRM` define un término, concepto o sigla de negocio con significado específico; no incluye identificadores de artefactos ni vocabulario del método documental. Se ubica en `business/terms/TRM-NNN-<slug>.md` y se cataloga en `business/terms/CTLG-TRM.md` (tipo `CTLG`, ver Ampliación aprobada v1.6.0). No se genera `index.md` para los términos.
+- Un `TRM` define un término, concepto o sigla de negocio con significado específico; no incluye identificadores de artefactos ni vocabulario del método documental. Se ubica en `business/terms/TRM-NNN-<slug>.md` y se cataloga en `business/terms/CTLG-TRM.md` (tipo `CTLG`, ver la sección Catalogos). No se genera `index.md` para los términos.
 - Un `BCP` compone y referencia el contexto de negocio de una iniciativa; no define requisitos, historias de usuario, ASR ni diseño. Va en `business/context-packs/`.
 - Un `BO` describe un objetivo y sus KPI; un `STK`, una parte interesada; un `BCAP`, una capacidad o proceso de negocio. Ninguno impone solución técnica. Van en `business/objectives/`, `business/stakeholders/` y `business/capabilities/`.
 - Un `PCH` y un `RMP` planifican la entrega y no definen requisitos ni arquitectura; un `SSP` organiza el trabajo de un Sprint a partir de un `DSP` aprobado sin ampliar su alcance; el compromiso es una decisión humana. Un `STR` informa con datos trazables y no redefine KPI; un `RSK` registra riesgos con dueño (una instancia por iniciativa); un `CHG` es una solicitud cuya decisión registra quién y cuándo; un `CLS` cierra con evidencia. Van en `management/{charters,roadmaps,sprints,status-reports,risks,changes,closure}/`.
@@ -217,7 +223,7 @@ Se incorporan sesenta y nueve tipos: ocho para especificaciones UX/UI, Web y Mob
 - Un `QAR` consolida los hallazgos, los gates y la evidencia de una auditoría de KB. No aprueba la publicación, que es una decisión humana, ni modifica la KB auditada.
 - Los tipos de Infraestructura (`IDS`, `IRQ`, `IBL`, `IIA`, `ITP`, `ICP`, `IFO`, `ISA`, `ICM`, `ITA`, `IOB`, `IRL`, `ISD`, `IAC`, `IDP`, `IRB`, `IAR`, `IHO`, `IXP`, `IXL`, `IGR`) describen documentos de diseño de infraestructura, uno por artefacto producido por el plugin `infra-architecture-design`; el ADR de infraestructura usa el tipo `ADR` aprobado, sin alias. No definen requisitos de negocio, historias ni código. Distinguen hecho, inferencia y supuesto; no inventan evidencia, aprobaciones ni valores de precio o capacidad; toda decisión, aceptación de riesgo o *go/no-go* es humana y se registra con quién y cuándo. Los secretos no se incluyen en ningún documento. Se ubican en `knowledge/infrastructure/<artefacto>/`. `IXP`, `IXL` e `IGR` documentan el control del orquestador; el estado operativo ejecutable (`execution-plan.json`, `task-result.yaml`) no es un documento OKF.
 
-### Perfil condicional propuesto
+### Perfiles condicionales
 
 | Tipo | Metadatos adicionales requeridos cuando apliquen | Secciones mínimas del cuerpo |
 |---|---|---|
@@ -308,13 +314,13 @@ Las rutas son convenciones de trabajo, no IDs OKF ni garantías de publicación.
 ### Compatibilidad y migración
 
 1. Inventariar documentos existentes, detectar colisiones de siglas y distinguir tipos de etiquetas informales.
-2. Las nuevas siglas y perfiles condicionales quedan aprobados en v1.3.0; actualizar catálogo, validadores y templates **en la misma MR o en MRs coordinadas**.
-3. Usar `v1.7.0-stable` como baseline normativa aprobada (incluye las ampliaciones v1.3.0 a v1.7.0); mantener `v1.2.0-stable` como versión anterior para compatibilidad y migración.
+2. Las nuevas siglas y perfiles condicionales requieren aprobación y actualización coordinada del catálogo, validadores y templates.
+3. Usar `v0.1.0-stable` como baseline normativa vigente y mantener compatibilidad de lectura para documentos existentes.
 4. Permitir lectura de tipos desconocidos por consumidores OKF; exigir catálogo aprobado solo en pipelines de publicación COMSATEL.
 5. No migrar automáticamente documentos históricos ni fabricar `verified`, `sources` o decisiones humanas.
 6. Versionar cambios a `HOF` y comprobar impacto en handoffs consumidos por Web/Mobile.
 
-## Catálogo corporativo aprobado de `type` (tipos preexistentes)
+## Catálogo corporativo vigente de `type`
 
 | Sigla | Artefacto |
 |---|---|
@@ -344,7 +350,7 @@ Las rutas son convenciones de trabajo, no IDs OKF ni garantías de publicación.
 | TC | Test Case |
 | RUN | Runbook |
 
-Este cuadro conserva los 25 tipos preexistentes de v1.2.0. Los 69 tipos adicionales de la tabla de ampliación v1.3.0 también están aprobados y forman, conjuntamente, el catálogo corporativo estable de **94 tipos**. Las siglas adicionales existentes en las KB (por ejemplo, `HUC`) requieren registro y conciliación mediante control de cambios; no se renombran ni invalidan automáticamente los documentos históricos. El nombre de `DSP` se concilió como *Development Scope Pack* (paquete de alcance candidato a Sprint, derivado de un `RCP` y de historias aprobadas); el nombre anterior *Detailed Solution Proposal* se retira y la sigla no cambia. Las siglas que existen solo en las KB y no las produce ningún pack (por ejemplo `MCP`, `PI`, `EEP`, `UST`, `ECP`) siguen pendientes de registro. No crear tipos nuevos sin aprobación.
+Este cuadro y las tablas complementarias forman conjuntamente el catálogo corporativo vigente. Las siglas adicionales existentes en las KB (por ejemplo, `HUC`) requieren registro y conciliación mediante control de cambios; no se renombran ni invalidan automáticamente los documentos históricos. El nombre de `DSP` se concilió como *Development Scope Pack* (paquete de alcance candidato a Sprint, derivado de un `RCP` y de historias aprobadas); el nombre anterior *Detailed Solution Proposal* se retira y la sigla no cambia. Las siglas que existen solo en las KB y no las produce ningún pack (por ejemplo `MCP`, `PI`, `EEP`, `UST`, `ECP`) siguen pendientes de registro. No crear tipos nuevos sin aprobación.
 
 ## Niveles de validación
 
@@ -358,26 +364,17 @@ El MCP debe continuar leyendo documentos mínimos OKF y extensiones desconocidas
 
 Inventariar metadatos reales; mapear `artifact_type` a `type` sin sobrescribir valores incompatibles; separar estados operativos de los documentales; preservar claves desconocidas; no fabricar `verified` ni `sources`; publicar cambios por Merge Request con informe y rollback. `plan.yaml`, `plan-status.yaml` y `task-status.yaml` en `./.comsatel/[pack-name]/` no son documentos conceptuales OKF.
 
-## Control de cambios aprobado
+## Historial de versiones
 
-| Versión | Estado | Cambio | Compatibilidad |
-|---|---|---|---|
-| 1.2.0 | stable | FDT y catálogo previo | Versión anterior |
-| 1.3.0 | stable | Incorporación aprobada UXR, FLW, SCR, CMP, TKN, WEB, MOB, HOF, ENT, ASIS, SVC, IMP, HCB, QFA, QTD, QTP, QTR, TSN, QTE, AT, QER, QQI, QDC, TDR, TDA, EXEC, EVD, IMD, TRM, BCP, BO, STK, BCAP, PCH, RMP, SSP, STR, RSK, CHG, CLS, SOL, QAR, los veinte tipos de Infraestructura (IDS, IRQ, IBL, IIA, ITP, ICP, IFO, ISA, ICM, ITA, IOB, IRL, ISD, IAC, IDP, IRB, IAR, IHO, IXP, IXL, IGR, UOW, UCX, UCB, UCM, UAP, UWR), perfiles condicionales y conciliación del nombre de DSP (Development Scope Pack) | Aditiva; el nombre de DSP cambia pero no su sigla; aprobada por el responsable |
-| 1.4.0 | stable | Incorporación aprobada ACP, CFR, ADH y GOV; perfil de cuerpo ADR (sección visual Mermaid, catálogo de elementos, puntos de variación y evaluación ATAM ligera); el orquestador deja de tener plantilla OKF | Aditiva; ningún tipo existente cambia; aprobada por el responsable |
-| 1.5.0 | stable | Incorporación aprobada DDR (Data Design Review), posterior a la v1.4.0 de arquitectura | Aditiva; ningún tipo existente cambia; aprobada por el responsable |
-| 1.6.0 | stable | Incorporación aprobada CTLG (Catálogo) y de la ampliación de Business Intelligence (`BIC`, `KPI`, `DSM`, `DMD`, `DSH`, `BIQ`) | Aditiva; ningún tipo existente cambia; aprobada por el responsable |
-| 1.7.0 | stable | Incorporación aprobada EPC (Épica), que agrupa historias de usuario funcionalmente relacionadas de un mismo RCP | Aditiva; ningún tipo existente cambia; aprobada por el responsable |
-| 1.8.0 | stable | Incorporación aprobada BSN (Escenario de negocio) como tipo de `business-knowledge`: secuencia de reglas BR con precondiciones, pasos, excepciones y resultado, trazada a BR y TRM | Aditiva; ningún tipo existente cambia; aprobada por el responsable y por la revisión de semántica |
-| 1.9.0 | stable | Aclaración aprobada: los documentos de especialistas llevan `type` registrado; las salidas operativas del orquestador no son OKF | Sin cambio de tipos; aprobada por el responsable |
-| 1.10.0 | stable | Incorporación aprobada IRP (Informe o Reporte genérico): informe de análisis con hallazgos separados en hechos, inferencias, supuestos y vacíos | Aditiva; ningún tipo existente cambia; aprobada por el responsable (declarada); revisiones de Architecture, UX/UI, Web y Mobile pendientes |
-| 1.11.0 | stable | División de `QTD`: la estrategia y el plan pasan a `QTP`; `QTD` queda con cobertura, trazabilidad, TSN y TC | Cambio de definición de `QTD`; sigla y tipo sin cambio; aprobada por el responsable el 2026-11-21 |
+| Version | Estado | Registro |
+|---|---|---|
+| 0.1.0 | stable | Inicio de la linea base vigente |
 
-**Criterio de aprobación:** Architecture + responsables de UX/UI, Web y Mobile deben revisar semántica, colisiones, templates, validadores y trazabilidad. El cambio a `status: stable` requiere evidencia real de aprobación y publicación gobernada.
+## Perfiles de arquitectura
 
-## Ampliación aprobada v1.4.0
+Los perfiles de arquitectura forman parte del catalogo vigente y no cambian la semantica de los tipos preexistentes.
 
-Se incorporan cuatro tipos documentales para los skills de `architecture-design` 1.1.0. Son aditivos: ningún tipo preexistente cambia de semántica.
+Se incorporan cuatro tipos documentales para los skills de `architecture-design` 0.1.0. Son aditivos: ningún tipo preexistente cambia de semántica.
 
 | Tipo | Nombre | Unidad documental | Productor | Consumidor típico | Campos adicionales obligatorios |
 |---|---|---|---|---|---|
@@ -404,7 +401,9 @@ Todo `ADR` debe incluir:
 
 La conformidad se comprueba con `scripts/validate_adr_body.py` del plugin `architecture-design`. La validación Mermaid (`--render`) es local.
 
-## Ampliación aprobada v1.5.0 (DDR)
+## Revision de diseno de datos
+
+`DDR` (Data Design Review) lo produce `dm-data-design-validator`. Registra consistencia LDM/PDM/DBM, trazabilidad a ADR y FDT, tenancy, seguridad, evidencia, riesgos, incertidumbres y propuesta de gate. Registra hallazgos; no aprueba el diseno.
 
 Se incorpora el tipo `DDR` (Data Design Review), que produce `dm-data-design-validator`. Es aditivo.
 
@@ -414,13 +413,13 @@ Se incorpora el tipo `DDR` (Data Design Review), que produce `dm-data-design-val
 
 - Un `DDR` no aprueba el diseño: registra hallazgos y propone el gate. La aprobación es humana.
 
-## Aclaración aprobada v1.9.0 (salidas de skills especialistas)
+## Salidas de skills especialistas
 
 Todo documento conceptual Markdown independiente producido por un skill especialista debe llevar `type` registrado y cumplir el perfil documental completo. Ninguna salida de un especialista queda exenta por llamarse auxiliar, informe, handoff o evidencia. Las salidas operativas de ejecución (planes, ledgers, registros de gate y resultados de tarea) son propiedad del orchestrator y no son documentos conceptuales OKF. Los archivos reservados `index.md` y `log.md` conservan sus reglas específicas. Si no existe un tipo semánticamente correcto, se integra el contenido en un documento con tipo aprobado o se solicita una decisión de gobierno; no se etiqueta con un tipo falso.
 
 La matriz de ownership de datos forma parte del `LDM` que completa `dm-logical-model-designer`; no se publica como documento independiente sin tipo. Las revisiones de diseño de datos usan `DDR`.
 
-## Aclaración aprobada v1.9.0 (salidas de skills especialistas)
+## Salidas de skills especialistas
 
 Todo documento conceptual Markdown independiente producido por un skill especialista debe llevar `type` registrado y cumplir el perfil documental completo. Ninguna salida de un especialista queda exenta por llamarse auxiliar, informe, handoff o evidencia. Las salidas operativas de ejecución (planes, ledgers, registros de gate y resultados de tarea) son propiedad del orchestrator y no son documentos conceptuales OKF. Los archivos reservados `index.md` y `log.md` conservan sus reglas específicas. Si no existe un tipo semánticamente correcto, se integra el contenido en un documento con tipo aprobado o se solicita una decisión de gobierno; no se etiqueta con un tipo falso.
 
@@ -430,7 +429,7 @@ La matriz de ownership de datos forma parte del `LDM` que completa `dm-logical-m
 
 [Especificación canónica de Google OKF v0.2](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md).
 
-## Perfil documental DDD (v1.1.0; vigente en v1.2.0)
+## Perfil documental DDD
 
 - **AGG:** documentar Bounded Context propietario, Aggregate Root, Entities internas, invariantes, comandos, límites transaccionales y relaciones. `bounded_context_id` es obligatorio.
 - **VO:** documentar Bounded Context propietario, atributos, restricciones, semántica de igualdad por valor e inmutabilidad. `bounded_context_id` es obligatorio.
@@ -439,18 +438,20 @@ La matriz de ownership de datos forma parte del `LDM` que completa `dm-logical-m
 - Las especificaciones son documentos conceptuales sujetos a los tres niveles de validación; los estados operativos del orchestrator permanecen separados.
 - La fecha de esta revisión es una fecha de edición, no una verificación histórica.
 
-## Perfil documental FDT (v1.2.0)
+## Perfil documental FDT
 
 - `FDT` exige `service_id`, `bounded_context_id`, `pack` y `skill`.
 - La ficha identifica capacidad, pre/postcondiciones, requisitos y reglas de negocio, operaciones OpenAPI/AsyncAPI y `operationId` cuando corresponda, datos de dominio y persistencia, interacciones inbound/outbound, diagramas de secuencia o referencias, seguridad, errores, consistencia, observabilidad, escenarios de prueba, impacto y handoff.
 - Referenciar artefactos de QA y Data Design aprobados; lo no disponible se registra como dependencia o bloqueo, no se inventa.
 - Las rutas de código se resuelven mediante ADR y repositorio; la FDT es especificación KB, no sustituto de `api.yaml`.
 
-## Ampliación de Business Intelligence (aprobada en v1.6.0)
+## Tipos de Business Intelligence
 
-**Estado: aprobada en v1.6.0** (autorizada por el responsable en conversación del 2026-10-31). Los seis tipos pasan a ser normativos. Antes de la aprobación se comprobó que no colisionan con ningún tipo del catálogo corporativo: cada sigla tiene un único significado en esta norma y en las copias de los packs.
+Los seis tipos de BI forman parte del catalogo vigente. Cada sigla conserva un unico significado en esta norma y en las copias de los packs.
 
-Se proponen seis tipos documentales para el pack `bi-analytics`, uno por etapa del flujo BI (G1 a G6):
+Los seis tipos son normativos y cada sigla tiene un único significado en esta norma y en las copias de los packs.
+
+El catálogo define seis tipos documentales para el pack `bi-analytics`, uno por etapa del flujo BI (G1 a G6):
 
 | Sigla | Nombre | Unidad documental | Productor | Consumidor típico |
 |---|---|---|---|---|
@@ -461,49 +462,28 @@ Se proponen seis tipos documentales para el pack `bi-analytics`, uno por etapa d
 | `DSH` | Dashboard and Report Specification | Especificación de pantallas e informes: audiencia, KPI mostrados, filtros, drill-down y control de acceso | `bi-dashboard-report-designer` | Analítica, UX/UI |
 | `BIQ` | BI Quality and Governance Report | Trazabilidad KPI-DMD-DSH, huérfanos, calidad de datos, gobierno, veredictos y handoff | `bi-quality-governance-validator` | Gestión, Gobierno de datos |
 
-Resolución de las condiciones: (1) sin colisiones con tipos existentes; (2) se registran en el catálogo corporativo en v1.6.0; (3) se añaden al registro de control de cambios. Esta ampliación no incluye `CTLG`, que se aprueba en la misma versión en su propia sección.
+Los tipos BI no incluyen `CTLG`, cuya definición se encuentra en la sección Catalogos.
 
 
-## Registro de aprobación de v1.3.0
+## Catalogos
 
-- **Decisión:** promoción documental de `draft` a `stable`, autorizada expresamente por el responsable en conversación del 2026-10-26.
-- **Alcance:** aprobación del catálogo de 94 tipos y reglas descritas en este estándar, incluidos `HOF` y `SOL` como tipos únicos.
-- **Rectificación editorial:** el borrador indicaba 62 tipos nuevos, pero su tabla enumera 63; la versión estable reconoce 69 (25 anteriores + 69 nuevos = 94), incluidos los seis tipos de Unidades de Trabajo `UOW`, `UCX`, `UCB`, `UCM`, `UAP`, `UWR`.
-- **Límite:** esta aprobación normativa no certifica automáticamente los 97 skills, sus relaciones PRODUCE/CONSUME, artefactos particulares ni una publicación en GitLab.
-- **Ampliación posterior (2026-10-27):** se incorporan al catálogo estable los seis tipos de Unidades de Trabajo de desarrollo asistido `UOW`, `UCX`, `UCB`, `UCM`, `UAP` y `UWR`, que figuraban en `v1.3.0-draft` y no en la promoción inicial; el catálogo pasa de 88 a 94 tipos (69 nuevos). Autorizada por el responsable en conversación del 2026-10-27, bajo la misma versión `v1.3.0-stable`; no cambia ningún tipo ya aprobado.
-- **Acción de publicación pendiente:** someter esta versión a Merge Request, actualizar validadores y plantillas y conservar trazabilidad de la aprobación.
+Este tipo forma parte del catálogo vigente.
 
-## Registro de aprobación de v1.4.0
-
-- **Decisión:** aprobación de la ampliación v1.4.0 (`ACP`, `CFR`, `ADH`, `GOV`, perfil de cuerpo ADR y retiro de la plantilla OKF del orquestador), autorizada por el responsable en conversación del 2026-10-31.
-- **Preparación:** el borrador `STD-OKF-001-ampliacion-v1.4.0-draft.md` se incorpora a este documento y se retira.
-- **Límite:** la aprobación normativa no publica el cambio en GitLab. Queda pendiente someter esta versión a Merge Request.
-
-## Registro de aprobación de v1.5.0
-
-- **Decisión:** aprobación de la ampliación `DDR`, autorizada por el responsable en conversación del 2026-10-31.
-- **Numeración:** registrada como 1.5.0 porque la ampliación de arquitectura (`ACP`, `CFR`, `ADH`, `GOV`) ya ocupa la 1.4.0.
-- **Límite:** la aprobación normativa no publica el cambio en GitLab. Queda pendiente someter esta versión a Merge Request.
-
-## Ampliación aprobada v1.6.0 (CTLG)
-
-**Estado: aprobada.** Autorizada por el responsable en conversación del 2026-10-31.
-
-Se incorpora el tipo `CTLG` (Catálogo) para documentos que indexan los documentos de un mismo tipo sin repetir sus definiciones: nombre oficial o título, identificador, estado, versión y enlace. Un catálogo nunca define un elemento; cada elemento se define en su propio documento.
+El tipo `CTLG` (Catálogo) para documentos que indexan los documentos de un mismo tipo sin repetir sus definiciones: nombre oficial o título, identificador, estado, versión y enlace. Un catálogo nunca define un elemento; cada elemento se define en su propio documento.
 
 | Sigla | Nombre | Unidad documental | Productor | Consumidor típico |
 |---|---|---|---|---|
 | `CTLG` | Catálogo | Índice ordenado de los documentos de un tipo, con ID, título, estado y enlace; un catálogo por tipo indexado y por ámbito | Generación desde el frontmatter de los documentos indexados (`bi-kpi-definition-designer` para KPI; generadores de cada pack para ADR y ASR) | Gobierno documental, Arquitectura, Analítica |
 
-**Resolución de la discrepancia con BI:** el pack `bi-analytics` 1.2.0 usa `CTLG` para el catálogo de KPI. `CTLG` se aprueba en esta versión como tipo general, por lo que el pack queda cubierto. La ampliación de BI pendiente (`BIC`, `KPI`, `DSM`, `DMD`, `DSH`, `BIQ`) sigue sin aprobar y no incluye `CTLG`; su aprobación no depende de esta.
+**Resolución de la discrepancia con BI:** el pack `bi-analytics` 0.1.0 usa `CTLG` para el catálogo de KPI. `CTLG` se mantiene como tipo general del catálogo, por lo que el pack queda cubierto. La ampliación de BI pendiente (`BIC`, `KPI`, `DSM`, `DMD`, `DSH`, `BIQ`) sigue sin aprobar y no incluye `CTLG`; su aprobación no depende de esta.
 
 **Límite:** la aprobación normativa no publica el cambio en GitLab. Queda pendiente someter esta versión a Merge Request.
 
-## Ampliación aprobada v1.7.0 (EPC)
+## Epicas
 
-**Estado: aprobada.** Autorizada por el responsable en conversación del 2026-11-07.
+Este tipo forma parte del catálogo vigente.
 
-Se incorpora el tipo `EPC` (Épica) para agrupar historias de usuario funcionalmente relacionadas que pertenecen a un mismo `RCP`, bajo un resultado de negocio común. Es aditivo: ningún tipo existente cambia.
+El tipo `EPC` (Épica) para agrupar historias de usuario funcionalmente relacionadas que pertenecen a un mismo `RCP`, bajo un resultado de negocio común. Es aditivo: ningún tipo existente cambia.
 
 | Sigla | Nombre | Unidad documental | Productor | Consumidor típico | Campos adicionales obligatorios |
 |---|---|---|---|---|---|
@@ -514,37 +494,13 @@ Se incorpora el tipo `EPC` (Épica) para agrupar historias de usuario funcionalm
 - El criterio de agrupación es obligatorio. Una `EPC` no introduce requisitos nuevos ni modifica sus historias: sus criterios de aceptación se trazan a criterios de las historias incluidas.
 - Una `EPC` no asigna Sprint (eso lo hace el `SSP`) y no aprueba nada: la aprobación es humana.
 
-## Ampliación aprobada v1.8.0 (BSN)
+## Escenarios de negocio
 
-**Estado: aprobada.** Autorizada por el responsable y con revisión de semántica aprobada el 2026-11-07 (`plugins/AGENTS.md`). Propagada a `business-knowledge` 2.1.0. El resto de copias del estándar se propagarán plugin por plugin cuando se apruebe.
+Este tipo forma parte del catálogo vigente y sus reglas se aplican a todas las copias del estándar.
 
-Se propone el tipo `BSN` (Business Scenario) para describir un escenario de negocio: secuencia de reglas de negocio aplicada por un actor sobre una capacidad, con precondiciones, pasos, excepciones y resultado. Es aditivo: ningún tipo existente cambia. `BSN` agrupa reglas `BR` por referencia y no las duplica.
+El tipo `BSN` (Business Scenario) para describir un escenario de negocio: secuencia de reglas de negocio aplicada por un actor sobre una capacidad, con precondiciones, pasos, excepciones y resultado. Es aditivo: ningún tipo existente cambia. `BSN` agrupa reglas `BR` por referencia y no las duplica.
 
 - Identidad: `BSN-NNN`, con numeración propia.
-- Productor: skill `biz-scenario-modeler` (plugin `business-knowledge`, propuesto).
+- Productor: skill `biz-scenario-modeler` (plugin `business-knowledge`).
 - Cada paso referencia una `BR`; los términos se referencian por `TRM`.
-- Un `BSN` no aprueba nada: la aprobación es humana.
-
-## Registro de aprobación de v1.7.0
-
-- **Decisión:** aprobación de la ampliación `EPC`, autorizada por el responsable en conversación del 2026-11-07.
-- **Numeración:** registrada como 1.7.0 porque la 1.6.0 ya registra `CTLG` y la ampliación de BI.
-- **Límite:** la aprobación normativa no publica el cambio en GitLab. Queda pendiente someter esta versión a Merge Request.
-- **Propagación pendiente:** las copias del estándar en cada plugin y las listas de tipos de sus validadores siguen en la versión anterior hasta que el responsable apruebe la propagación plugin por plugin (`plugins/AGENTS.md`).
-
-## Erratas de v1.7.0
-
-- **Erratum (2026-11-07):** la descripción del `TRM` indicaba que se indexa en `business/terms/index.md`. Ese índice ya no existe: el catálogo de términos es `business/terms/CTLG-TRM.md` (tipo `CTLG`, Ampliación aprobada v1.6.0). Corrección textual; no cambia ningún tipo, campo ni gate.
-
-## Registro de aprobación de v1.8.0
-
-- **Decisión:** aprobación de la ampliación `BSN`, autorizada por el responsable y con revisión de semántica aprobada el 2026-11-07.
-- **Propagación:** aprobada solo para `business-knowledge` (versión 2.1.0). Las demás copias del estándar siguen en v1.7.0 hasta que se apruebe su propagación plugin por plugin.
-- **Límite:** la aprobación normativa no publica el cambio en GitLab. Queda pendiente el Merge Request.
-
-## Registro de aprobación de v1.9.0, v1.10.0 y v1.11.0
-
-- **v1.9.0:** aclaración de salidas de skills especialistas (ver sección correspondiente). Incluida en esta versión.
-- **v1.10.0:** incorporación de `IRP` (Informe o Reporte genérico), un único tipo para cualquier informe o reporte de análisis, para no crear tipos específicos por plugin. Aprobada por el responsable. Las revisiones de Architecture, UX/UI, Web y Mobile siguen pendientes según el historial.
-- **v1.11.0:** división de `QTD`. Estrategia y plan pasan a `QTP`; `QTD` queda con cobertura, trazabilidad, TSN y TC. Aprobada por el responsable el 2026-11-21.
-- **Límite:** la aprobación normativa no publica el cambio en GitLab. Queda pendiente la propagación a las copias de cada plugin, que se hace plugin por plugin tras su clasificación de impacto (`plugins/AGENTS.md`).
+- Un `BSN` no aprueba nada: la aprobación es humana.\n

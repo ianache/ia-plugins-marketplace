@@ -1,6 +1,8 @@
 ---
 name: accessibility-reviewer
 description: Usar cuando una especificación (SCR-*), HTML o nodo Figma deba evaluarse contra WCAG 2.2 AA y registrar hallazgos sin autocorregir decisiones de producto; también cuando el gate DESIGN_READY_FOR_DEV necesite el informe de accesibilidad de un SCR.
+metadata:
+  version: "0.1.0"
 ---
 
 # accessibility-reviewer

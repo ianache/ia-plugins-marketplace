@@ -1,5 +1,5 @@
 ---
-type: MOB # aprobado en STD-OKF-001 v1.11.0-stable
+type: MOB # aprobado en STD-OKF-001 v0.1.0-stable
 id: MOB-PLACEHOLDER
 title: Título del artefacto
 description: Propósito verificable

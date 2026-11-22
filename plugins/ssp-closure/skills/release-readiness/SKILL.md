@@ -2,7 +2,7 @@
 name: release-readiness
 description: Evaluar evidencia de QA, defectos abiertos y riesgos residuales de un SSP para aportar readiness al informe STR del periodo sin decidir el despliegue.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "specialist"
 ---

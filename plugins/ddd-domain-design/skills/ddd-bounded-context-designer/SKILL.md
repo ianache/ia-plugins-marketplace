@@ -1,6 +1,8 @@
 ---
 name: ddd-bounded-context-designer
 description: Delimitar bounded contexts a partir de DSP/SSP, contexto gobernado y outputs DDD previos, con trazabilidad y revisión humana.
+metadata:
+  version: "0.1.0"
 ---
 # ddd-bounded-context-designer
 
@@ -32,8 +34,8 @@ Requiere revisión humana cuando haya cambio de límite, contrato o regla; no au
 - Registrar ejecución con estado y evidencias en el plan gestionado por orchestrator.
 
 
-## Norma corporativa objetivo — STD-OKF-001 v1.9.0-stable
-- Antes de producir Markdown conceptual, leer `standards/STD-OKF-001-v1.9.0-stable.md` (ruta relativa a la raíz del plugin). Si no está disponible, bloquear publicación.
+## Norma corporativa objetivo — STD-OKF-001 v0.1.0-stable
+- Antes de producir Markdown conceptual, leer `standards/STD-OKF-001-v0.1.0-stable.md` (ruta relativa a la raíz del plugin). Si no está disponible, bloquear publicación.
 - Distinguir tres niveles: OKF mínimo, perfil COMSATEL y publicación. Ejecutar `python scripts/okf_validate.py <archivo> --level profile` antes de revisión y `--level publish --run <directorio-run>` antes de publicación.
 - Los documentos conceptuales deben usar exclusivamente los campos corporativos `type`, `id`, `title`, `description`, `version`, `status`, `owner`, `classification`, `tags`, `generated.by`, `generated.at`, `sources`, y condicionalmente `product`, `bounded_context_id`, `pack`, `skill`, `related`. No crear aliases `artifact_type`, `source_refs`, `reviewed_by`, `lifecycle_status`.
 - Usar `type: BC` para Bounded Context, `type: CTX` para Context Map y los tipos aprobados `AGG`, `VO`, `EVT` para especificaciones separadas. No crear otros tipos nuevos (incluido SSP) sin control de cambios. Documentos operativos YAML del orchestrator no son OKF.
@@ -54,7 +56,7 @@ Generar especificaciones AGG/VO/EVT independientes cuando corresponda, con `boun
 - El orchestrator resuelve y entrega a cada skill `workspace_root`, `run_id`, `document_type`, `output_path`, `pathmap_version`, `gate`; el skill devuelve `actual_output_path` y evidencia.
 - Validar con `scripts/validate_pathmap.py verify --workspace <workspace> --kind <type-o-archivo> --file <ruta>` antes de declarar un output completo. Bloquear tipos no mapeados, rutas incorrectas y archivos inexistentes.
 - Solo aceptar rutas alternativas por instrucción explícita del usuario, registrando excepción y evidencia en el plan.
-- Los Markdown conceptuales deben cumplir `STD-OKF-001-v1.9.0-stable.md` antes de gate y publicación.
+- Los Markdown conceptuales deben cumplir `STD-OKF-001-v0.1.0-stable.md` antes de gate y publicación.
 
 ## Plantilla de salida (v2.2.0)
 - Las plantillas de este skill están en su propia carpeta: `skills/ddd-bounded-context-designer/templates/` (en las rutas de abajo, `templates/` es esa carpeta).

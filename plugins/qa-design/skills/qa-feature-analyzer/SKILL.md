@@ -2,7 +2,7 @@
 name: qa-feature-analyzer
 description: Usar cuando un Development Scope Pack (DSP) validado deba convertirse en análisis QA trazable, identificando riesgos, ambigüedades, evidencia y test surfaces sin redefinir el alcance.
 metadata:
-  version: "1.6.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

@@ -1,6 +1,6 @@
 from pathlib import Path
 import re, sys, yaml
-# Secciones mínimas por tipo (STD-OKF-001 v1.11.0-stable, perfil de Infraestructura).
+# Secciones mínimas por tipo (STD-OKF-001 v0.1.0-stable, perfil de Infraestructura).
 SECTIONS = {
  "IDS": [
   "Alcance y modo",

@@ -1,6 +1,8 @@
 ---
 name: stitch-ui-generator
 description: Usar cuando haya que generar o regenerar UI en Google Stitch para pantallas SCR-* ya especificadas de un flujo FLW-*, o cuando un agente vaya a crear, buscar o reutilizar un proyecto Stitch. No usar para inventar pantallas o flujos.
+metadata:
+  version: "0.1.0"
 ---
 
 # stitch-ui-generator

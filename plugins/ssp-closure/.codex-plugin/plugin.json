@@ -1,0 +1,9 @@
+{
+  "name": "ssp-closure",
+  "version": "0.1.0",
+  "description": "Cierre gobernado de Sprint Review, Retrospective y readiness para SSP. Un orchestrator y cinco skills especialistas; documentos STR/CLS conformes con STD-OKF-001 v1.9.0.",
+  "skills": "./skills/",
+  "author": {
+    "name": "COMSATEL"
+  }
+}

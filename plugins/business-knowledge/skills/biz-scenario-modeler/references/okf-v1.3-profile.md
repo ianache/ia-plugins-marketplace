@@ -1,6 +1,6 @@
-# Perfil OKF v0.2 + STD-OKF-001 v1.9.0-stable
+# Perfil OKF v0.2 + STD-OKF-001 v0.1.0-stable
 
-Tipos de este skill: BSN. `TRM BCP BO STK BCAP BR IMD BSN` son tipos **aprobados** en v1.9.0-stable.
+Tipos de este skill: BSN. `TRM BCP BO STK BCAP BR IMD BSN` son tipos **aprobados** en v0.1.0-stable.
 
 Usar `templates/scenario.md` como punto de partida y sustituir TODOS los placeholders con valores verificados antes de ejecutar el validador. No fabricar fuentes, fechas, reglas ni aprobaciones. Si no hay evidencia suficiente, registrar el bloqueo en `.comsatel/business-knowledge/runs/<run-id>/`.
 

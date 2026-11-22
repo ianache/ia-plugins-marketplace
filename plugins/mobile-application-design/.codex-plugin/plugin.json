@@ -1,0 +1,9 @@
+{
+  "name": "mobile-application-design",
+  "version": "0.1.0",
+  "description": "DTC-105: diseño técnico gobernado de aplicaciones Flutter para Android/iOS, 6 skills y orchestrator",
+  "skills": "./skills/",
+  "author": {
+    "name": "COMSATEL Engineering"
+  }
+}

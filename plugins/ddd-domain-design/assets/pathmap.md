@@ -18,7 +18,7 @@ En `orchestrator_root` de `pathmap.json` (`<run-id>/`): `execution-plan.yaml`, `
 4. El orchestrator valida existencia, ubicación y tipo de cada salida antes de `DONE` o de aprobar un gate.
 5. Tipo sin mapeo: `BLOCKED`. No inventar una carpeta de destino.
 6. Una ruta alternativa solo procede por instrucción **explícita del usuario**, registrada en el plan con justificación y evidencia; nunca por decisión autónoma de un skill.
-7. Los documentos Markdown de dominio cumplen STD-OKF-001 v1.9.0-stable. Las salidas operativas del orchestrator no se clasifican como OKF.
+7. Los documentos Markdown de dominio cumplen STD-OKF-001 v0.1.0-stable. Las salidas operativas del orchestrator no se clasifican como OKF.
 
 **Gobierno:** las rutas aquí definidas son convenciones de este plugin; su homologación corporativa requiere aprobación.
 

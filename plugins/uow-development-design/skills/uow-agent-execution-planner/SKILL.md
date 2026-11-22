@@ -2,7 +2,7 @@
 name: uow-agent-execution-planner
 description: "Usar cuando una UOW con contratos y mapa de código deba convertirse en el plan de ejecución para el agente IA del developer (pasos con prueba primero, verificación, condiciones de parada, desviaciones), con perfil neutral y perfil Claude Code con Superpowers."
 metadata:
-  version: "1.3.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "development"
 ---

@@ -14,7 +14,7 @@ G0 Scope → G1 Opportunity Scout → G2 Problem Framing → G3 Divergent Ideati
 - Entrega a Requirements Engineering: `SOL` en draft + `handoff.json`; Requirements produce RCP/BR/US posteriormente.
 
 ## Política OKF
-`STD-OKF-001-v1.11.0-stable.md` se distribuye como estándar aprobado. Los documentos de ideación usan `SOL` (Solution Proposal, tipo aprobado en v1.11.0-stable con `ideation_stage`); una sola sigla para todas las etapas. No se crea ninguna otra sigla sin governance. Un documento de ideación solo debe usar `type: SOL` cuando represente efectivamente una propuesta de solución; las notas de brainstorming permanecen como evidencia operativa. Templates con placeholders son inválidos para publicación.
+`STD-OKF-001-v0.1.0-stable.md` se distribuye como estándar aprobado. Los documentos de ideación usan `SOL` (Solution Proposal, tipo aprobado en v0.1.0-stable con `ideation_stage`); una sola sigla para todas las etapas. No se crea ninguna otra sigla sin governance. Un documento de ideación solo debe usar `type: SOL` cuando represente efectivamente una propuesta de solución; las notas de brainstorming permanecen como evidencia operativa. Templates con placeholders son inválidos para publicación.
 
 ## Límites
 La creatividad no equivale a novedad demostrada; un plan de experimento no equivale a validación. Gates con aprobación humana; sin merges, publicaciones ni verificaciones automáticas ficticias.

@@ -1,6 +1,8 @@
 ---
 name: innovation-experiment-designer
 description: Usar para diseñar validación de hipótesis en iniciativas Greenfield, Brownfield o Evolution; producir experiment-plan.md y evidencia de G5 sin inventar validaciones.
+metadata:
+  version: "0.1.0"
 ---
 
 # Diseñar validación de hipótesis
@@ -20,7 +22,7 @@ Matriz deseabilidad/viabilidad/factibilidad, experimentos, riesgos, métricas, u
 Priorizar supuestos más riesgosos. Diseñar experimentos de bajo costo (interviews, prototype, fake-door con consentimiento, concierge, PoC) con hipótesis falsables, métrica, umbral, tamaño/muestra razonado, ética y privacidad. No inventar resultados ni llamar validado a lo no ejecutado. Recomendar pivot/persevere/stop condicionado a evidencias.
 
 ## Salidas
-- Documento conceptual `experiment-plan.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v1.11.0-stable; tipo `SOL` (aprobado en v1.11.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
+- Documento conceptual `experiment-plan.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v0.1.0-stable; tipo `SOL` (aprobado en v0.1.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
 - `gate-evidence.json` con resultado técnico y referencias, sin `approved: true` automático.
 - Plan de experimentos y decision log con estado not-tested/tested y riesgos residuales.
 
@@ -28,7 +30,7 @@ Priorizar supuestos más riesgosos. Diseñar experimentos de bajo costo (intervi
 Leer `references/gate-checklist.md`; `READY` no significa aprobado. El orchestrator bloquea dependientes hasta aprobación humana registrada.
 
 ## Validación y gobierno
-Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v1.11.0-stable.md` de la raíz del plugin; `v1.11.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
+Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v0.1.0-stable.md` de la raíz del plugin; `v0.1.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
 
 ## Recursos del skill
 - `references/contract.md`: contrato de datos y dependencias.

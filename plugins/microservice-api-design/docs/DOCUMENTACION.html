@@ -80,7 +80,7 @@ ul.tight li{margin:4px 0}
   <p class="lead">Plugin de Claude Code que diseña microservicios y sus APIs en Greenfield, Brownfield y Evolution: reconstrucción As-Is, límites y arquitectura hexagonal, contratos, fichas de diseño por funcionalidad, impacto y handoff a la KB y al código.</p>
   <ul class="meta">
     <li><b>Versión</b> 0.4.0</li>
-    <li><b>Documentos</b> STD-OKF-001 v1.11.0-stable</li>
+    <li><b>Documentos</b> STD-OKF-001 v0.1.0-stable</li>
     <li><b>Invocación</b> <code>/microservice-api-design:microservice-design-orchestrator</code></li>
   </ul>
 </header>
@@ -181,7 +181,7 @@ ul.tight li{margin:4px 0}
     </tbody>
   </table></div>
   <ul class="tight">
-    <li><code>ASIS</code>, <code>SVC</code>, <code>IMP</code> y <code>HCB</code> están aprobadas en STD-OKF-001 v1.11.0-stable. <code>FDT</code> sí es tipo oficial desde v1.2.0.</li>
+    <li><code>ASIS</code>, <code>SVC</code>, <code>IMP</code> y <code>HCB</code> están aprobadas en STD-OKF-001 v0.1.0-stable. <code>FDT</code> sí es tipo oficial desde v1.2.0.</li>
     <li>Un tipo sin mapeo queda bloqueado hasta que exista una asignación aprobada.</li>
     <li>Las FDT aprobadas se publican a la KB <code>codebase/&lt;MICROSERVICIO&gt;/docs/functionalities/</code> solo por Merge Request autorizado.</li>
   </ul>
@@ -238,7 +238,7 @@ python scripts/fdt_validate.py &lt;fdt-manifest&gt;.yaml --manifest</pre>
 <section id="observaciones">
   <h2>Observaciones</h2>
   <p>Hallazgos al documentar el plugin.</p>
-  <div class="note info"><b>Resuelto · estándar.</b> Se copió STD-OKF-001 v1.11.0-stable a <code>standards/</code>. Es aditivo: no cambia el perfil de FDT, y los validadores y la plantilla FDT son compatibles.</div>
+  <div class="note info"><b>Resuelto · estándar.</b> Se copió STD-OKF-001 v0.1.0-stable a <code>standards/</code>. Es aditivo: no cambia el perfil de FDT, y los validadores y la plantilla FDT son compatibles.</div>
   <div class="note info"><b>Resuelto · sigla HCB.</b> La familia de rutas del handoff se llamaba <code>HOF</code>, igual que un tipo aprobado en v1.3.0 (UX/UI Development Handoff Contract). Se renombró a <code>HCB</code>.</div>
   <div class="note open"><b>Versiones.</b> <code>plugin.json</code> y el pathmap dicen 0.4.0, y el <code>README.md</code> dice v0.3.0.</div>
   <div class="note open"><b>README desactualizado.</b> Sus comandos usan <code>init runs/demo</code> sin <code>--workspace-root</code> y no menciona <code>validate-handoff</code> ni <code>validate-contract</code>.</div>

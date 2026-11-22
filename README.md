@@ -12,14 +12,14 @@ El repositorio es un marketplace de plugins de Claude Code: el catálogo está e
 
 Equivalente en terminal: `claude plugin marketplace add <URL>` y `claude plugin install <plugin>@comsatel-skills-catalog`. El repositorio es privado: Git debe tener credenciales para `project.comsatel.com.pe`.
 
-Al agregar un plugin nuevo a `plugins/`, añada su entrada en `marketplace.json` (`name` igual al de su `plugin.json` y `source` `./plugins/<nombre>`) y valide con `claude plugin validate .`. La versión se mantiene solo en el `plugin.json` de cada plugin.
+Al agregar un plugin nuevo a `plugins/`, añada su entrada en `marketplace.json` (`name` igual al de su `plugin.json` y `source` `./plugins/<nombre>`) y valide con `claude plugin validate .`. Mantenga alineada la versión del plugin en `.claude-plugin/plugin.json` y `.codex-plugin/plugin.json`; cada skill declara su versión en `metadata.version` dentro de `SKILL.md`.
 
 ## Marketplace de Codex
 
-El mismo repositorio también ofrece un catálogo para Codex en [.agents/plugins/marketplace.json](.agents/plugins/marketplace.json). Sus entradas usan el formato de marketplace de Codex y apuntan a los mismos paquetes de `plugins/`, que contienen `skills/` y manifiestos compatibles con Claude.
+El mismo repositorio también ofrece un catálogo para Codex en [.agents/plugins/marketplace.json](.agents/plugins/marketplace.json). Sus entradas usan el formato de marketplace de Codex y apuntan a los mismos paquetes de `plugins/`, que incluyen `skills/` y un manifiesto `.codex-plugin/plugin.json` compatible con Codex.
 
 ```text
-codex plugin marketplace add https://github.com/ianache/ia-plugins-marketplace.git --sparse .agents/plugins --sparse plugins
+codex plugin marketplace add ianache/ia-plugins-marketplace --ref main --sparse .agents/plugins --sparse plugins
 ```
 
 En Codex, abra el directorio de plugins con `/plugins` y seleccione `COMSATEL Skills Catalog`. Para cada plugin nuevo, mantenga su manifiesto y skills en `plugins/<nombre>/` y agregue una entrada equivalente en ambos catálogos: `.claude-plugin/marketplace.json` y `.agents/plugins/marketplace.json`.

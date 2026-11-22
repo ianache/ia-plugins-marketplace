@@ -2,7 +2,7 @@
 name: uow-readiness-reviewer
 description: "Usar como revisor independiente del paquete de una UOW antes de asignarla: completitud, trazabilidad, ausencia de alcance inventado y preguntas abiertas, sin rediseñar el paquete."
 metadata:
-  version: "1.3.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "development"
 ---

@@ -17,4 +17,4 @@ Registrar: `run_id`, `skill`, `version`, `source_refs`, `deliverables`, `decisio
 - No inventar evidencia, commits, aprobaciones ni resultados de pruebas.
 - No modificar artefactos UX/UI; usar únicamente el handoff aprobado.
 - Los límites MicroUI se justifican con DDD + UX + ownership + despliegue; no imponer correspondencia 1:1 con API/BC.
-- Los Markdown OKF siguen STD-OKF-001 v1.11.0-stable; el tipo `WEB` está aprobado en v1.11.0-stable.
+- Los Markdown OKF siguen STD-OKF-001 v0.1.0-stable; el tipo `WEB` está aprobado en v0.1.0-stable.

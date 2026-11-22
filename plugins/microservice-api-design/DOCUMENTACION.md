@@ -2,7 +2,7 @@
 
 Plugin de Claude Code que diseña microservicios y sus APIs en tres escenarios (Greenfield, Brownfield y Evolution): reconstrucción As-Is, límites y arquitectura hexagonal To-Be, contratos OpenAPI/AsyncAPI, fichas de diseño por funcionalidad (FDT), análisis de impacto y handoff a la KB y al código. Usa **un orquestador y seis skills especialistas**, con gates de aprobación humana.
 
-- **Versión:** 1.2.0 (pathmap 0.7.0) · **Documentos:** STD-OKF-001 v1.11.0-stable
+- **Versión:** 1.2.0 (pathmap 0.7.0) · **Documentos:** STD-OKF-001 v0.1.0-stable
 - **Invocación:** `/microservice-api-design:microservice-design-orchestrator`
 - **Entrada:** DDD aprobado (`BC`, `CTX`, `AGG`, `VO`, `EVT`), ADR, DSP/SSP, KB `codebase/<MICROSERVICIO>` y repositorios.
 
@@ -87,7 +87,7 @@ Estados de tarea: `PENDING`, `READY`, `IN_PROGRESS`, `NEEDS_REVIEW`, `DONE`, `BL
 | `IMP` | Impact and Evolution Analysis | evolution-planner | `design/microservices/<servicio>/evolution/` |
 | `HCB` | Codebase Handoff Contract | codebase-handoff | `design/microservices/<servicio>/handoff/` |
 
-`ASIS`, `SVC`, `IMP` y `HCB` están aprobadas en STD-OKF-001 v1.11.0-stable. `FDT` sí es tipo oficial desde v1.2.0. Un tipo sin mapeo queda bloqueado.
+`ASIS`, `SVC`, `IMP` y `HCB` están aprobadas en STD-OKF-001 v0.1.0-stable. `FDT` sí es tipo oficial desde v1.2.0. Un tipo sin mapeo queda bloqueado.
 
 ### 3.2 Archivos del workflow
 
@@ -164,13 +164,13 @@ Requiere PyYAML. No hay ejecución automática de Claude ni integración con Git
 
 ## 6. Observaciones detectadas al documentar
 
-1. **Resuelto:** se copió `STD-OKF-001-v1.11.0-stable.md` a `standards/` desde otro plugin (copia idéntica en cinco plugins).
+1. **Resuelto:** se copió `STD-OKF-001-v0.1.0-stable.md` a `standards/` desde otro plugin (copia idéntica en cinco plugins).
 2. **Resuelto:** versiones alineadas con `plugin.json`; el pathmap tiene su propia versión (`pathmap.json` → `version`).
 3. **Resuelto:** el `README.md` usa `--workspace-root` y documenta `validate-contract` y `validate-handoff`.
 4. **Resuelto:** `tests/test_smoke.py` se actualizó a la versión 0.4.0, a `--workspace-root` y a las FDT del manifiesto.
 5. **Resuelto:** `C4` y `EVT` tienen tarea propia en los tres escenarios (`docs/c4-architecture.md` → `codebase/<servicio>/docs/`; `events/event-contracts.md`). Por el C4, Brownfield también requiere `codebase/<servicio>`.
 6. **Gates distintos por escenario.** El mismo código cubre trabajo diferente según el escenario. Por ejemplo, G1 es "As-Is y límites" en Brownfield y Evolution, pero en Greenfield cubre límites y arquitectura.
-7. **Resuelto:** la familia de rutas `HOF` colisionaba con el tipo aprobado `HOF` (UX/UI Development Handoff Contract) de STD-OKF-001 v1.11.0-stable. Se renombró a `HCB` en el pathmap y en las políticas de rutas.
+7. **Resuelto:** la familia de rutas `HOF` colisionaba con el tipo aprobado `HOF` (UX/UI Development Handoff Contract) de STD-OKF-001 v0.1.0-stable. Se renombró a `HCB` en el pathmap y en las políticas de rutas.
 8. **Compatibilidad con v1.3.0 verificada.** v1.3.0 es aditiva: agrega ocho tipos de UX/UI, Web y Mobile y no cambia el perfil de `FDT` ni las reglas de metadatos. `okf_validate.py` y `fdt_validate.py` aplican las reglas vigentes de ambas versiones, y `templates/fdt-functionality.md` pasa los dos validadores. El docstring de `okf_validate.py` ya lo indica.
 
 ## Contrato OpenAPI y C4 en el codebase

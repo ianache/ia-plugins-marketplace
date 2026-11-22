@@ -1,5 +1,5 @@
 ---
-type: WEB # aprobado en STD-OKF-001 v1.11.0-stable
+type: WEB # aprobado en STD-OKF-001 v0.1.0-stable
 id: WEB-EXAMPLE
 title: "web-development-handoff: entregable"
 description: "Construir Development Context Pack, backlog técnico, matriz de trazabilidad y criterios de aceptación"

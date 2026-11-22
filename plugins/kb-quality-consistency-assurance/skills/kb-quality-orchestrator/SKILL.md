@@ -1,6 +1,8 @@
 ---
 name: kb-quality-orchestrator
 description: Orquestar auditorías, revisión de cambios y remediación gobernada en KB OKF. Usar cuando se requiera esta función en un workflow de aseguramiento de KB.
+metadata:
+  version: "0.1.0"
 ---
 # kb-quality-orchestrator
 
@@ -22,7 +24,7 @@ Planificar tareas, verificar DAG, invocar especialistas, consolidar gates y exig
 - Adjuntar evidencia verificable (ruta, revisión SHA, sección/línea o excerpt y hash cuando esté disponible).
 - Separar `confirmed`, `suspected` y `unverified`; el análisis LLM por sí solo no convierte una sospecha en bloqueo definitivo.
 - Ejecutar el gate de salida solo tras producir sus entradas. Los gates no son prerrequisitos de las tareas que evalúan.
-- Tratar `STD-OKF-001` como perfil corporativo versionado: la copia vigente es `standards/STD-OKF-001-v1.11.0-stable.md` (estable, aprobada).
+- Tratar `STD-OKF-001` como perfil corporativo versionado: la copia vigente es `standards/STD-OKF-001-v0.1.0-stable.md` (estable, aprobada).
 
 ## Recursos
 - `../../references/contracts.md`

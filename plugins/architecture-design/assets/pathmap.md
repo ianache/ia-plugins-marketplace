@@ -17,7 +17,7 @@
 
 El mapeo de cada tipo documental a su directorio (y los metadatos de cada artefacto) vive solo en [`pathmap.json`](pathmap.json), bajo `document_types` y `artifacts`; su versión está en `pathmap_version`. Este archivo no repite ese contenido. Las convenciones propuestas y las confirmadas por el usuario se distinguen en `artifacts.<tipo>.basis`.
 
-Do **not** generate `RCP` or requirements-owned artifacts from Architecture Design merely to fill a directory. Requirements documents remain owned by Requirements Engineering. Other approved types may be added to this table only through reviewed change control. Paths are not a substitute for the corporate type registry in STD-OKF-001 v1.11.0-stable.
+Do **not** generate `RCP` or requirements-owned artifacts from Architecture Design merely to fill a directory. Requirements documents remain owned by Requirements Engineering. Other approved types may be added to this table only through reviewed change control. Paths are not a substitute for the corporate type registry in STD-OKF-001 v0.1.0-stable.
 
 ## Per-task handoff contract (orchestrator → specialized skill)
 
@@ -32,7 +32,7 @@ Do **not** generate `RCP` or requirements-owned artifacts from Architecture Desi
   "override": null,
   "gate": "G3",
   "inputs": ["approved-evidence-ref"],
-  "required_standard": "STD-OKF-001-v1.11.0-stable"
+  "required_standard": "STD-OKF-001-v0.1.0-stable"
 }
 ```
 

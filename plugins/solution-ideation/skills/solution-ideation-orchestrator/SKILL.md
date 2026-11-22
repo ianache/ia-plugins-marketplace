@@ -1,6 +1,8 @@
 ---
 name: solution-ideation-orchestrator
 description: Usar para planificar, coordinar y gobernar ideación e innovación de soluciones nuevas o existentes, activando seis skills especializados, contratos y gates antes del handoff a requirements-engineering.
+metadata:
+  version: "0.1.0"
 ---
 
 # Solution Ideation Orchestrator
@@ -28,8 +30,8 @@ G0 iniciativa y alcance; G1 oportunidades; G2 problem framing; G3 diversidad cre
 
 ## Documentos y gobierno
 - Operativos y control: `.comsatel/solution-ideation/runs/<run-id>/`.
-- Propuestas conceptuales OKF: `design/ideation/<run-id>/`, `type: SOL` (Solution Proposal, aprobado en v1.11.0-stable; una sola sigla para todas las etapas, indicada en `ideation_stage`). No crear otras siglas sin gobierno.
-- STD-OKF-001 v1.11.0-stable es perfil objetivo; no fingir que es estable. Ejecutar `scripts/validate_okf.py` y registrar resultados.
+- Propuestas conceptuales OKF: `design/ideation/<run-id>/`, `type: SOL` (Solution Proposal, aprobado en v0.1.0-stable; una sola sigla para todas las etapas, indicada en `ideation_stage`). No crear otras siglas sin gobierno.
+- STD-OKF-001 v0.1.0-stable es perfil objetivo; no fingir que es estable. Ejecutar `scripts/validate_okf.py` y registrar resultados.
 - No publicar, fusionar MRs ni aprobar gates automáticamente. Identidad humana en JSON es declaración, no autenticación.
 
 ## Recursos

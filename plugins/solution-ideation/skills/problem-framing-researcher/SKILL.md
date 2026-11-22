@@ -1,6 +1,8 @@
 ---
 name: problem-framing-researcher
 description: Usar para investigar problemas y necesidades en iniciativas Greenfield, Brownfield o Evolution; producir problem-framing.md y evidencia de G2 sin inventar validaciones.
+metadata:
+  version: "0.1.0"
 ---
 
 # Investigar problemas y necesidades
@@ -20,7 +22,7 @@ Problem framing, Jobs-to-be-Done, actores, segmentos, pains/gains, proceso actua
 Formular problema sin fijar solución; entrevistar o solicitar evidencia cuando falte; separar usuario, comprador y operador; documentar As-Is, métricas base, restricciones y supuestos. En Evolution mapear fricciones y capacidades existentes.
 
 ## Salidas
-- Documento conceptual `problem-framing.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v1.11.0-stable; tipo `SOL` (aprobado en v1.11.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
+- Documento conceptual `problem-framing.md` en `design/ideation/<run-id>/` con frontmatter STD-OKF-001 v0.1.0-stable; tipo `SOL` (aprobado en v0.1.0-stable), **solo si** representa una propuesta de solución; para evidencia de exploración no propositiva usar registro operativo en `comsatel/` y referenciarlo desde el SOL final. No inventar tipos `IDE`, `OPP` u otros.
 - `gate-evidence.json` con resultado técnico y referencias, sin `approved: true` automático.
 - Problemas priorizados, JTBD, actores, evidencia, hipótesis y criterios de éxito.
 
@@ -28,7 +30,7 @@ Formular problema sin fijar solución; entrevistar o solicitar evidencia cuando 
 Leer `references/gate-checklist.md`; `READY` no significa aprobado. El orchestrator bloquea dependientes hasta aprobación humana registrada.
 
 ## Validación y gobierno
-Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v1.11.0-stable.md` de la raíz del plugin; `v1.11.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
+Usar `python scripts/validate.py <ruta-documento.md>` desde este skill. Aplicar `standards/STD-OKF-001-v0.1.0-stable.md` de la raíz del plugin; `v0.1.0-stable` sigue siendo la baseline aprobada. No publicar automáticamente. No fabricar entrevistas, resultados, fuentes, firmas ni `verified`.
 
 ## Recursos del skill
 - `references/contract.md`: contrato de datos y dependencias.

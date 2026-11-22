@@ -1,6 +1,8 @@
 ---
 name: dm-design-orchestrator
 description: Coordinar diseño de datos Greenfield, Brownfield y Evolution mediante plan DAG, tareas, evidencias y gates.
+metadata:
+  version: "0.1.0"
 ---
 # dm-design-orchestrator
 

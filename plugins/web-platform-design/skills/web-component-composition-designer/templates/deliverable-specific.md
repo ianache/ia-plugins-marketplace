@@ -1,5 +1,5 @@
 ---
-type: WEB # aprobado en STD-OKF-001 v1.11.0-stable
+type: WEB # aprobado en STD-OKF-001 v0.1.0-stable
 id: WEB-EXAMPLE
 title: "web-component-composition-designer: entregable"
 description: "Mapear SCR/CMP/TKN aprobados a módulos Angular, rutas, lazy loading, estado y contratos de composición"

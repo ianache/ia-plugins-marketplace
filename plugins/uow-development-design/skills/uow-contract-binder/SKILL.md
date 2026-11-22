@@ -2,7 +2,7 @@
 name: uow-contract-binder
 description: "Usar cuando una UOW deba enlazarse con las operaciones API y los objetos de datos exactos (tablas, migraciones) que debe implementar, verificando que los contratos existen, están versionados y son coherentes entre API y BD, sin inventar nada."
 metadata:
-  version: "1.3.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "development"
 ---

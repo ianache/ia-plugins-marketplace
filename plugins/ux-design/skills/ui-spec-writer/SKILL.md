@@ -1,6 +1,8 @@
 ---
 name: ui-spec-writer
 description: Usar cuando un User Flow (FLW-*) deba convertirse en especificación de pantallas (SCR-*), componentes y tokens independiente de herramienta, antes de generar UI en Stitch o diseñar en Figma.
+metadata:
+  version: "0.1.0"
 ---
 
 # ui-spec-writer

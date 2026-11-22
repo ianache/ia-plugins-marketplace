@@ -2,7 +2,7 @@
 name: qa-test-design
 description: Usar cuando un QA Feature Analysis Pack aprobado deba convertirse en estrategia, condiciones, técnicas, Test Cases, datos y oracles trazables por API, WEB, MOBILE o CROSS_SURFACE.
 metadata:
-  version: "2.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "qa"
 ---

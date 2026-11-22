@@ -1,6 +1,8 @@
 ---
 name: bi-dashboard-report-designer
 description: Especifica dashboards e informes con audiencia, visualizaciones, filtros, drill-down y KPI mostrados. Produce DSH.
+metadata:
+  version: "0.1.0"
 ---
 
 # BI Dashboard and Report Designer

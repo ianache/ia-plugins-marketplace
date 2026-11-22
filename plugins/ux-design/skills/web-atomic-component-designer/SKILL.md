@@ -3,7 +3,7 @@ name: web-atomic-component-designer
 description: Identify and specify Angular UI components with Atomic Design so they are reusable, accessible, testable and publishable through an NPM component library.
 metadata:
   package: dtc-web
-  version: 0.2.0
+  version: "0.1.0"
   standard: google-okf-v0.2
 ---
 

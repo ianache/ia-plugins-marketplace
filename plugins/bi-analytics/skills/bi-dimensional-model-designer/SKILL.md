@@ -1,6 +1,8 @@
 ---
 name: bi-dimensional-model-designer
 description: Diseña hechos, dimensiones, grano, jerarquías y reglas de cambio histórico a partir de KPI y DSM. Produce DMD.
+metadata:
+  version: "0.1.0"
 ---
 
 # BI Dimensional Model Designer

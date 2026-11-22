@@ -1,6 +1,8 @@
 ---
 name: ux-development-handoff
 description: Usar cuando un diseño UX/UI aprobado deba entregarse a Desarrollo (Developer + agente IA + Superpowers), cuando se pida evaluar DESIGN_READY_FOR_DEV, o cuando Superpowers pida el contexto de diseño para implementar un SCR-*.
+metadata:
+  version: "0.1.0"
 ---
 
 # ux-development-handoff

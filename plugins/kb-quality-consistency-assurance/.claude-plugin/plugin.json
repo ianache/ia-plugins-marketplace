@@ -1,6 +1,6 @@
 {
   "name": "kb-quality-consistency-assurance",
-  "version": "1.4.0",
+  "version": "0.1.0",
   "description": "Auditoría y aseguramiento de calidad y consistencia de KB OKF v0.2, con gates y revisión semántica asistida por Claude; Mod de observabilidad y Quality Gate Monitor",
   "author": {
     "name": "COMSATEL Engineering"

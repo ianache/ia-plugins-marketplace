@@ -2,7 +2,7 @@
 name: retro-experiment-tracker
 description: Convertir acciones de mejora aprobadas en payloads de issues de GitLab y seguir sus referencias, exigiendo dueño, métrica y fecha de cierre.
 metadata:
-  version: "1.0.0"
+  version: "0.1.0"
   author: "COMSATEL"
   type: "specialist"
 ---
