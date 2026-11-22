@@ -1,0 +1,9 @@
+{
+  "producer": "architecture-conformance-assessor",
+  "inputs": [],
+  "outputs": [],
+  "sources": [],
+  "open_questions": [],
+  "gate": "G4",
+  "status": "pending_human_review"
+}

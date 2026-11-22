@@ -1,0 +1,31 @@
+gate: READINESS_GATE
+owner_skill: uow-readiness-reviewer
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 1
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: package-complete
+  evaluator: script
+  required: true
+- id: traceability-complete
+  evaluator: script
+  required: true
+- id: reviewer-independent-of-author
+  evaluator: script
+  required: true
+- id: open-questions-handled
+  evaluator: script
+  required: true
+- id: no-invented-scope
+  evaluator: independent-review
+  required: true
+evidence:
+  required: true
+  path: .comsatel/uow-development-design/runs/evidence/READINESS_GATE/
+  gate_report: .comsatel/uow-development-design/runs/evidence/READINESS_GATE/gate-report-T06.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador decide el gate.

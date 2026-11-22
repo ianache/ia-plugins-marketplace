@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "required": [
+    "objective",
+    "dsp_ref",
+    "gitlab_id"
+  ],
+  "properties": {
+    "objective": {
+      "type": "string"
+    },
+    "dsp_ref": {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "path"
+      ]
+    },
+    "gitlab_id": {
+      "type": "string"
+    },
+    "surfaces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "available_artifacts": {
+      "type": "array"
+    },
+    "upstream_decisions": {
+      "type": "array"
+    }
+  }
+}

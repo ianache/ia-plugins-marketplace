@@ -1,0 +1,11 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "skill": "web-application-reconstruction-analyzer",
+  "status": "awaiting_human_gate",
+  "artifacts": [
+    "as-is/application-inventory.md",
+    "as-is/reconstruction-findings.md"
+  ],
+  "gate": "G1",
+  "approved": false
+}

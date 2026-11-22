@@ -1,0 +1,70 @@
+{
+  "version": "0.7.0",
+  "workspace_relative": true,
+  "service_placeholder": "{service}",
+  "document_types": {
+    "ASIS": "design/microservices/{service}/as-is/",
+    "SVC": "design/microservices/{service}/",
+    "C4": "codebase/{codebase_service}/docs/",
+    "API": "design/microservices/{service}/",
+    "EVT": "design/microservices/{service}/events/",
+    "FDT": "design/microservices/{service}/functionalities/",
+    "IMP": "design/microservices/{service}/evolution/",
+    "HCB": "design/microservices/{service}/handoff/"
+  },
+  "output_files": {
+    "as-is/architecture-reconstruction.md": "ASIS",
+    "to-be/service-boundaries.md": "SVC",
+    "to-be/service-architecture.md": "SVC",
+    "to-be/api-integration-design.md": "API",
+    "functionalities/fdt-manifest.yaml": "FDT",
+    "evolution/impact-analysis.md": "IMP",
+    "handoff/codebase-handoff.yaml": "HCB",
+    "docs/c4-architecture.md": "C4",
+    "events/event-contracts.md": "EVT"
+  },
+  "openapi": {
+    "primary": "codebase/{service}/src/main/resources/api.yaml",
+    "alternative": "codebase/{service}/api/src/main/resources/api.yaml",
+    "alternative_when_exists": "codebase/{service}/api",
+    "scenarios": [
+      "greenfield",
+      "evolution"
+    ],
+    "on_missing_codebase_service": "Solicitar al humano la carpeta del servicio dentro de codebase/ y pasarla con init --codebase-service <carpeta>; no inventar la ruta.",
+    "note": "El diseño (api-integration-design.md) va en el tipo API; este bloque solo fija dónde se escribe el contrato OpenAPI."
+  },
+  "orchestrator_root": ".comsatel/microservice-api-design/runs/",
+  "notes": {
+    "C4": "Siempre en codebase/<servicio>/docs/; exige que exista codebase/<servicio> (misma regla que openapi.on_missing_codebase_service).",
+    "service_placeholder": "{service} es el id del microservicio (init --service); {codebase_service} es la carpeta bajo codebase/ (por defecto el mismo id)."
+  },
+  "templates": {
+    "ASIS": [
+      "templates/asis-reconstruction.md"
+    ],
+    "SVC": [
+      "templates/service-boundaries.md",
+      "templates/service-architecture.md"
+    ],
+    "API": [
+      "templates/api-integration-design.md"
+    ],
+    "EVT": [
+      "templates/event-contracts.md"
+    ],
+    "IMP": [
+      "templates/impact-analysis.md"
+    ],
+    "C4": [
+      "templates/c4-architecture.md"
+    ],
+    "FDT": [
+      "templates/fdt-functionality.md",
+      "templates/fdt-manifest.yaml"
+    ],
+    "HCB": [
+      "templates/codebase-handoff.yaml"
+    ]
+  }
+}

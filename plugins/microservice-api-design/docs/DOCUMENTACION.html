@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microservice API Design</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600&display=swap">
+<style>
+/* Layout: single reading column, sticky section nav, scenario tabs, gate chips as the recurring accent */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#1b2430; --muted:#5a6676; --line:#dde2e9;
+  --accent:#1f5f8b; --accent-soft:#e3eef6;
+  --g0:#6b5b95; --g1:#1f7a6d; --g2:#b26a00; --g3:#a63d57; --g4:#2f5fb3;
+  --warn-bg:#fff4e0; --warn-fg:#7a4a00; --ok-bg:#e4f4ea; --ok-fg:#1d5a34;
+  --display:'Fraunces',Georgia,serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12171e; --surface:#1a212b; --fg:#e4e9f0; --muted:#98a4b5; --line:#2c3644;
+  --accent:#6fb2e0; --accent-soft:#1d2e3d;
+  --g0:#a797d6; --g1:#4fc0ae; --g2:#e0a040; --g3:#e07a93; --g4:#7ea3ee;
+  --warn-bg:#3a2d12; --warn-fg:#f0c878; --ok-bg:#16301f; --ok-fg:#8fd6a8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171e; --surface:#1a212b; --fg:#e4e9f0; --muted:#98a4b5; --line:#2c3644;
+  --accent:#6fb2e0; --accent-soft:#1d2e3d;
+  --g0:#a797d6; --g1:#4fc0ae; --g2:#e0a040; --g3:#e07a93; --g4:#7ea3ee;
+  --warn-bg:#3a2d12; --warn-fg:#f0c878; --ok-bg:#16301f; --ok-fg:#8fd6a8; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 var(--body);
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto}
+header{padding-block:40px 20px}
+h1{font:600 clamp(28px,5vw,40px)/1.15 var(--display);margin:0 0 8px;text-wrap:balance}
+.lead{color:var(--muted);max-width:68ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin:16px 0 0;padding:0;list-style:none;font-size:13px;color:var(--muted)}
+.meta b{color:var(--fg);font-weight:500}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding-block:8px;z-index:5}
+nav.top a{color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:500;white-space:nowrap}
+nav.top a:hover,nav.top a:focus-visible{background:var(--accent-soft);color:var(--accent);outline:none}
+section{padding-top:40px}
+h2{font:600 22px/1.25 var(--display);margin:0 0 6px}
+h2+p{color:var(--muted);margin:0 0 16px;max-width:70ch}
+h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:28px 0 10px;font-weight:600}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+code,.mono{font:13px var(--mono)}
+code{background:var(--accent-soft);padding:1px 6px;border-radius:4px;word-break:break-word}
+.chip{display:inline-block;font:500 12px var(--mono);padding:2px 9px;border-radius:99px;color:#fff;white-space:nowrap}
+.G0{background:var(--g0)}.G1{background:var(--g1)}.G2{background:var(--g2)}.G3{background:var(--g3)}.G4{background:var(--g4)}
+.sigla{font:600 13px var(--mono);color:var(--accent)}
+.tabs{display:flex;gap:6px;margin:0 0 12px;flex-wrap:wrap}
+.tabs button{font:500 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:7px 14px;border-radius:6px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gates{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.gate{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;min-width:0}
+.gate h4{margin:8px 0 4px;font-size:15px}
+.gate p{margin:0 0 6px;font-size:14px}
+.gate .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+ul.tight{margin:8px 0 0;padding-left:20px}
+ul.tight li{margin:4px 0}
+.cli{background:#0f141b;color:#d8e0ea;border-radius:8px;padding:16px;overflow-x:auto;font:13px/1.65 var(--mono);margin:0}
+.cli .c{color:#7d8a9c}
+.note{border-radius:8px;padding:12px 16px;margin:0 0 10px;font-size:14px}
+.note.open{background:var(--warn-bg);color:var(--warn-fg)}
+.note.info{background:var(--accent-soft);color:var(--fg)}
+.note b{font-weight:600}
+@media (max-width:560px){section{padding-top:32px}}
+@media (prefers-reduced-motion:no-preference){nav.top a{transition:background .15s,color .15s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <h1>Microservice API Design</h1>
+  <p class="lead">Plugin de Claude Code que diseña microservicios y sus APIs en Greenfield, Brownfield y Evolution: reconstrucción As-Is, límites y arquitectura hexagonal, contratos, fichas de diseño por funcionalidad, impacto y handoff a la KB y al código.</p>
+  <ul class="meta">
+    <li><b>Versión</b> 0.4.0</li>
+    <li><b>Documentos</b> STD-OKF-001 v1.11.0-stable</li>
+    <li><b>Invocación</b> <code>/microservice-api-design:microservice-design-orchestrator</code></li>
+  </ul>
+</header>
+
+<nav class="top" aria-label="Secciones">
+  <a href="#skills">Skills</a><a href="#secuencia">Secuencia</a><a href="#entregables">Entregables</a><a href="#gates">Gates</a><a href="#uso">Uso</a><a href="#observaciones">Observaciones</a>
+</nav>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <p>Un orquestador y seis especialistas. Ningún skill aprueba su propio gate.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Skill</th><th>Qué hace</th><th>Entregable</th></tr></thead>
+    <tbody>
+      <tr><td><code>microservice-design-orchestrator</code></td><td>Identifica el escenario, planifica el DAG, controla gates y persiste el progreso. No invoca a Claude automáticamente.</td><td>Registros del run</td></tr>
+      <tr><td><code>microservice-reconstruction-analyzer</code></td><td>Reconstrucción As-Is: repositorio, rutas reales, OpenAPI, código, dependencias, persistencia, eventos y tests. Cita archivo y commit por afirmación.</td><td><code>architecture-reconstruction.md</code></td></tr>
+      <tr><td><code>microservice-boundary-architecture-designer</code></td><td>Límites de servicios y arquitectura hexagonal To-Be: responsabilidades, ownership, adaptadores, puertos, C4 y NFR.</td><td><code>service-boundaries.md</code>, <code>service-architecture.md</code></td></tr>
+      <tr><td><code>api-integration-contract-designer</code></td><td>Contract First: OpenAPI 3.1, AsyncAPI/eventos y gRPC si aplica. Distingue Domain Events de Integration Events y analiza compatibilidad.</td><td><code>api-integration-design.md</code></td></tr>
+      <tr><td><code>microservice-functionality-designer</code></td><td>Una FDT por capacidad: entradas, salidas, errores, reglas, datos, seguridad, secuencias, pruebas y handoff.</td><td><code>fdt-manifest.yaml</code> + una FDT por funcionalidad</td></tr>
+      <tr><td><code>microservice-evolution-planner</code></td><td>Compara As-Is y To-Be: breaking changes, consumidores, migraciones, rollout, rollback y riesgos. En Greenfield justifica N/A.</td><td><code>impact-analysis.md</code></td></tr>
+      <tr><td><code>microservice-codebase-handoff</code></td><td>Mapea la KB <code>codebase/&lt;MICROSERVICIO&gt;</code> al repositorio de código. Resuelve rutas por ADR y evidencia.</td><td><code>codebase-handoff.yaml</code></td></tr>
+    </tbody>
+  </table></div>
+  <h3>Reglas comunes</h3>
+  <ul class="tight">
+    <li>No inventar fuentes ausentes ni evidencias. Declarar la incertidumbre.</li>
+    <li>Un bounded context no equivale obligatoriamente a un microservicio. No se redefine el DDD aprobado.</li>
+    <li>No hay push ni Merge Request sin autorización explícita.</li>
+    <li>Los validadores locales comprueban estructura, no semántica ni identidad del aprobador.</li>
+  </ul>
+</section>
+
+<section id="secuencia">
+  <h2>Secuencia por escenario</h2>
+  <p>El gate de entrada debe estar aprobado para iniciar una tarea. Aprobar el gate siguiente exige que las tareas con el gate anterior como entrada estén en <code>DONE</code>.</p>
+  <div class="tabs" role="tablist" aria-label="Escenario">
+    <button role="tab" id="tab-greenfield" aria-selected="true" aria-controls="p-greenfield" data-t="greenfield">Greenfield</button>
+    <button role="tab" id="tab-brownfield" aria-selected="false" aria-controls="p-brownfield" data-t="brownfield">Brownfield</button>
+    <button role="tab" id="tab-evolution" aria-selected="false" aria-controls="p-evolution" data-t="evolution">Evolution</button>
+  </div>
+
+  <div class="tw" id="p-greenfield" role="tabpanel" aria-labelledby="tab-greenfield"><table>
+    <thead><tr><th>Tarea</th><th>Skill</th><th>Depende de</th><th>Gate de entrada</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">T01</td><td>boundary-architecture-designer · límites</td><td>—</td><td><span class="chip G0">G0</span></td></tr>
+      <tr><td class="mono">T02</td><td>boundary-architecture-designer · arquitectura To-Be</td><td class="mono">T01</td><td><span class="chip G0">G0</span></td></tr>
+      <tr><td class="mono">T03</td><td>api-integration-contract-designer</td><td class="mono">T02</td><td><span class="chip G1">G1</span></td></tr>
+      <tr><td class="mono">T03F</td><td>functionality-designer · FDT</td><td class="mono">T03</td><td><span class="chip G2">G2</span></td></tr>
+      <tr><td class="mono">T04</td><td>evolution-planner · N/A documentado</td><td class="mono">T03F</td><td><span class="chip G2">G2</span></td></tr>
+      <tr><td class="mono">T05</td><td>codebase-handoff</td><td class="mono">T04</td><td><span class="chip G3">G3</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw" id="p-brownfield" role="tabpanel" aria-labelledby="tab-brownfield" hidden><table>
+    <thead><tr><th>Tarea</th><th>Skill</th><th>Depende de</th><th>Gate de entrada</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">T01</td><td>reconstruction-analyzer · As-Is</td><td>—</td><td><span class="chip G0">G0</span></td></tr>
+      <tr><td class="mono">T02</td><td>boundary-architecture-designer · conciliación de límites</td><td class="mono">T01</td><td><span class="chip G0">G0</span></td></tr>
+      <tr><td class="mono">T03</td><td>boundary-architecture-designer · evaluación de arquitectura</td><td class="mono">T02</td><td><span class="chip G1">G1</span></td></tr>
+      <tr><td class="mono">T04</td><td>api-integration-contract-designer · inventario</td><td class="mono">T03</td><td><span class="chip G1">G1</span></td></tr>
+      <tr><td class="mono">T04F</td><td>functionality-designer · FDT</td><td class="mono">T04</td><td><span class="chip G2">G2</span></td></tr>
+      <tr><td class="mono">T05</td><td>evolution-planner · impacto solo documental</td><td class="mono">T04F</td><td><span class="chip G2">G2</span></td></tr>
+      <tr><td class="mono">T06</td><td>codebase-handoff · conciliación KB/código</td><td class="mono">T05</td><td><span class="chip G3">G3</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw" id="p-evolution" role="tabpanel" aria-labelledby="tab-evolution" hidden><table>
+    <thead><tr><th>Tarea</th><th>Skill</th><th>Depende de</th><th>Gate de entrada</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">T01</td><td>reconstruction-analyzer · As-Is</td><td>—</td><td><span class="chip G0">G0</span></td></tr>
+      <tr><td class="mono">T02</td><td>boundary-architecture-designer · evolución de límites</td><td class="mono">T01</td><td><span class="chip G0">G0</span></td></tr>
+      <tr><td class="mono">T03</td><td>boundary-architecture-designer · To-Be</td><td class="mono">T02</td><td><span class="chip G1">G1</span></td></tr>
+      <tr><td class="mono">T04</td><td>api-integration-contract-designer · evolución</td><td class="mono">T03</td><td><span class="chip G1">G1</span></td></tr>
+      <tr><td class="mono">T04F</td><td>functionality-designer · FDT</td><td class="mono">T04</td><td><span class="chip G2">G2</span></td></tr>
+      <tr><td class="mono">T05</td><td>evolution-planner · impacto y migración</td><td class="mono">T04F</td><td><span class="chip G2">G2</span></td></tr>
+      <tr><td class="mono">T06</td><td>codebase-handoff</td><td class="mono">T05</td><td><span class="chip G3">G3</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Estados de tarea</h3>
+  <p style="color:var(--muted);margin:0;max-width:70ch"><code>PENDING</code>, <code>READY</code>, <code>IN_PROGRESS</code>, <code>NEEDS_REVIEW</code>, <code>DONE</code>, <code>BLOCKED</code>, <code>FAILED</code>. Una tarea llega a <code>DONE</code> solo desde <code>NEEDS_REVIEW</code>, con evidencia y con sus salidas existentes.</p>
+</section>
+
+<section id="entregables">
+  <h2>Entregables</h2>
+  <p>Familias documentales del pathmap v0.4.0, relativas a la raíz del workspace. Los registros del orquestador van aparte, en <code>.comsatel/microservice-api-design/runs/&lt;run-id&gt;/</code>.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Sigla</th><th>Nombre</th><th>Lo produce</th><th>Carpeta</th></tr></thead>
+    <tbody>
+      <tr><td class="sigla">ASIS</td><td>As-Is Architecture Reconstruction</td><td>reconstruction-analyzer</td><td><code>design/microservices/<servicio>/as-is/</code></td></tr>
+      <tr><td class="sigla">SVC</td><td>Service Design Specification</td><td>boundary-architecture-designer</td><td><code>design/microservices/<servicio>/</code></td></tr>
+      <tr><td class="sigla">API</td><td>Contratos de API e integración</td><td>api-integration-contract-designer</td><td><code>design/microservices/<servicio>/</code></td></tr>
+      <tr><td class="sigla">EVT</td><td>Contratos de eventos</td><td>api-integration-contract-designer</td><td><code>design/microservices/<servicio>/events/</code></td></tr>
+      <tr><td class="sigla">C4</td><td>Vista de arquitectura C4</td><td>boundary-architecture-designer</td><td><code>codebase/<servicio>/docs/</code></td></tr>
+      <tr><td class="sigla">FDT</td><td>Ficha de Diseño Técnico de Funcionalidad</td><td>functionality-designer</td><td><code>design/microservices/<servicio>/functionalities/</code></td></tr>
+      <tr><td class="sigla">IMP</td><td>Impact and Evolution Analysis</td><td>evolution-planner</td><td><code>design/microservices/<servicio>/evolution/</code></td></tr>
+      <tr><td class="sigla">HCB</td><td>Codebase Handoff Contract</td><td>codebase-handoff</td><td><code>design/microservices/<servicio>/handoff/</code></td></tr>
+    </tbody>
+  </table></div>
+  <ul class="tight">
+    <li><code>ASIS</code>, <code>SVC</code>, <code>IMP</code> y <code>HCB</code> están aprobadas en STD-OKF-001 v1.11.0-stable. <code>FDT</code> sí es tipo oficial desde v1.2.0.</li>
+    <li>Un tipo sin mapeo queda bloqueado hasta que exista una asignación aprobada.</li>
+    <li>Las FDT aprobadas se publican a la KB <code>codebase/&lt;MICROSERVICIO&gt;/docs/functionalities/</code> solo por Merge Request autorizado.</li>
+  </ul>
+  <h3>Archivos del workflow</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Archivo</th><th>Familia</th></tr></thead>
+    <tbody>
+      <tr><td><code>as-is/architecture-reconstruction.md</code></td><td class="sigla">ASIS</td></tr>
+      <tr><td><code>to-be/service-boundaries.md</code>, <code>to-be/service-architecture.md</code></td><td class="sigla">SVC</td></tr>
+      <tr><td><code>to-be/api-integration-design.md</code></td><td class="sigla">API</td></tr>
+      <tr><td><code>functionalities/fdt-manifest.yaml</code> y <code>functionalities/&lt;FDT-ID&gt;-&lt;slug&gt;.md</code></td><td class="sigla">FDT</td></tr>
+      <tr><td><code>evolution/impact-analysis.md</code></td><td class="sigla">IMP</td></tr>
+      <tr><td><code>handoff/codebase-handoff.yaml</code></td><td class="sigla">HCB</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="gates">
+  <h2>Gates</h2>
+  <p>Aprobar un gate exige actor y evidencia. El actor es una declaración que el CLI no autentica.</p>
+  <div class="gates">
+    <div class="gate"><span class="chip G0">G0</span><h4>Fuentes y alcance</h4><p>Plan, fuentes, repositorio, ref/commit, ADR y KB definidos.</p><p><span class="k">Se aprueba cuando</span><br><code>scope-manifest.yaml</code> tiene fuentes y no tiene <code>missing_sources</code>.</p></div>
+    <div class="gate"><span class="chip G1">G1</span><h4>As-Is y límites</h4><p>Reconstrucción y límites de servicio aceptados. En Greenfield cubre límites y arquitectura.</p><p><span class="k">Se aprueba cuando</span><br>G0 aprobado y tareas con entrada G0 en <code>DONE</code>.</p></div>
+    <div class="gate"><span class="chip G2">G2</span><h4>Arquitectura y contratos</h4><p>Arquitectura To-Be y contratos de API y eventos aceptados.</p><p><span class="k">Se aprueba cuando</span><br>G1 aprobado y tareas con entrada G1 en <code>DONE</code>.</p></div>
+    <div class="gate"><span class="chip G3">G3</span><h4>Impacto y compatibilidad</h4><p>FDT, análisis de impacto y migración aceptados.</p><p><span class="k">Se aprueba cuando</span><br>G2 aprobado y tareas con entrada G2 en <code>DONE</code>.</p></div>
+    <div class="gate"><span class="chip G4">G4</span><h4>Handoff y verificación</h4><p>Handoff a KB y codebase validado y listo para publicar.</p><p><span class="k">Se aprueba cuando</span><br>G3 aprobado, tareas con entrada G3 en <code>DONE</code> y <code>codebase-handoff.yaml</code> válido.</p></div>
+  </div>
+  <h3>Estados de un gate</h3>
+  <p style="color:var(--muted);margin:0"><code>NOT_READY</code>, <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>.</p>
+  <h3>Controles adicionales</h3>
+  <div class="note info"><b>FUNCTIONALITY_DESIGN_READY.</b> Control obligatorio al cerrar la tarea FDT, entre G2 y G3. No es un gate G*. Cada funcionalidad del alcance tiene FDT, sin referencias obligatorias sin resolver, con <code>operationId</code> de OpenAPI alineado, fuentes y escenarios verificables, y aprobación humana para publicar. El CLI ejecuta <code>fdt_validate</code> al pasar la tarea a <code>DONE</code>.</div>
+  <div class="note info"><b>Validación de G4.</b> Antes de aprobar G4, el CLI ejecuta <code>validate-handoff</code>: <code>service_id</code>, escenario, KB bajo <code>codebase/</code>, repositorio con proyecto, rama destino, ref y commit, referencias a ADR, artefactos con origen, destino, acción y validación, y aprobación humana requerida. Rechaza rutas absolutas o con <code>..</code>.</div>
+</section>
+
+<section id="uso">
+  <h2>Uso</h2>
+  <p>Requiere PyYAML. No hay ejecución automática de Claude ni integración con GitLab.</p>
+<pre class="cli"><span class="c"># crear un run (greenfield | brownfield | evolution)</span>
+python scripts/workflow.py init &lt;run&gt; --scope DSP-001 --scenario evolution --service &lt;servicio&gt; --workspace-root &lt;workspace&gt;
+python scripts/workflow.py check &lt;run&gt;
+
+<span class="c"># aprobar gates y mover tareas</span>
+python scripts/workflow.py approve-gate &lt;run&gt; --gate G0 --actor '&lt;aprobador&gt;' --evidence '&lt;referencia&gt;'
+python scripts/workflow.py transition &lt;run&gt; --task T01 --to READY --actor orchestrator --reason 'G0 aprobado'
+python scripts/workflow.py status &lt;run&gt;
+
+<span class="c"># validadores</span>
+python scripts/workflow.py validate-contract &lt;contrato&gt;.yaml
+python scripts/workflow.py validate-handoff &lt;codebase-handoff&gt;.yaml
+python scripts/fdt_validate.py &lt;FDT&gt;.md
+python scripts/fdt_validate.py &lt;fdt-manifest&gt;.yaml --manifest</pre>
+</section>
+
+<section id="observaciones">
+  <h2>Observaciones</h2>
+  <p>Hallazgos al documentar el plugin.</p>
+  <div class="note info"><b>Resuelto · estándar.</b> Se copió STD-OKF-001 v1.11.0-stable a <code>standards/</code>. Es aditivo: no cambia el perfil de FDT, y los validadores y la plantilla FDT son compatibles.</div>
+  <div class="note info"><b>Resuelto · sigla HCB.</b> La familia de rutas del handoff se llamaba <code>HOF</code>, igual que un tipo aprobado en v1.3.0 (UX/UI Development Handoff Contract). Se renombró a <code>HCB</code>.</div>
+  <div class="note open"><b>Versiones.</b> <code>plugin.json</code> y el pathmap dicen 0.4.0, y el <code>README.md</code> dice v0.3.0.</div>
+  <div class="note open"><b>README desactualizado.</b> Sus comandos usan <code>init runs/demo</code> sin <code>--workspace-root</code> y no menciona <code>validate-handoff</code> ni <code>validate-contract</code>.</div>
+  <div class="note info"><b>Resuelto · prueba.</b> <code>tests/test_smoke.py</code> se actualizó y pasa: 3 escenarios, todas las transiciones, G0 a G4 y validación del handoff.</div>
+  <div class="note open"><b>C4 y EVT.</b> Están en el pathmap, pero ningún archivo del workflow los produce de forma explícita.</div>
+  <div class="note open"><b>Gates por escenario.</b> El mismo código cubre trabajo distinto según el escenario. G1 es "As-Is y límites" en Brownfield y Evolution, pero en Greenfield cubre límites y arquitectura.</div>
+</section>
+</div>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){
+      var on=x===b; x.setAttribute('aria-selected',on);
+      document.getElementById('p-'+x.dataset.t).hidden=!on;
+    });
+  });
+});
+</script>
+</body>
+</html>

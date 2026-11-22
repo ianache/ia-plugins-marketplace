@@ -1,0 +1,12 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "scenario": "Brownfield",
+  "product": "CL2",
+  "input_refs": [
+    "DDD/BC-distribuidores",
+    "DDD/BC-identidad",
+    "UX/HOF-approved",
+    "API/OpenAPI-approved"
+  ],
+  "requested_gate": "G2"
+}

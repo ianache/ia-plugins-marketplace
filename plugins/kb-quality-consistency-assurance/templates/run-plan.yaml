@@ -1,0 +1,15 @@
+run_id: KBQ-EXAMPLE
+mode: audit
+nodes:
+  - {id: T01, kind: task, depends_on: []}
+  - {id: T02, kind: task, depends_on: []}
+  - {id: T03, kind: task, depends_on: []}
+  - {id: T04, kind: task, depends_on: []}
+  - {id: T05, kind: task, depends_on: []}
+  - {id: G1, kind: gate, depends_on: [T01], evaluates: [T01]}
+  - {id: G2, kind: gate, depends_on: [T02], evaluates: [T02]}
+  - {id: G3, kind: gate, depends_on: [T03], evaluates: [T03]}
+  - {id: G4, kind: gate, depends_on: [T04], evaluates: [T04]}
+  - {id: G5, kind: gate, depends_on: [T05], evaluates: [T05]}
+  - {id: T06, kind: task, depends_on: [G1, G2, G3, G4, G5]}
+  - {id: G6, kind: gate, depends_on: [T06], evaluates: [T06]}

@@ -1,0 +1,11 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "skill": "web-bff-api-integration-designer",
+  "status": "awaiting_human_gate",
+  "artifacts": [
+    "integration/bff-api-contracts.md",
+    "integration/security-integration.md"
+  ],
+  "gate": "G4",
+  "approved": false
+}

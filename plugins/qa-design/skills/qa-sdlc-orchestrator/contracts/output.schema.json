@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "required": [
+    "status",
+    "tasks"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "PLANNED",
+        "IN_PROGRESS",
+        "BLOCKED",
+        "COMPLETED",
+        "FAILED"
+      ]
+    },
+    "tasks": {
+      "type": "object"
+    },
+    "open_human_interventions": {
+      "type": "array"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+contract_version: "0.1"
+workflow_modes: [GREENFIELD, BROWNFIELD, EVOLUTION]
+plan_states: [PLANNED, IN_PROGRESS, BLOCKED, COMPLETED, FAILED]
+task_states: [PENDING, AUTHORIZED, IN_PROGRESS, COMPLETED, BLOCKED, FAILED, CANCELLED]
+gate_states: [PENDING, PASS, FAIL, BLOCKED, WAIVED, NOT_APPLICABLE]
+document_status: [draft, stable, deprecated]
+# Ciclo de la UOW (campo operativo; nunca en `status`, que es el estado documental).
+scope_state: [DRAFT, IN_REVIEW, READY_FOR_ASSIGNMENT, SUPERSEDED]
+claim_classes: [FACT, INFERENCE, ASSUMPTION, UNKNOWN]
+uow_artifact_types: [UCX, UOW, UCB, UCM, UAP, UWR]
+source_types: [US, RCP, BR, DSP, SSP, FDT, API, EVT, SVC, ENT, LDM, PDM, DBM, DBR, HOF, WEB, MOB, HCB, ADR, ASR]
+step_kinds: [test, impl, migration, docs]
+recommendation: [READY_FOR_APPROVAL, NEEDS_REWORK, BLOCKED]
+open_question_status: [OPEN, RESOLVED, ESCALATED]
+agent_profiles: [neutral, claude-code-superpowers]
+traceability_chain: "US → UOW → UCB, UCM, UAP → UWR → UOW_READY_GATE"
+cardinality:
+  US_to_UOW: "1:N"
+  UOW_to_UCB: "1:1"
+  UOW_to_UCM: "1:1"
+  UOW_to_UAP: "1:1"
+  UOW_to_UWR: "1:N revisiones; vale la última"
+paths:   # sin run-id en la ruta canónica
+  root: ./management/uows
+  ucx: ./management/uows/UCX-NNN-<slug>.md
+  uow: ./management/uows/UOW-NNN-<slug>.md
+  companions: ./management/uows/UOW-NNN/
+  manifest: ./management/uows/UOW-NNN/uow-package.yaml
+  runtime: .comsatel/uow-development-design/runs/
+rules:
+  scope_authority: "La US (y el DSP o SSP de origen). Una UOW no amplía el alcance ni redefine requisitos, contratos ni modelos."
+  reference_not_copy: "Los documentos de otros plugins se referencian por ID y versión; no se copian ni se redefinen. No existe un Development Context Pack único: se cita el que corresponda."
+  no_invented_inputs: "Un contrato, campo, tabla, ADR o commit ausente es una brecha o un desconocido; nunca se inventa."
+  assignable_unit: "Una UOW es un slice vertical que un solo developer con su agente puede completar."
+  state_authority: "Solo el orquestador escribe plan-status.yaml y task-status.yaml y evalúa gates. Un especialista que intente cambiar estado o autoaprobar un gate es rechazado."
+  gate_proposals: "Un especialista entrega gate_proposal {gate, checks[{id,result,evidence_ref}]}. Nunca emite decision/PASS."
+  human_decisions: "Una decisión humana no convierte FAIL/BLOCKED en PASS: obliga a reevaluar el gate."
+  partial_scope: "No existe PASS parcial. Lo no listo se saca del alcance con decisión humana o el gate falla."
+  package_approval: "La UOW se asigna solo con UOW_READY_GATE en PASS: aprobación humana ligada al digest de uow-package.yaml. La asignación es de Gestión."
+  agent_boundaries: "El agente no amplía alcance, no cambia contratos y no escribe fuera de allowed_paths; ante una desviación se detiene y escala."
+  secrets: "Solo referencias; nunca credenciales, tokens ni GITLAB_PAT en artefactos."
+  markdown_artifacts: "Google OKF v0.2 con perfil STD-OKF-001 (type = sigla del catálogo)."

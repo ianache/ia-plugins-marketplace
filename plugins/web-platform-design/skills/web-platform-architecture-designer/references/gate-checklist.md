@@ -1,0 +1,14 @@
+# Checklist G2
+
+- [ ] Fuentes existentes, versionadas y trazables
+- [ ] Supuestos, bloqueos y decisiones abiertos explícitos
+- [ ] Salidas en la carpeta autorizada
+- [ ] Cumplimiento OKF y metadata corporativa
+- [ ] Seguridad, tenancy y permisos revisados según alcance
+- [ ] Consistencia con BC/CTX, OpenAPI y UX/UI handoff
+- [ ] Sin autoaprobación; evidencia de revisión humana
+- [ ] Comparación frontend modular vs MicroUIs
+- [ ] Matriz BC↔capacidades↔User Flows↔MicroUI↔API
+- [ ] Ownership, despliegue independiente y costos de integración justificados
+
+**Resultado:** PASS / FAIL / BLOCKED, reviewer, fecha, evidencias, observaciones. El script solo verifica estructura.

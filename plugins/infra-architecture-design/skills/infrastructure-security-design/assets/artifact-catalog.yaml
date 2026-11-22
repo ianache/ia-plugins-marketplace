@@ -1,0 +1,9 @@
+skill: infrastructure-security-design
+artifacts:
+- security-architecture
+- control-matrix
+- threat-assessment
+types:
+  security-architecture: ISA
+  control-matrix: ICM
+  threat-assessment: ITA

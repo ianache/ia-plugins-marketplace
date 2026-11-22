@@ -1,0 +1,40 @@
+contract_version: "5.4"
+gitlab_testcase_issue:
+  entity_published: TC
+  required_inputs: [gitlab_id, testcase_id, testcase_title, approved, scenario_refs, kb_local_path, kb_gitlab_url, human_approval]
+  authentication:
+    env: GITLAB_PAT
+    forbidden_in_artifacts: true
+  label: TestCase
+  issue_body_must_contain_only:
+    - testcase_id
+    - short_purpose
+    - test_surface
+    - scenario_refs
+    - dsp_ref
+    - requirement_refs
+    - risk_refs
+    - kb_local_path
+    - kb_gitlab_url
+    - issue_url_after_creation
+  forbidden:
+    - publishing TSN as TestCase issue
+    - publishing TDR, TDA, AT, EXEC or EVD as TestCase issue (solo TC-* se publica)
+    - copying full OKF testcase content
+    - secrets or tokens
+    - full test steps when already stored in OKF
+  idempotency:
+    key: testcase_id
+    behavior: search existing open/closed issue with label TestCase and matching TC id before creating
+  preconditions:
+    - TEST_DESIGN_REVIEW_GATE en PASS evaluado por el orquestador; approved: true por TC
+    - TESTCASE_PUBLICATION_GATE es MANDATORY_HIL: human_approval ligada al digest del conjunto de TC (artifact_revision)
+    - TC con readiness BLOCKED_CLARIFICATION o fuera de alcance nunca se publican
+  dry_run: "python publish_testcase_issues.py payload.json --dry-run valida y muestra los issues sin red ni PAT"
+gitlab_cicd_execution:   # execution engine para EXEC con execution_mode AUTOMATED_CICD
+  provider: GITLAB
+  exec_fields: [provider, pipeline_id, pipeline_url, job_id, job_name, commit_sha, ref, environment]
+  rules:
+    - identifiers come from the real pipeline/job; never invented (null while not executed)
+    - variables and credentials by reference (GITLAB_PAT and CI variables are never persisted)
+    - GitLab CI/CD is the execution engine; there is no dedicated runner skill

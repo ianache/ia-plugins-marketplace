@@ -1,0 +1,18 @@
+gate: HUMAN_GATE
+owner_skill: qa-sdlc-orchestrator
+proposal_only: false
+policy:
+  mode: MANDATORY_HIL
+  on_pass: AUTO_ADVANCE_AFTER_HUMAN_APPROVAL
+  max_retries: 0
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: quality-decision-recorded
+  evaluator: script
+  required: true
+evidence:
+  required: true
+  path: .comsatel/qa-design/runs/<run-id>/evidence/HUMAN_GATE/
+note: El orquestador evalúa este gate con gate_governance.decide().

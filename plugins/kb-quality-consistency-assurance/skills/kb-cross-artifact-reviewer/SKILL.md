@@ -1,0 +1,30 @@
+---
+name: kb-cross-artifact-reviewer
+description: Revisar consistencia entre artefactos y disciplinas del SDLC. Usar cuando se requiera esta función en un workflow de aseguramiento de KB.
+---
+# kb-cross-artifact-reviewer
+
+## Propósito
+Revisar consistencia entre artefactos y disciplinas del SDLC.
+
+## Entradas contractuales
+`artifact_index.yaml, dependency_map.yaml, document excerpts`. Las entradas deben estar ancladas a repositorio, rama y commit SHA; registrar ausencias como BLOCKED, sin inventar evidencia.
+
+## Procedimiento
+Comprobar trazabilidad entre US, reglas, arquitectura, APIs, datos, UX, QA y contratos, según aplicabilidad.
+
+## Salidas contractuales
+`cross-artifact-findings.yaml, cross-artifact-gate.yaml`. Producir los artefactos dentro de `.comsatel/kb-quality-consistency-assurance/runs/<run_id>/`; documentos Markdown conceptuales con frontmatter OKF v0.2 y perfil corporativo cuando aplique; YAML operativo no es un documento OKF.
+
+## Reglas obligatorias
+- Respetar la fuente de verdad Git; MCP y WebDAV son vistas de lectura, no fuentes autoritativas.
+- No alterar archivos gobernados ni hacer commit/merge sin autorización humana explícita.
+- Adjuntar evidencia verificable (ruta, revisión SHA, sección/línea o excerpt y hash cuando esté disponible).
+- Separar `confirmed`, `suspected` y `unverified`; el análisis LLM por sí solo no convierte una sospecha en bloqueo definitivo.
+- Ejecutar el gate de salida solo tras producir sus entradas. Los gates no son prerrequisitos de las tareas que evalúan.
+- Tratar `STD-OKF-001` como perfil corporativo versionado: la copia vigente es `standards/STD-OKF-001-v1.11.0-stable.md` (estable, aprobada).
+
+## Recursos
+- `../../references/contracts.md`
+- `../../references/gates.md`
+- `../../references/policy.md`

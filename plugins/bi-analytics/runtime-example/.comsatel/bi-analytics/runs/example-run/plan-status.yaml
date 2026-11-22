@@ -1,0 +1,46 @@
+schema_version: '1.0'
+pack_name: bi-analytics
+run_id: example-run
+status: BLOCKED
+planning_gate:
+  id: G0
+  status: BLOCKED
+  evidence_refs: []
+tasks:
+  T-01:
+    status: PENDING
+    gate_status: PENDING
+    authorization: null
+    evidence_refs: []
+  T-02:
+    status: PENDING
+    gate_status: PENDING
+    authorization: null
+    evidence_refs: []
+  T-03:
+    status: PENDING
+    gate_status: PENDING
+    authorization: null
+    evidence_refs: []
+  T-04:
+    status: PENDING
+    gate_status: PENDING
+    authorization: null
+    evidence_refs: []
+  T-05:
+    status: PENDING
+    gate_status: PENDING
+    authorization: null
+    evidence_refs: []
+  T-06:
+    status: PENDING
+    gate_status: PENDING
+    authorization: null
+    evidence_refs: []
+human_intervention:
+- id: HI-001
+  gate: G0
+  issue: Esperando validación de planificación
+  decision_required: Revisar y aprobar evidencias
+  status: OPEN
+events: []

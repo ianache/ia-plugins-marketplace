@@ -1,0 +1,13 @@
+# Destino: .comsatel/uow-development-design/runs/evidence/READINESS_GATE/gate-report-T06.yaml (carpeta de evidencia del orquestador)
+schema_version: "1.1"
+gate: READINESS_GATE
+proposal_only: true   # el especialista propone; solo el orquestador decide el gate
+produced_by: uow-readiness-reviewer/1.1.0
+checks:
+  - {id: package-complete, result: UNCERTAIN, evidence_ref: null}
+  - {id: traceability-complete, result: UNCERTAIN, evidence_ref: null}
+  - {id: reviewer-independent-of-author, result: UNCERTAIN, evidence_ref: null}
+  - {id: open-questions-handled, result: UNCERTAIN, evidence_ref: null}
+  - {id: no-invented-scope, result: UNCERTAIN, evidence_ref: null}
+observations: []
+deferred_items: []

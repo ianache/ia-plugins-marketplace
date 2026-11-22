@@ -1,0 +1,120 @@
+{
+  "pathmap_version": "1.1.0",
+  "plugin": "qa-design",
+  "workspace_relative": true,
+  "deliverable_root": "testing/<DSP-ID>/",
+  "document_types": {
+    "QFA": "",
+    "QTD": "",
+    "QTP": "",
+    "QTS": "",
+    "TSN": "",
+    "TC": "",
+    "TDR": "",
+    "QTR": "",
+    "QTE": "",
+    "AT": "automated-tests/",
+    "TDA": "test-data/",
+    "EXEC": "executions/",
+    "EVD": "evidence/",
+    "QER": "",
+    "QQI": "",
+    "QDC": ""
+  },
+  "artifacts": {
+    "QFA": {
+      "name": "QA Feature Analysis Pack",
+      "skill": "qa-feature-analyzer",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "QTD": {
+      "name": "QA Test Design Pack",
+      "skill": "qa-test-design",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "QTP": {
+      "name": "QA Test Plan y priorización",
+      "skill": "qa-test-design",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "QTS": {
+      "name": "QA Test Strategy",
+      "skill": "qa-test-design",
+      "basis": "plantilla qa-test-strategy.md; entregables en testing\\"
+    },
+    "TSN": {
+      "name": "Test Scenario",
+      "skill": "qa-test-design",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "TC": {
+      "name": "Test Case",
+      "skill": "qa-test-design",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "TDR": {
+      "name": "Test Data Requirement",
+      "skill": "qa-test-design",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "QTR": {
+      "name": "QA Test Design Review",
+      "skill": "qa-test-design-reviewer",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "QTE": {
+      "name": "QA Test Engineering Pack",
+      "skill": "qa-agentic-test-engineer",
+      "basis": "SKILL.md: QTE en testing\\"
+    },
+    "AT": {
+      "name": "Automated Test",
+      "skill": "qa-agentic-test-engineer",
+      "basis": "SKILL.md del skill: automated-tests/AT-*"
+    },
+    "TDA": {
+      "name": "Test Data Asset",
+      "skill": "qa-agentic-test-engineer",
+      "basis": "SKILL.md del skill: test-data/{datasets,fixtures,scripts}/"
+    },
+    "EXEC": {
+      "name": "Test Execution",
+      "skill": "qa-agentic-test-engineer",
+      "basis": "SKILL.md del skill: executions/EXEC-*"
+    },
+    "EVD": {
+      "name": "Test Evidence",
+      "skill": "qa-agentic-test-engineer",
+      "basis": "SKILL.md del skill: evidence/EVD-*"
+    },
+    "QER": {
+      "name": "QA Test Engineering Review",
+      "skill": "qa-agentic-test-reviewer",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "QQI": {
+      "name": "QA Quality Intelligence Pack",
+      "skill": "qa-quality-intelligence",
+      "basis": "SKILL.md: entregables en testing\\; sin subcarpeta definida"
+    },
+    "QDC": {
+      "name": "Quality Decision",
+      "skill": "qa-sdlc-orchestrator",
+      "basis": "SUPUESTO: la plantilla Quality-Decision.md no declara destino; se asume testing\\ (confirmar)"
+    }
+  },
+  "orchestrator_root": ".comsatel/qa-design/runs/",
+  "orchestrator_files": [
+    "plan.yaml",
+    "plan-status.yaml",
+    "tasks/<id>/task-status.yaml",
+    "events.jsonl",
+    "evidence/"
+  ],
+  "notes": {
+    "document_types": "Los documentos QA se escriben bajo deliverable_root = testing/<DSP-ID>/ (sin versión: las pruebas pertenecen a un DSP concreto). Si hay SSP, la carpeta es testing/<DSP-ID>/<SSP-ID>/ (plan.ssp_ref). Los tipos son relativos a esa raíz: solo AT, TDA, EXEC y EVD tienen subcarpeta; el resto va directamente en la raíz.",
+    "kb_local_path": "El kb_local_path de la entrada fija el destino de publicación en la KB; es distinto de este destino local de trabajo.",
+    "orchestrator_root": "Cada run tiene su carpeta: <orchestrator_root><run-id>/ (plan.yaml, plan-status.yaml, tasks/, events.jsonl, evidence/). El run-id es obligatorio en el CLI y no se reutiliza: init rechaza un plan ya existente. Mismo patrón que requirements-engineering.",
+    "gate_reports": "Los gate-report de los especialistas (gate_proposal) se escriben en <orchestrator_root><run-id>/evidence/<GATE>/gate-report-<TASK_ID>.yaml."
+  }
+}

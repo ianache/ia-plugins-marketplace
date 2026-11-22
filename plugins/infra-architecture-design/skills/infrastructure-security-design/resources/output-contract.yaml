@@ -1,0 +1,20 @@
+skill: infrastructure-security-design
+version: 4.1.0
+artifacts:
+- security-architecture
+- control-matrix
+- threat-assessment
+result_file: task-result.yaml
+must_validate:
+- frontmatter
+- mandatory_sections
+- source_provenance
+- traceability
+may_write_execution_plan: false
+result_status_values:
+- IN_REVIEW
+- BLOCKED
+- FAILED
+evidence_entry_requires:
+- path
+- sha256

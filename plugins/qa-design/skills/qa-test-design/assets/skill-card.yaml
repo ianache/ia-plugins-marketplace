@@ -1,0 +1,9 @@
+name: qa-test-design
+purpose: QA Test Design Pack
+scope_authority: DSP
+test_surfaces:
+- API
+- WEB
+- MOBILE
+- CROSS_SURFACE
+gate: TEST_DESIGN_GATE

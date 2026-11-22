@@ -1,0 +1,3 @@
+name: uow-orchestrator
+role: orchestrator
+gates: [G0, CONTEXT_GATE, SLICE_GATE, BINDING_GATE, CODEBASE_GATE, AGENT_PLAN_GATE, READINESS_GATE, UOW_READY_GATE]

@@ -1,0 +1,27 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "ux-ui-design",
+  "workspace_relative": true,
+  "deliverable_root": "design/ux-ui/{run_id}/",
+  "orchestrator_root": ".comsatel/ux-ui-design/runs/",
+  "output_files": {
+    "design-system/atomic-component-catalog.md": "ui-atomic-design-system-designer",
+    "design-system/design-tokens.md": "ui-atomic-design-system-designer",
+    "design-system/platform-adaptation.md": "ui-atomic-design-system-designer",
+    "quality/design-review.md": "ui-design-quality-validator",
+    "quality/accessibility-review.md": "ui-design-quality-validator",
+    "quality/coverage-matrix.md": "ui-design-quality-validator",
+    "prototypes/prototype-brief.md": "ui-prototype-generator",
+    "prototypes/tool-manifest.md": "ui-prototype-generator",
+    "prototypes/review-log.md": "ui-prototype-generator",
+    "screens/screen-specifications.md": "ui-screen-specification-designer",
+    "screens/navigation-map.md": "ui-screen-specification-designer",
+    "screens/state-matrix.md": "ui-screen-specification-designer",
+    "requirements/ux-requirements.md": "ux-requirements-flow-designer",
+    "flows/user-flows.md": "ux-requirements-flow-designer",
+    "flows/traceability.md": "ux-requirements-flow-designer",
+    "handoff/ux-ui-handoff.md": "ux-ui-development-handoff",
+    "handoff/screen-component-mapping.md": "ux-ui-development-handoff",
+    "handoff/change-request-register.md": "ux-ui-development-handoff"
+  }
+}

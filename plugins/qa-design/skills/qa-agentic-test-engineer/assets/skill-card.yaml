@@ -1,0 +1,9 @@
+name: qa-agentic-test-engineer
+purpose: QA Test Engineering Pack
+scope_authority: DSP
+test_surfaces:
+- API
+- WEB
+- MOBILE
+- CROSS_SURFACE
+gate: TEST_ENGINEERING_GATE

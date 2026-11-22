@@ -1,0 +1,25 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "data-modeling-database-design",
+  "workspace_relative": true,
+  "deliverable_root": "design/database/{run_id}/",
+  "orchestrator_root": ".comsatel/data-modeling-database-design/runs/",
+  "output_files": {
+    "as-is/database-reconstruction.md": "dm-schema-reconstruction-analyzer",
+    "to-be/logical-data-model.md": ["dm-data-boundary-designer", "dm-logical-model-designer"],
+    "to-be/physical-data-model.md": "dm-physical-model-designer",
+    "migration/database-migration.md": "dm-database-migration-designer",
+    "validation/data-design-review.md": "dm-data-design-validator"
+  },
+  "document_types": {
+    "DBR": "as-is/",
+    "LDM": "to-be/",
+    "PDM": "to-be/",
+    "DBM": "migration/",
+    "DDR": "validation/"
+  },
+  "notes": {
+    "ownership": "La matriz de límites y ownership se integra en el LDM; la revisión independiente es DDR.",
+    "document_types": "Directorio relativo a deliverable_root para cada tipo OKF."
+  }
+}

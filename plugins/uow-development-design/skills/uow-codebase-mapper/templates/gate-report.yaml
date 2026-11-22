@@ -1,0 +1,13 @@
+# Destino: .comsatel/uow-development-design/runs/evidence/CODEBASE_GATE/gate-report-T04.yaml (carpeta de evidencia del orquestador)
+schema_version: "1.1"
+gate: CODEBASE_GATE
+proposal_only: true   # el especialista propone; solo el orquestador decide el gate
+produced_by: uow-codebase-mapper/1.1.0
+checks:
+  - {id: repo-ref-pinned, result: UNCERTAIN, evidence_ref: null}
+  - {id: allowed-paths-defined, result: UNCERTAIN, evidence_ref: null}
+  - {id: forbidden-zones-defined, result: UNCERTAIN, evidence_ref: null}
+  - {id: baseline-analysis-present, result: UNCERTAIN, evidence_ref: null}
+  - {id: adr-compliance-referenced, result: UNCERTAIN, evidence_ref: null}
+observations: []
+deferred_items: []

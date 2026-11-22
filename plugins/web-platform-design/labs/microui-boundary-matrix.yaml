@@ -1,0 +1,20 @@
+status: illustrative_not_approved
+scenario: WEB-CL2-001
+alternatives:
+  - modular_frontend_monolith
+  - independently_deployed_microuis
+candidates:
+  - name: distributor-administration
+    experience: Administracion de distribuidores
+    bounded_contexts: [DistributorManagement, IdentityAndAccess]
+    apis: [OpenAPI-Distributor, OpenAPI-Identity]
+    owner: TBD
+    independent_deployment_needed: TBD
+    decision: pending_G2
+  - name: fleet-monitoring
+    experience: Monitoreo de flota
+    bounded_contexts: [VehicleManagement, Telemetry]
+    apis: [OpenAPI-Vehicle, OpenAPI-Telemetry]
+    owner: TBD
+    independent_deployment_needed: TBD
+    decision: pending_G2

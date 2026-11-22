@@ -1,0 +1,9 @@
+{
+  "gate": "G4",
+  "skill": "mgt-risk-change-controller",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

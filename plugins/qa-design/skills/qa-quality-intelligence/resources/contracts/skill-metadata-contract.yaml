@@ -1,0 +1,16 @@
+contract_version: "5.4"
+skill_metadata:
+  required: [version, author, type]
+  version: {format: SemVer}
+  author: {non_empty: true}
+  type:
+    non_empty: true
+    recommended_vocabulary: [qa, requirements, architecture, development, ux-ui, data, deployment, doc]
+qa_pack_constraints:   # plugin qa-design
+  type: qa
+  author: COMSATEL
+  version_equals_plugin: true
+validation:
+  type_not_qa: BLOCKED
+  missing_required_metadata: BLOCKED
+  invalid_semver: BLOCKED

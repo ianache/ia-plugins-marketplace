@@ -1,0 +1,16 @@
+{
+  "gate": "G3",
+  "skill": "af-user-story-designer",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "epics_reviewed": [],
+  "epic_checks": {
+    "related_stories_exist": null,
+    "no_story_in_two_epics": null,
+    "grouping_criterion_explicit": null,
+    "epic_criteria_traced": null
+  },
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

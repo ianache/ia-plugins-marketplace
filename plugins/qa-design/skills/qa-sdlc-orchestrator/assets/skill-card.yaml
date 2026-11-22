@@ -1,0 +1,9 @@
+name: qa-sdlc-orchestrator
+purpose: QA Orchestration Plan/State/History
+scope_authority: DSP
+test_surfaces:
+- API
+- WEB
+- MOBILE
+- CROSS_SURFACE
+gate: ORCHESTRATION_GATES

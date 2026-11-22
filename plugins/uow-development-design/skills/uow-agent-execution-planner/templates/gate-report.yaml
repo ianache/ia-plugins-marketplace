@@ -1,0 +1,15 @@
+# Destino: .comsatel/uow-development-design/runs/evidence/AGENT_PLAN_GATE/gate-report-T05.yaml (carpeta de evidencia del orquestador)
+schema_version: "1.1"
+gate: AGENT_PLAN_GATE
+proposal_only: true   # el especialista propone; solo el orquestador decide el gate
+produced_by: uow-agent-execution-planner/1.1.0
+checks:
+  - {id: steps-verifiable, result: UNCERTAIN, evidence_ref: null}
+  - {id: tests-before-code, result: UNCERTAIN, evidence_ref: null}
+  - {id: stop-conditions-defined, result: UNCERTAIN, evidence_ref: null}
+  - {id: deviation-protocol-present, result: UNCERTAIN, evidence_ref: null}
+  - {id: no-secrets, result: UNCERTAIN, evidence_ref: null}
+  - {id: dod-measurable, result: UNCERTAIN, evidence_ref: null}
+  - {id: no-destructive-or-unauthorized-prod, result: UNCERTAIN, evidence_ref: null}
+observations: []
+deferred_items: []

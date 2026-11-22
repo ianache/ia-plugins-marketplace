@@ -1,0 +1,13 @@
+# Destino: .comsatel/uow-development-design/runs/evidence/SLICE_GATE/gate-report-T02.yaml (carpeta de evidencia del orquestador)
+schema_version: "1.1"
+gate: SLICE_GATE
+proposal_only: true   # el especialista propone; solo el orquestador decide el gate
+produced_by: uow-slice-designer/1.1.0
+checks:
+  - {id: criteria-assigned-to-uow, result: UNCERTAIN, evidence_ref: null}
+  - {id: uow-boundaries-defined, result: UNCERTAIN, evidence_ref: null}
+  - {id: dependencies-acyclic, result: UNCERTAIN, evidence_ref: null}
+  - {id: uow-traces-to-us, result: UNCERTAIN, evidence_ref: null}
+  - {id: uow-fits-single-assignment, result: UNCERTAIN, evidence_ref: null}
+observations: []
+deferred_items: []

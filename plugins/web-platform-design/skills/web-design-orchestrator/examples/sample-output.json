@@ -1,0 +1,11 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "skill": "web-design-orchestrator",
+  "status": "awaiting_human_gate",
+  "artifacts": [
+    ".comsatel/web-platform-design/runs/<run-id>/execution-plan.json",
+    ".comsatel/web-platform-design/runs/<run-id>/gate-register.json"
+  ],
+  "gate": "G0-G6",
+  "approved": false
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "<run-id>",
+  "skill": "ui-prototype-generator",
+  "gate": "G4",
+  "status": "pending_review",
+  "evidence_paths": [],
+  "blocking_findings": [],
+  "reviewer": null,
+  "decision_at": null
+}

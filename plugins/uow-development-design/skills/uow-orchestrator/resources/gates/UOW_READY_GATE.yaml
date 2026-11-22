@@ -1,0 +1,21 @@
+gate: UOW_READY_GATE
+owner_skill: uow-orchestrator
+proposal_only: false
+policy:
+  mode: MANDATORY_HIL
+  on_pass: AUTO_ADVANCE_AFTER_HUMAN_APPROVAL
+  max_retries: 0
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: package-digest-matches
+  evaluator: script
+  required: true
+- id: review-recommendation-ready
+  evaluator: script
+  required: true
+evidence:
+  required: true
+  path: .comsatel/uow-development-design/runs/evidence/UOW_READY_GATE/
+note: El orquestador evalúa este gate con gate_governance.decide(); exige aprobación humana ligada al digest del paquete.

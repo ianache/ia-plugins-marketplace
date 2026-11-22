@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+"""Validación compartida STD-OKF-001 v1.3.0."""
+from pathlib import Path
+import sys
+ROOT=Path(__file__).resolve().parents[3]
+sys.path.insert(0,str(ROOT/'scripts'))
+from validate_okf import main
+if __name__=='__main__':sys.exit(main())

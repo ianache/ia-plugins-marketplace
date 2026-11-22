@@ -1,0 +1,9 @@
+skill: infrastructure-governance-handoff
+artifacts:
+- adr
+- architecture-review
+- handoff
+types:
+  architecture-review: IAR
+  handoff: IHO
+  adr: ADR

@@ -1,0 +1,130 @@
+# Política de gates del pack qa-sdlc-pack (gate-governance v1.0).
+# Fuente única para el orquestador. Cada especialista conserva en resources/gates/ los mismos
+# checks como criterios de su propuesta; tests/test_orchestrator.py verifica que coinciden.
+# Verificadores (`runners`): scripts que el orquestador ejecuta por su cuenta en `gate`. Su resultado manda sobre
+# cualquier PASS declarado. Un check `script` sin verificador solo pasa con `attested_by: human:<id>`; un check
+# `independent-review` solo pasa con `reviewer` (human:<id> | agent:<skill>) distinto del autor de la tarea.
+schema_version: "1.0"
+gates:
+  FEATURE_ANALYSIS_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+    checks:
+      - {id: dsp-valid-and-verified, evaluator: script, required: true}
+      - {id: scope-complete, evaluator: script, required: true}
+      - {id: critical-risks-evidenced, evaluator: independent-review, required: true}
+      - {id: surfaces-declared, evaluator: script, required: true}
+      - {id: no-scope-conflict, evaluator: independent-review, required: true}
+  TEST_DESIGN_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+    runners:
+      - script: qa-test-design/scripts/check_test_design.py
+        args: [--pack, "{pack}", --critical-risks, "{critical_risks}", --profile, design]
+      - script: qa-test-design/scripts/check_tc_detail.py
+        args: [--pack, "{pack}"]
+    checks:
+      - {id: tc-detail-complete, evaluator: script, required: true}
+      - {id: strategy-plan-consistent, evaluator: independent-review, required: true}
+      - {id: critical-risk-has-tsn, evaluator: script, required: true}
+      - {id: tsn-has-tc, evaluator: script, required: true}
+      - {id: approved-tc-has-oracle-and-data, evaluator: script, required: true}
+      - {id: test-data-requirements-defined, evaluator: script, required: true}
+      - {id: test-data-safe, evaluator: script, required: true}
+      - {id: traceability-complete, evaluator: script, required: true}
+      - {id: critical-surfaces-covered, evaluator: script, required: true}
+      - {id: coverage-prioritization-defined, evaluator: script, required: true}
+      - {id: no-pending-clarification-in-scope, evaluator: script, required: true}
+  TEST_DESIGN_REVIEW_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+    runners:
+      - script: qa-test-design-reviewer/scripts/check_test_design.py
+        args: [--pack, "{pack}", --critical-risks, "{critical_risks}", --profile, review]
+      - script: qa-test-design-reviewer/scripts/check_tc_detail.py
+        args: [--pack, "{pack}"]
+    checks:
+      - {id: tc-detail-complete, evaluator: script, required: true}
+      - {id: no-critical-risk-uncovered, evaluator: script, required: true}
+      - {id: no-tsn-without-tc, evaluator: script, required: true}
+      - {id: no-approved-tc-without-oracle, evaluator: script, required: true}
+      - {id: no-tc-without-test-data-requirement, evaluator: script, required: true}
+      - {id: test-data-safe, evaluator: script, required: true}
+      - {id: critical-traceability-complete, evaluator: script, required: true}
+      - {id: no-scope-or-evidence-conflict, evaluator: independent-review, required: true}
+      - {id: reviewer-independent-of-author, evaluator: script, required: true}
+      - {id: surface-target-complete, evaluator: script, required: true}
+      - {id: tc-api-assigned, evaluator: script, required: true}
+      - {id: ssp-tc-selection, evaluator: script, required: true}
+      - {id: test-data-plan-reviewed, evaluator: independent-review, required: true}
+  TESTCASE_PUBLICATION_GATE:
+    mode: MANDATORY_HIL
+    max_retries: 0
+    waiver_allowed: false
+    checks:
+      - {id: only-approved-tc-published, evaluator: script, required: true}
+      - {id: no-tsn-published, evaluator: script, required: true}
+      - {id: issue-body-minimal, evaluator: script, required: true}
+      - {id: idempotent-no-duplicates, evaluator: script, required: true}
+      - {id: no-secrets, evaluator: script, required: true}
+  TEST_ENGINEERING_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+    runners:
+      - script: qa-agentic-test-engineer/scripts/check_test_engineering.py
+        args: [--pack, "{pack}", --design-pack, "{design_pack}", --profile, engineering, --ssp-tc-ids, "{ssp_tc_ids}"]
+    checks:
+      - {id: at-references-approved-tc, evaluator: script, required: true}
+      - {id: tda-traces-to-tdr-and-tc, evaluator: script, required: true}
+      - {id: test-data-ready, evaluator: script, required: true}
+      - {id: exec-evaluates-tc-oracle, evaluator: script, required: true}
+      - {id: execution-mode-requirements, evaluator: script, required: true}
+      - {id: cicd-provenance-complete, evaluator: script, required: true}
+      - {id: evidence-reproducible, evaluator: independent-review, required: true}
+      - {id: environment-authorized, evaluator: script, required: true}
+      - {id: no-secrets-or-scope-drift, evaluator: script, required: true}
+      - {id: no-unauthorized-pii, evaluator: script, required: true}
+      - {id: no-destructive-or-unauthorized-prod, evaluator: script, required: true, on_trigger: REQUEST_HIL}
+      - {id: api-automation-subordinate-traceable, evaluator: script, required: true}
+      - {id: load-automation-subordinate-traceable, evaluator: script, required: true}
+      - {id: web-automation-subordinate-traceable, evaluator: script, required: true}
+      - {id: ssp-scope-respected, evaluator: script, required: true}
+  TEST_ENGINEERING_REVIEW_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+    runners:
+      - script: qa-agentic-test-reviewer/scripts/check_test_engineering.py
+        args: [--pack, "{pack}", --design-pack, "{design_pack}", --profile, review]
+    checks:
+      - {id: at-to-tc-traceable, evaluator: script, required: true}
+      - {id: test-data-traceable, evaluator: script, required: true}
+      - {id: exec-against-oracle, evaluator: script, required: true}
+      - {id: execution-mode-explicit, evaluator: script, required: true}
+      - {id: manual-execution-evidence-complete, evaluator: script, required: true}
+      - {id: standalone-execution-reproducible, evaluator: script, required: true}
+      - {id: cicd-provenance-verified, evaluator: script, required: true}
+      - {id: evidence-sufficient, evaluator: independent-review, required: true}
+      - {id: security-clean, evaluator: script, required: true, on_trigger: REQUEST_HIL}
+      - {id: manual-and-automated-coverage-reported, evaluator: script, required: true}
+  QUALITY_INTELLIGENCE_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+    checks:
+      - {id: provenance-and-scope-established, evaluator: script, required: true}
+      - {id: traceability-chain-evaluated, evaluator: script, required: true}
+      - {id: results-segmented-by-mode, evaluator: script, required: true}
+      - {id: failures-classified-by-cause, evaluator: script, required: true}
+      - {id: recommendation-issued, evaluator: script, required: true}
+      - {id: evidence-sufficiency-declared, evaluator: independent-review, required: true}
+  HUMAN_GATE:
+    mode: MANDATORY_HIL
+    max_retries: 0
+    waiver_allowed: false
+    checks:
+      - {id: quality-decision-recorded, evaluator: script, required: true}

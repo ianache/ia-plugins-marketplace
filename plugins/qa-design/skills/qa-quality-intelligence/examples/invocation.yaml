@@ -1,0 +1,6 @@
+skill: qa-quality-intelligence
+dsp_ref: DSP-EXAMPLE@1.0
+intent: <intent>
+inputs:
+- <local paths or artifact refs>
+expected_output: QA Quality Intelligence Pack

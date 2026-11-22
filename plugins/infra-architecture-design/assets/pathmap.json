@@ -1,0 +1,121 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "infra-architecture-design",
+  "workspace_relative": true,
+  "output_root": "infrastructure",
+  "document_types": {
+    "topology": "infrastructure/topology/",
+    "capacity": "infrastructure/capacity/",
+    "finops": "infrastructure/finops/",
+    "discovery": "infrastructure/discovery/",
+    "requirements": "infrastructure/requirements/",
+    "baseline": "infrastructure/baseline/",
+    "impact-assessment": "infrastructure/impact-assessment/",
+    "iac-specification": "infrastructure/iac-specification/",
+    "deployment-plan": "infrastructure/deployment-plan/",
+    "rollback-plan": "infrastructure/rollback-plan/",
+    "adr": "infrastructure/adr/",
+    "architecture-review": "infrastructure/architecture-review/",
+    "handoff": "infrastructure/handoff/",
+    "observability": "infrastructure/observability/",
+    "reliability": "infrastructure/reliability/",
+    "slo-dr-plan": "infrastructure/slo-dr-plan/",
+    "security-architecture": "infrastructure/security-architecture/",
+    "control-matrix": "infrastructure/control-matrix/",
+    "threat-assessment": "infrastructure/threat-assessment/"
+  },
+  "artifacts": {
+    "topology": {
+      "skill": "infrastructure-architecture-design"
+    },
+    "capacity": {
+      "skill": "infrastructure-architecture-design"
+    },
+    "finops": {
+      "skill": "infrastructure-architecture-design"
+    },
+    "discovery": {
+      "skill": "infrastructure-assessment"
+    },
+    "requirements": {
+      "skill": "infrastructure-assessment"
+    },
+    "baseline": {
+      "skill": "infrastructure-assessment"
+    },
+    "impact-assessment": {
+      "skill": "infrastructure-assessment"
+    },
+    "iac-specification": {
+      "skill": "infrastructure-delivery-design"
+    },
+    "deployment-plan": {
+      "skill": "infrastructure-delivery-design"
+    },
+    "rollback-plan": {
+      "skill": "infrastructure-delivery-design"
+    },
+    "adr": {
+      "skill": "infrastructure-governance-handoff"
+    },
+    "architecture-review": {
+      "skill": "infrastructure-governance-handoff"
+    },
+    "handoff": {
+      "skill": "infrastructure-governance-handoff"
+    },
+    "observability": {
+      "skill": "infrastructure-operations-design"
+    },
+    "reliability": {
+      "skill": "infrastructure-operations-design"
+    },
+    "slo-dr-plan": {
+      "skill": "infrastructure-operations-design"
+    },
+    "security-architecture": {
+      "skill": "infrastructure-security-design"
+    },
+    "control-matrix": {
+      "skill": "infrastructure-security-design"
+    },
+    "threat-assessment": {
+      "skill": "infrastructure-security-design"
+    }
+  },
+  "okf_types": {
+    "topology": "ITP",
+    "capacity": "ICP",
+    "finops": "IFO",
+    "discovery": "IDS",
+    "requirements": "IRQ",
+    "baseline": "IBL",
+    "impact-assessment": "IIA",
+    "iac-specification": "IAC",
+    "deployment-plan": "IDP",
+    "rollback-plan": "IRB",
+    "adr": "ADR",
+    "architecture-review": "IAR",
+    "handoff": "IHO",
+    "observability": "IOB",
+    "reliability": "IRL",
+    "slo-dr-plan": "ISD",
+    "security-architecture": "ISA",
+    "control-matrix": "ICM",
+    "threat-assessment": "ITA",
+    "execution-plan": "IXP",
+    "execution-log": "IXL",
+    "gate-register": "IGR"
+  },
+  "okf_types_note": "Equivalencia entre la clave de cada artefacto (slug) y su tipo OKF aprobado en STD-OKF-001 v1.11.0-stable. Los tres últimos son documentos del orchestrator y viven bajo orchestrator_root, no bajo output_root.",
+  "orchestrator_root": ".comsatel/infra-architecture-design/runs/",
+  "orchestrator_files": {
+    "plan": "{run_id}/plan.json",
+    "events": "{run_id}/plan.json.events.jsonl",
+    "task_results": "{run_id}/task-results/",
+    "execution-plan": "{run_id}/execution-plan/",
+    "execution-log": "{run_id}/execution-log/",
+    "gate-register": "{run_id}/gate-register/"
+  },
+  "standard": "STD-OKF-001 (Ubicacion y relacion con el orchestrator)"
+}

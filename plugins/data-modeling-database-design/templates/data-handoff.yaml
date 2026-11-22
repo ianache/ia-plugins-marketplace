@@ -1,0 +1,11 @@
+handoff:
+  scenario: evolution
+  schema_id: REPLACE
+  kb_target: codebase/REPLACE/database
+  design_root: design/database/REPLACE
+  repository: REPLACE
+  migration_target: REPLACE_FROM_ADR
+  migration_tool: Flyway
+  adr_refs: []
+  requires_human_approval: true
+  publish_via_merge_request: true

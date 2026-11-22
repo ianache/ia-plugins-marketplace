@@ -1,0 +1,6 @@
+schema_version: "1.0"
+service_id: ms-distribuidores
+functionalities:
+  - id: CL2-FDT-001
+    file: CL2-FDT-001-registrar-distribuidor.md
+    status: reviewed # o approved; nunca asignar sin revisión real

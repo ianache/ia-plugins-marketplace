@@ -1,0 +1,8 @@
+{
+  "name": "qa-design",
+  "version": "3.0.0",
+  "description": "Diseño detallado de planes, estrategias, casos de prueba, revisión independiente, Surface Targets, automatización y gates gobernados.",
+  "author": {
+    "name": "COMSATEL"
+  }
+}

@@ -1,0 +1,84 @@
+execution_modes:
+- GREENFIELD
+- BROWNFIELD
+- EVOLUTION
+schema_version: '1.1'
+pack_name: bi-analytics
+run_id: example-run
+execution:
+  mode: GREENFIELD
+  justification: Ejemplo sin BI previo del producto; G0 verificó que no existen documentos en ./bi/ para el producto.
+  baseline: null
+planning_gate: G0
+tasks:
+- id: T-01
+  skill: bi-decision-context-analyst
+  depends_on: []
+  gate: G1
+  artifact_action: CREATE
+  acceptance_criteria:
+  - BIC documentado con preguntas de negocio y decisiones
+  - Audiencias y alcance analítico aprobados por persona
+  expected_outputs:
+  - BIC
+- id: T-02
+  skill: bi-kpi-definition-designer
+  depends_on:
+  - T-01
+  gate: G2
+  artifact_action: CREATE
+  acceptance_criteria:
+  - KPI con fórmula, grano y owner completos
+  - Trazabilidad de cada KPI a una decisión de BIC
+  expected_outputs:
+  - KPI
+- id: T-03
+  skill: bi-data-source-mapper
+  depends_on:
+  - T-01
+  gate: G3
+  artifact_action: CREATE
+  acceptance_criteria:
+  - DSM con sistemas origen, linaje y frecuencia
+  - Cada elemento de KPI con fuente identificada o marcado como gap
+  expected_outputs:
+  - DSM
+- id: T-04
+  skill: bi-dimensional-model-designer
+  depends_on:
+  - T-02
+  - T-03
+  gate: G4
+  artifact_action: CREATE
+  acceptance_criteria:
+  - DMD con grano explícito por tabla de hechos
+  - Cada KPI calculable desde el modelo
+  expected_outputs:
+  - DMD
+- id: T-05
+  skill: bi-dashboard-report-designer
+  depends_on:
+  - T-02
+  - T-04
+  gate: G5
+  artifact_action: CREATE
+  acceptance_criteria:
+  - DSH con KPI, filtros y audiencia por dashboard
+  - Cada visualización referencia un KPI o métrica del catálogo
+  expected_outputs:
+  - DSH
+- id: T-06
+  skill: bi-quality-governance-validator
+  depends_on:
+  - T-02
+  - T-03
+  - T-04
+  - T-05
+  gate: G6
+  artifact_action: CREATE
+  acceptance_criteria:
+  - Trazabilidad completa KPI-DMD-DSH sin huérfanos
+  - Calidad de datos y control de acceso documentados
+  - Aprobación humana del handoff
+  expected_outputs:
+  - BIQ

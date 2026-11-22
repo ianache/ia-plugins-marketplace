@@ -1,0 +1,31 @@
+gate: CONTEXT_GATE
+owner_skill: uow-context-assembler
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 2
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: sources-versioned
+  evaluator: script
+  required: true
+- id: claims-separated
+  evaluator: script
+  required: true
+- id: unknowns-listed
+  evaluator: script
+  required: true
+- id: mode-baseline-consistent
+  evaluator: script
+  required: true
+- id: conflicts-reported
+  evaluator: independent-review
+  required: true
+evidence:
+  required: true
+  path: .comsatel/uow-development-design/runs/evidence/CONTEXT_GATE/
+  gate_report: .comsatel/uow-development-design/runs/evidence/CONTEXT_GATE/gate-report-T01.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador decide el gate.

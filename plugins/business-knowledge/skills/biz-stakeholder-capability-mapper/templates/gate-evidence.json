@@ -1,0 +1,9 @@
+{
+  "gate": "G2",
+  "skill": "biz-stakeholder-capability-mapper",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

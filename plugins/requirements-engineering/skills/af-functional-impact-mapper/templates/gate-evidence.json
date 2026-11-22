@@ -1,0 +1,9 @@
+{
+  "gate": "G5",
+  "skill": "af-functional-impact-mapper",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

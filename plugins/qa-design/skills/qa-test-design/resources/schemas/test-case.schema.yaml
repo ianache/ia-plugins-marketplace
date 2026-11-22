@@ -1,0 +1,41 @@
+# Contrato machine-readable de TestCase (tc_contract "1.4"). Declarativo.
+# Consumidores: scripts/check_tc_detail.py (enumeraciones y secciones) y tests/test_testcase_contract.py,
+# que verifica que las enumeraciones coincidan con el validador. Cambiar aquí exige cambiar el validador.
+schema_version: "1.4"
+kind: TestCase
+frontmatter:
+  required: [type, id, title, status, version, tc_contract, tsn, dsp_ref, user_stories, risks, surface, surface_target_id, test_level, test_type, priority, criticality, automation_status]
+  id_pattern: "^(?:[A-Z0-9]+-)?TC-[A-Za-z0-9._-]+$"
+  conditional_required:   # 1.4: identificador del microservicio (= api_id de la tabla Surface Target)
+    api_id: {when: {surface: [API]}}
+  enums:
+    surface: [API, WEB, MOBILE, CROSS_SURFACE, DATABASE, EVENT, BATCH, INTEGRATION]
+    test_level: [unit, integration, system, e2e, security, performance]
+    test_type: [positivo, negativo, seguridad, rendimiento, regresion]
+    priority: [P0, P1, P2, P3]
+    criticality: [CRITICAL, HIGH, MEDIUM, LOW]
+    automation_status: [MANUAL_ONLY, AUTOMATION_CANDIDATE, PARTIALLY_AUTOMATED, AUTOMATED]
+sections:   # obligatorias con tc_contract "1.3" y "1.4", en este orden
+  - Elemento bajo prueba (Surface Target)
+  - Intención
+  - Precondiciones
+  - Datos de prueba
+  - Pasos
+  - Resultado esperado (oracle)
+  - Postcondiciones y limpieza
+  - Requisitos de evidencia
+  - Restricciones de ejecución
+  - Trazabilidad
+  - Automatización
+rules:
+  oracle: {requires: [Pass when, Fail when], min_items_each: 1}
+  cleanup: {required_values: [true, false], strategy_ref_when_required: true}
+  idempotencia: required
+  evidence_modes: [MANUAL, AUTOMATED_STANDALONE, AUTOMATED_CICD]   # "none" si una modalidad no aplica
+  execution_constraints:
+    forbidden_must_include: [PRODUCTION]
+    allowed_must_not_include: [PRODUCTION]
+    destructive_requires_human_authorization: true
+  traceability: {must_match_frontmatter: [dsp_ref, user_stories, risks, tsn]}
+  test_data: {step_td_refs_must_exist: true, tdr_refs_must_be_declared: true}
+  placeholders: forbidden

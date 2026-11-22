@@ -1,0 +1,13 @@
+# Destino: .comsatel/uow-development-design/runs/evidence/BINDING_GATE/gate-report-T03.yaml (carpeta de evidencia del orquestador)
+schema_version: "1.1"
+gate: BINDING_GATE
+proposal_only: true   # el especialista propone; solo el orquestador decide el gate
+produced_by: uow-contract-binder/1.1.0
+checks:
+  - {id: api-operations-resolved, result: UNCERTAIN, evidence_ref: null}
+  - {id: db-objects-resolved, result: UNCERTAIN, evidence_ref: null}
+  - {id: api-db-consistent, result: UNCERTAIN, evidence_ref: null}
+  - {id: contract-versions-pinned, result: UNCERTAIN, evidence_ref: null}
+  - {id: no-invented-contracts, result: UNCERTAIN, evidence_ref: null}
+observations: []
+deferred_items: []

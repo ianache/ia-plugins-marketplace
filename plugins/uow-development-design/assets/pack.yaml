@@ -1,0 +1,107 @@
+pack_name: uow-development-design
+version: 1.0.0
+purpose: Convertir una User Story, el diseño de API y el diseño de BD en Unidades de Trabajo (UOW) asignables a un developer que desarrolla asistido por un agente IA
+artifact_types:
+  UOW: Unit of Work
+  UCX: UOW Context Pack
+  UCB: UOW Contract Binding
+  UCM: UOW Codebase Map
+  UAP: UOW Agent Execution Plan
+  UWR: UOW Readiness Review
+skills:
+- name: uow-orchestrator
+  role: orchestrator
+  description: Planifica, despacha y gobierna los gates del pack; custodia el manifiesto y la aprobación humana del paquete UOW
+- name: uow-context-assembler
+  role: specialist
+  description: Reúne y versiona los insumos de US, API, BD, UX, arquitectura y handoffs existentes, separando hecho, inferencia, supuesto y desconocido; produce UCX
+- name: uow-slice-designer
+  role: specialist
+  description: Parte la US en una o más UOW (slice vertical) con límites, dependencias y dimensión; produce UOW
+- name: uow-contract-binder
+  role: specialist
+  description: Enlaza la UOW con las operaciones API y las tablas y migraciones exactas y verifica coherencia API-BD; produce UCB
+- name: uow-codebase-mapper
+  role: specialist
+  description: Define repositorio, rama y commit base, módulos permitidos y zonas prohibidas, y analiza el código existente en Brownfield y Evolution; produce UCM
+- name: uow-agent-execution-planner
+  role: specialist
+  description: Diseña el plan de ejecución para el agente IA (TDD, verificación, DoD, condiciones de parada, desviaciones) con perfil Claude Code y Superpowers; produce UAP
+- name: uow-readiness-reviewer
+  role: specialist
+  description: Revisa de forma independiente la completitud, la trazabilidad y la ausencia de alcance inventado del paquete; produce UWR
+gates:
+- id: G0
+  criteria:
+  - DAG válido
+  - Entradas identificadas
+  - Criterios definidos
+- id: G1
+  criteria:
+  - UCX con insumos versionados
+  - Hechos separados de inferencias, supuestos y desconocidos
+- id: G2
+  criteria:
+  - UOW con alcance, límites y dependencias
+  - Cada UOW trazada a su US
+- id: G3
+  criteria:
+  - UCB coherente entre API y BD
+  - UCM con rama base, módulos permitidos y zonas prohibidas
+- id: G4
+  criteria:
+  - UAP con pasos verificables, DoD y condiciones de parada
+- id: G5
+  criteria:
+  - UWR independiente del autor
+  - Sin alcance inventado
+- id: G6
+  criteria:
+  - Aprobación humana ligada al digest del paquete
+tasks:
+- id: T-01
+  skill: uow-context-assembler
+  depends_on: []
+  gate: G1
+  outputs:
+  - UCX
+- id: T-02
+  skill: uow-slice-designer
+  depends_on:
+  - T-01
+  gate: G2
+  outputs:
+  - UOW
+- id: T-03
+  skill: uow-contract-binder
+  depends_on:
+  - T-02
+  gate: G3
+  outputs:
+  - UCB
+- id: T-04
+  skill: uow-codebase-mapper
+  depends_on:
+  - T-02
+  gate: G3
+  outputs:
+  - UCM
+- id: T-05
+  skill: uow-agent-execution-planner
+  depends_on:
+  - T-03
+  - T-04
+  gate: G4
+  outputs:
+  - UAP
+- id: T-06
+  skill: uow-readiness-reviewer
+  depends_on:
+  - T-05
+  gate: G5
+  outputs:
+  - UWR
+execution_modes:
+- GREENFIELD
+- BROWNFIELD
+- EVOLUTION

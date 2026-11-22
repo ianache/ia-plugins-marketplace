@@ -1,0 +1,52 @@
+# Política de gates del pack bi-analytics (ejemplo). Requiere aprobación humana real; no se autoaprueba.
+policies:
+  G0:
+    mode: MANDATORY_HIL
+    on_fail: REQUEST_HIL
+  G1:
+    mode: CONDITIONAL_HIL
+    on_pass: AUTO_ADVANCE
+    max_retries: 2
+    on_retries_exhausted: REQUEST_HIL
+    on_uncertainty: REQUEST_HIL
+  G2:
+    mode: CONDITIONAL_HIL
+    on_pass: AUTO_ADVANCE
+    max_retries: 2
+    on_retries_exhausted: REQUEST_HIL
+    on_uncertainty: REQUEST_HIL
+  G3:
+    mode: CONDITIONAL_HIL
+    on_pass: AUTO_ADVANCE
+    max_retries: 2
+    on_retries_exhausted: REQUEST_HIL
+    on_uncertainty: REQUEST_HIL
+  G4:
+    mode: CONDITIONAL_HIL
+    on_pass: AUTO_ADVANCE
+    max_retries: 2
+    on_retries_exhausted: REQUEST_HIL
+    on_uncertainty: REQUEST_HIL
+  G5:
+    mode: CONDITIONAL_HIL
+    on_pass: AUTO_ADVANCE
+    max_retries: 2
+    on_retries_exhausted: REQUEST_HIL
+    on_uncertainty: REQUEST_HIL
+  G6:
+    mode: MANDATORY_HIL
+    on_pass: REQUEST_HIL
+    requires: explicit_human_approval_of_exact_revision
+checks:
+  - id: trazabilidad-sin-huerfanos
+    evaluator: script
+    required: true
+  - id: frontmatter-okf-valido
+    evaluator: script
+    required: true
+  - id: revision-independiente-semantica
+    evaluator: independent-review
+    required: true
+evidence:
+  required: true
+  path: .comsatel/bi-analytics/runs/<run-id>/evidence/

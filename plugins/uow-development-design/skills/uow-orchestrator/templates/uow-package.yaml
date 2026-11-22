@@ -1,0 +1,6 @@
+# Manifiesto del paquete de una UOW. Lo genera `scripts/uow_package.py build`; no se edita a mano.
+uow_id: UOW-001
+documents:   # [{id, path, sha256}]
+  - {id: <PRODUCTO>-UOW-001, path: ../UOW-001-<slug>.md, sha256: <hash>}
+digest: <sha256 del conjunto>
+approval: null   # la aprobación humana vive en el estado operativo (UOW_READY_GATE), ligada a este digest

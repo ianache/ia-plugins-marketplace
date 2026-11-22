@@ -1,0 +1,115 @@
+version: 2
+description: Task graph per mode and named human gates. Loaded by scripts/workflow.py; do not duplicate it elsewhere.
+gates:
+- id: G1_BASELINE_APPROVED
+  title: Requirements and baseline approved
+  after: [T1_assessment]
+- id: G2_ARCHITECTURE_APPROVED
+  title: Target architecture approved
+  after: [T2_architecture]
+- id: G3_SECURITY_OPERATIONS_REVIEWED
+  title: Security and operations designs reviewed
+  after: [T3_security, T4_operations]
+- id: G4_DELIVERY_APPROVED
+  title: Delivery and rollback design approved
+  after: [T5_delivery]
+- id: G5_HANDOFF_APPROVED
+  title: Governance and handoff approved
+  after: [T6_governance]
+modes:
+  greenfield:
+    tasks:
+    - id: T1_assessment
+      skill: infrastructure-assessment
+      objective: Capture requirements, ASR/NFR, constraints and baseline for a new design.
+      depends_on: []
+      requires_gates: []
+    - id: T2_architecture
+      skill: infrastructure-architecture-design
+      objective: Design topology, networking, sizing and FinOps for the new target.
+      depends_on: [T1_assessment]
+      requires_gates: [G1_BASELINE_APPROVED]
+    - id: T3_security
+      skill: infrastructure-security-design
+      objective: Design IAM, secrets, threat model and controls for the target.
+      depends_on: [T2_architecture]
+      requires_gates: [G2_ARCHITECTURE_APPROVED]
+    - id: T4_operations
+      skill: infrastructure-operations-design
+      objective: Design observability, SLO, reliability, HA and DR for the target.
+      depends_on: [T2_architecture]
+      requires_gates: [G2_ARCHITECTURE_APPROVED]
+    - id: T5_delivery
+      skill: infrastructure-delivery-design
+      objective: Specify IaC, deployment, CI/CD, GitOps and rollback.
+      depends_on: [T3_security, T4_operations]
+      requires_gates: [G3_SECURITY_OPERATIONS_REVIEWED]
+    - id: T6_governance
+      skill: infrastructure-governance-handoff
+      objective: Produce ADRs, architecture review and the handoff package.
+      depends_on: [T5_delivery]
+      requires_gates: [G4_DELIVERY_APPROVED]
+  brownfield:
+    tasks:
+    - id: T1_assessment
+      skill: infrastructure-assessment
+      objective: Reconstruct the as-is infrastructure and rate the confidence of each evidence source.
+      depends_on: []
+      requires_gates: []
+    - id: T2_architecture
+      skill: infrastructure-architecture-design
+      objective: Design the target topology, sizing and FinOps against the reconstructed baseline.
+      depends_on: [T1_assessment]
+      requires_gates: [G1_BASELINE_APPROVED]
+    - id: T3_security
+      skill: infrastructure-security-design
+      objective: Assess existing controls and design the security target, listing gaps.
+      depends_on: [T2_architecture]
+      requires_gates: [G2_ARCHITECTURE_APPROVED]
+    - id: T4_operations
+      skill: infrastructure-operations-design
+      objective: Assess existing observability, SLO and DR, and design the operations target.
+      depends_on: [T2_architecture]
+      requires_gates: [G2_ARCHITECTURE_APPROVED]
+    - id: T5_delivery
+      skill: infrastructure-delivery-design
+      objective: Specify the migration path, IaC, deployment and rollback from the as-is state.
+      depends_on: [T3_security, T4_operations]
+      requires_gates: [G3_SECURITY_OPERATIONS_REVIEWED]
+    - id: T6_governance
+      skill: infrastructure-governance-handoff
+      objective: Produce ADRs, architecture review and the handoff package.
+      depends_on: [T5_delivery]
+      requires_gates: [G4_DELIVERY_APPROVED]
+  evolution:
+    tasks:
+    - id: T1_assessment
+      skill: infrastructure-assessment
+      objective: Validate the approved baseline and assess the impact of the requested change.
+      depends_on: []
+      requires_gates: []
+    - id: T2_architecture
+      skill: infrastructure-architecture-design
+      objective: Design the delta to the approved baseline (topology, capacity, FinOps).
+      depends_on: [T1_assessment]
+      requires_gates: [G1_BASELINE_APPROVED]
+    - id: T3_security
+      skill: infrastructure-security-design
+      objective: Assess the security impact of the delta and design controls.
+      depends_on: [T2_architecture]
+      requires_gates: [G2_ARCHITECTURE_APPROVED]
+    - id: T4_operations
+      skill: infrastructure-operations-design
+      objective: Assess the operations impact of the delta (SLO, DR, observability).
+      depends_on: [T2_architecture]
+      requires_gates: [G2_ARCHITECTURE_APPROVED]
+    - id: T5_delivery
+      skill: infrastructure-delivery-design
+      objective: Specify the controlled change, IaC delta and rollback plan.
+      depends_on: [T3_security, T4_operations]
+      requires_gates: [G3_SECURITY_OPERATIONS_REVIEWED]
+    - id: T6_governance
+      skill: infrastructure-governance-handoff
+      objective: Produce ADRs for the change, architecture review and the handoff package.
+      depends_on: [T5_delivery]
+      requires_gates: [G4_DELIVERY_APPROVED]

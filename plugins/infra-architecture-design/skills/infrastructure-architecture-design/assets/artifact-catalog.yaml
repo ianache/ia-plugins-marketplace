@@ -1,0 +1,9 @@
+skill: infrastructure-architecture-design
+artifacts:
+- topology
+- capacity
+- finops
+types:
+  topology: ITP
+  capacity: ICP
+  finops: IFO

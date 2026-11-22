@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [
+    "task_id",
+    "artifacts",
+    "evidence_refs"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array"
+    },
+    "evidence_refs": {
+      "type": "array"
+    }
+  }
+}

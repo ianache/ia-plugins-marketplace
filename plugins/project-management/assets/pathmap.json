@@ -1,0 +1,52 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "project-management",
+  "workspace_relative": true,
+  "document_types": {
+    "PCH": "management/charters/",
+    "RMP": "management/roadmaps/",
+    "SSP": "management/sprints/",
+    "STR": "management/status-reports/",
+    "RSK": "management/risks/",
+    "CHG": "management/changes/",
+    "CLS": "management/closure/"
+  },
+  "artifacts": {
+    "PCH": {
+      "name": "Project Charter",
+      "file": "PCH-NNN-<slug>.md",
+      "skill": "mgt-charter-roadmap-planner"
+    },
+    "RMP": {
+      "name": "Roadmap",
+      "file": "RMP-NNN-<slug>.md",
+      "skill": "mgt-charter-roadmap-planner"
+    },
+    "SSP": {
+      "name": "Sprint Scope Pack",
+      "file": "SSP-NNN-<slug>.md",
+      "skill": "mgt-backlog-iteration-planner"
+    },
+    "STR": {
+      "name": "Status Report",
+      "file": "STR-NNN-<slug>.md",
+      "skill": "mgt-progress-reporting-analyst"
+    },
+    "RSK": {
+      "name": "Risk Register",
+      "file": "RSK-NNN-<slug>.md",
+      "skill": "mgt-risk-change-controller"
+    },
+    "CHG": {
+      "name": "Change Request",
+      "file": "CHG-NNN-<slug>.md",
+      "skill": "mgt-risk-change-controller"
+    },
+    "CLS": {
+      "name": "Closure Report",
+      "file": "CLS-NNN-<slug>.md",
+      "skill": "mgt-release-closure-auditor"
+    }
+  },
+  "orchestrator_root": ".comsatel/project-management/runs/"
+}

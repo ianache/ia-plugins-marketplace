@@ -1,0 +1,9 @@
+name: qa-quality-intelligence
+purpose: QA Quality Intelligence Pack
+scope_authority: DSP
+test_surfaces:
+- API
+- WEB
+- MOBILE
+- CROSS_SURFACE
+gate: QUALITY_INTELLIGENCE_GATE

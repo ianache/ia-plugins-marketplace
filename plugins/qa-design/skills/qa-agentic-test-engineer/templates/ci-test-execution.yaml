@@ -1,0 +1,25 @@
+# CI/CD Test Execution Specification. Condicional a execution_mode AUTOMATED_CICD.
+# GitLab CI/CD es el execution engine; no existe un skill de runner. Variables y credenciales solo por referencia.
+spec_version: "1"
+provider: GITLAB
+project_ref: <gitlab_id o ruta del proyecto>
+trigger:
+  rules: [<merge_request_event | schedule | web>]
+  ref: <rama o tag>
+environment: <entorno autorizado>
+suites:
+  - id: <suite>
+    jobs:
+      - name: <job>
+        stage: test
+        testcase_refs: [TC-XXX]
+        at_refs: [AT-XXX]
+        tda_refs: [TDA-XXX]
+        needs: []
+        variables_by_reference: [<NOMBRE_DE_VARIABLE_CI>]
+        artifacts: {paths: [reports/], reports: [junit]}
+mapping:   # trazabilidad job <-> TC/AT, usada para normalizar EXEC/EVD
+  - job: <job>
+    testcase_ref: TC-XXX
+    at_ref: AT-XXX
+exec_capture: [pipeline_id, pipeline_url, job_id, job_name, commit_sha, ref, environment, result, timestamps, evidence_refs]

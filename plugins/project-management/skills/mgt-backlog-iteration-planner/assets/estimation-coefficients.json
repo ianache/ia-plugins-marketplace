@@ -1,0 +1,71 @@
+{
+  "version": "3",
+  "note": "Todos los grupos están aprobados por una persona. Los de QA y agente se aprobaron sin datos históricos: 'calibration: pendiente' hasta compararlos con las horas reales del primer Sprint cerrado.",
+  "human": {
+    "status": "aprobado",
+    "decided_by": "ianache (PO)",
+    "date": "2026-10-16",
+    "source": "PRACTICA-ESTIMACION v2",
+    "fixed_h": 3.0,
+    "per_criterion_h": 2.5,
+    "round_up_to_h": 2,
+    "factors": {
+      "E": 0.3,
+      "S": 0.2,
+      "V": 0.2,
+      "F": 0.2,
+      "D": 0.1
+    },
+    "open_question": {
+      "per_question": 0.05,
+      "max": 0.15
+    },
+    "size_max_h": {
+      "S": 12,
+      "M": 24,
+      "L": 40
+    },
+    "confidence_max_factor_sum": {
+      "Alta": 0.15,
+      "Media": 0.5
+    },
+    "rate_pen_per_h": 30.0
+  },
+  "agent_cost": {
+    "status": "aprobado",
+    "decided_by": "ianache (PO)",
+    "date": "2026-10-24",
+    "subscription_usd_per_month": 25.0,
+    "seats": 1,
+    "month_working_days": 22,
+    "fx_pen_per_usd": 3.45,
+    "fx_informed_by": "ianache (PO)",
+    "fx_date": "2026-10-24",
+    "fx_note": "Tipo de cambio informado por una persona; actualizarlo con su fecha cuando cambie. Un Sprint puede indicar el suyo en sprint.fx_pen_per_usd."
+  },
+  "agent_effort": {
+    "status": "aprobado",
+    "decided_by": "ianache (PO)",
+    "date": "2026-10-24",
+    "calibration": "pendiente",
+    "dev_agent_h_per_human_h": 1.0
+  },
+  "qa": {
+    "status": "aprobado",
+    "decided_by": "ianache (PO)",
+    "date": "2026-10-24",
+    "calibration": "pendiente",
+    "design_per_story": {
+      "human_h": 0.5,
+      "agent_h": 1.0
+    },
+    "manual_tc": {
+      "human_h": 0.5,
+      "agent_h": 0.0
+    },
+    "automated_tc": {
+      "human_h": 0.25,
+      "agent_h": 0.5
+    }
+  }
+}

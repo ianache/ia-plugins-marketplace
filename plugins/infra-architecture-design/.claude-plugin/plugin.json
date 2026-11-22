@@ -1,0 +1,8 @@
+{
+  "name": "infra-architecture-design",
+  "version": "1.4.0",
+  "description": "Specialized infrastructure skills and a single orchestrator, supporting greenfield, brownfield and evolution",
+  "author": {
+    "name": "Ilver Anache"
+  }
+}

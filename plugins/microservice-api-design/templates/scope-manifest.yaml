@@ -1,0 +1,5 @@
+schema_version: '1.0'
+scope_ref: DSP-001
+sources: []
+missing_sources:
+  - Validar DSP/SSP, DDD Domain Design Contract, BC/CTX/AGG/VO/EVT y ADR

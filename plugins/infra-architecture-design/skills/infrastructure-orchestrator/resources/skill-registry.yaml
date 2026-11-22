@@ -1,0 +1,22 @@
+skills:
+- name: infrastructure-orchestrator
+  role: orchestrator
+  contract: ../infrastructure-orchestrator/resources/output-contract.yaml
+- name: infrastructure-assessment
+  role: specialist
+  contract: ../infrastructure-assessment/resources/output-contract.yaml
+- name: infrastructure-architecture-design
+  role: specialist
+  contract: ../infrastructure-architecture-design/resources/output-contract.yaml
+- name: infrastructure-security-design
+  role: specialist
+  contract: ../infrastructure-security-design/resources/output-contract.yaml
+- name: infrastructure-delivery-design
+  role: specialist
+  contract: ../infrastructure-delivery-design/resources/output-contract.yaml
+- name: infrastructure-operations-design
+  role: specialist
+  contract: ../infrastructure-operations-design/resources/output-contract.yaml
+- name: infrastructure-governance-handoff
+  role: specialist
+  contract: ../infrastructure-governance-handoff/resources/output-contract.yaml

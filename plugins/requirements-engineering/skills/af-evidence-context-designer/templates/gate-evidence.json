@@ -1,0 +1,9 @@
+{
+  "gate": "G1",
+  "skill": "af-evidence-context-designer",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

@@ -1,0 +1,11 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "skill": "web-platform-architecture-designer",
+  "status": "awaiting_human_gate",
+  "artifacts": [
+    "architecture/shell-microui-boundaries.md",
+    "architecture/web-platform-architecture.md"
+  ],
+  "gate": "G2",
+  "approved": false
+}

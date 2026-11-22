@@ -1,0 +1,9 @@
+{
+  "gate": "G2",
+  "skill": "mgt-backlog-iteration-planner",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

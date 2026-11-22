@@ -1,0 +1,29 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "ssp-closure",
+  "workspace_relative": true,
+  "document_types": {
+    "STR": "management/status-reports/",
+    "CLS": "management/closure/"
+  },
+  "artifacts": {
+    "STR": {
+      "name": "Status Report",
+      "file": "STR-<period-id>.md",
+      "skill": "ssp-closure-orchestrator",
+      "cardinality": "one-per-period"
+    },
+    "CLS": {
+      "name": "Closure Report",
+      "file": "CLS-<ssp-id>.md",
+      "skill": "retro-agenda",
+      "cardinality": "one-per-ssp"
+    }
+  },
+  "operational_artifacts": {
+    "orchestrator_root": ".comsatel/ssp-closure/runs/",
+    "run_contents": ["run-manifest.json", "execution-plan.json", "gate-register.json", "task-results/", "evidence/"],
+    "okf": false
+  },
+  "approved_types": ["CLS", "STR"]
+}

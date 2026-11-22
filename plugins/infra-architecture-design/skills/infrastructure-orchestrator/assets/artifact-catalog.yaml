@@ -1,0 +1,9 @@
+skill: infrastructure-orchestrator
+artifacts:
+- execution-plan
+- execution-log
+- gate-register
+types:
+  execution-plan: IXP
+  execution-log: IXL
+  gate-register: IGR

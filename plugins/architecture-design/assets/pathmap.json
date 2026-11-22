@@ -1,0 +1,40 @@
+{
+  "pathmap_version": "1.2.0",
+  "plugin": "architecture-design",
+  "workspace_relative": true,
+  "document_types": {
+    "ADR": "architecture/adrs/",
+    "ASR": "architecture/asrs/",
+    "C4": "architecture/views/c4/",
+    "SEQ": "architecture/views/sequences/",
+    "API": "architecture/contracts/apis/",
+    "DSP": "architecture/solutions/"
+  },
+  "artifacts": {
+    "ADR": {
+      "name": "Architecture Decision Record",
+      "basis": "User-confirmed"
+    },
+    "ASR": {
+      "name": "Architecturally Significant Requirement",
+      "basis": "User-confirmed"
+    },
+    "C4": {
+      "name": "C4 Architecture View",
+      "basis": "Proposed convention"
+    },
+    "SEQ": {
+      "name": "Sequence Diagram",
+      "basis": "Proposed convention"
+    },
+    "API": {
+      "name": "API Contract",
+      "basis": "Proposed convention; verify cross-plugin ownership"
+    },
+    "DSP": {
+      "name": "Detailed Solution Proposal",
+      "basis": "Proposed convention; verify cross-plugin ownership"
+    }
+  },
+  "orchestrator_root": ".comsatel/architecture-design/runs/"
+}

@@ -1,0 +1,201 @@
+schema_version: '1.1'
+pack_name: qa-sdlc-pack
+plan_id: QAPLAN-EXAMPLE
+workflow_modes:
+- GREENFIELD
+- BROWNFIELD
+- EVOLUTION
+dsp_ref:
+  id: DSP-XXX
+  version: <versión>
+  path: <ruta del DSP>
+  digest: null
+gitlab_id: <gitlab-project-id>
+objective: <objetivo QA>
+scope: {}
+surfaces:
+- API
+- WEB
+planning_gate: G0
+plan_revision: 1
+max_parallel_tasks: 4
+halt_scope: all
+gate_policies:
+  FEATURE_ANALYSIS_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+  TEST_DESIGN_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+  TEST_DESIGN_REVIEW_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+  TESTCASE_PUBLICATION_GATE:
+    mode: MANDATORY_HIL
+    max_retries: 0
+    waiver_allowed: false
+  TEST_ENGINEERING_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+  TEST_ENGINEERING_REVIEW_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+  QUALITY_INTELLIGENCE_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 0
+    waiver_allowed: false
+  HUMAN_GATE:
+    mode: MANDATORY_HIL
+    max_retries: 0
+    waiver_allowed: false
+tasks:
+- id: T01
+  skill: qa-feature-analyzer
+  executor: agent
+  depends_on: []
+  gate: FEATURE_ANALYSIS_GATE
+  expected_outputs:
+  - QFA
+  inputs: []
+  acceptance_criteria:
+  - dsp-valid-and-verified
+  - scope-complete
+  - critical-risks-evidenced
+  - surfaces-declared
+  - no-scope-conflict
+- id: T02
+  skill: qa-test-design
+  executor: agent
+  depends_on:
+  - T01
+  gate: TEST_DESIGN_GATE
+  expected_outputs:
+  - QTD
+  - QTS
+  - QTP
+  - TSN
+  - TC
+  inputs: []
+  acceptance_criteria:
+  - strategy-plan-consistent
+  - critical-risk-has-tsn
+  - tsn-has-tc
+  - approved-tc-has-oracle-and-data
+  - traceability-complete
+  - critical-surfaces-covered
+  - coverage-prioritization-defined
+  - no-pending-clarification-in-scope
+- id: T03
+  skill: qa-test-design-reviewer
+  executor: agent
+  depends_on:
+  - T02
+  gate: TEST_DESIGN_REVIEW_GATE
+  expected_outputs:
+  - QTR
+  inputs: []
+  acceptance_criteria:
+  - no-critical-risk-uncovered
+  - no-tsn-without-tc
+  - no-approved-tc-without-oracle
+  - critical-traceability-complete
+  - no-scope-or-evidence-conflict
+  - reviewer-independent-of-author
+- id: T04
+  skill: qa-sdlc-orchestrator
+  executor: orchestrator
+  depends_on:
+  - T03
+  gate: TESTCASE_PUBLICATION_GATE
+  expected_outputs:
+  - gitlab_issue_refs
+  inputs: []
+  human_approval_before_dispatch: true
+  acceptance_criteria:
+  - only-approved-tc-published
+  - no-tsn-published
+  - issue-body-minimal
+  - idempotent-no-duplicates
+  - no-secrets
+- id: T05-API
+  skill: qa-agentic-test-engineer
+  executor: agent
+  depends_on:
+  - T03
+  gate: TEST_ENGINEERING_GATE
+  expected_outputs:
+  - QTE
+  - AT
+  inputs: []
+  surface: API
+  acceptance_criteria:
+  - at-references-approved-tc
+  - exec-evaluates-tc-oracle
+  - evidence-reproducible
+  - environment-authorized
+  - no-secrets-or-scope-drift
+  - no-destructive-or-unauthorized-prod
+- id: T05-WEB
+  skill: qa-agentic-test-engineer
+  executor: agent
+  depends_on:
+  - T03
+  gate: TEST_ENGINEERING_GATE
+  expected_outputs:
+  - QTE
+  - AT
+  inputs: []
+  surface: WEB
+  acceptance_criteria:
+  - at-references-approved-tc
+  - exec-evaluates-tc-oracle
+  - evidence-reproducible
+  - environment-authorized
+  - no-secrets-or-scope-drift
+  - no-destructive-or-unauthorized-prod
+- id: T06
+  skill: qa-agentic-test-reviewer
+  executor: agent
+  depends_on:
+  - T05-API
+  - T05-WEB
+  gate: TEST_ENGINEERING_REVIEW_GATE
+  expected_outputs:
+  - QER
+  inputs: []
+  acceptance_criteria:
+  - at-to-tc-traceable
+  - exec-against-oracle
+  - evidence-sufficient
+  - security-clean
+  - manual-and-automated-coverage-reported
+- id: T07
+  skill: qa-quality-intelligence
+  executor: agent
+  depends_on:
+  - T06
+  gate: QUALITY_INTELLIGENCE_GATE
+  expected_outputs:
+  - QQI
+  inputs: []
+  acceptance_criteria:
+  - provenance-and-scope-established
+  - traceability-chain-evaluated
+  - recommendation-issued
+  - evidence-sufficiency-declared
+- id: T08
+  skill: qa-sdlc-orchestrator
+  executor: orchestrator
+  depends_on:
+  - T07
+  gate: HUMAN_GATE
+  expected_outputs:
+  - QDC
+  inputs: []
+  acceptance_criteria:
+  - quality-decision-recorded

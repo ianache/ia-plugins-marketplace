@@ -1,0 +1,9 @@
+schema_version: "1.1"
+dsp_ref: DSP-XXX@<versión>
+risks:
+  - {risk: RISK-XXX, critical: true, tsn: [TSN-XXX], surfaces: [API]}
+test_cases:
+  # readiness: READY | BLOCKED_CLARIFICATION | DEFERRED  (operativo; no va en el frontmatter del TC)
+  - {id: TC-XXX, tsn: TSN-XXX, surface: API, readiness: READY}
+deferred_items: []
+  # - {id: TC-YYY, reason: "<pregunta abierta>", decision_ref: HI-00N}   # sin decision_ref el gate falla

@@ -1,0 +1,18 @@
+run_id: ""
+scenario: greenfield # greenfield | brownfield | evolution
+product: ""
+web_application: ""
+repository: ""
+source_ref: ""
+source_commit: ""
+kb_target: "codebase/<WEB_APP>/"
+ux_ui_handoff:
+  resource: ""
+  version: ""
+  approved: false
+api_contracts: []
+fdt_refs: []
+ddd_refs: []
+adr_refs: []
+asr_refs: []
+assumptions: []

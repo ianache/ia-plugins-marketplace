@@ -1,0 +1,15 @@
+# Manifiesto de Test Data del Engineering Pack. Trazabilidad: TC → TDR → TDA → EXEC → EVD.
+manifest_version: "1"
+test_data:
+  - id: TDA-001
+    tdr_ref: TDR-001
+    testcase_refs: [TC-001]
+    asset_kind: dataset            # dataset | fixture | factory | seed | setup | cleanup
+    source_type: SYNTHETIC   # SYNTHETIC | FIXTURE | REFERENCE | MASKED_COPY | GENERATED | SEEDED
+    path: test-data/datasets/<archivo>
+    sha256: null
+    readiness: PENDING       # PENDING | READY | FAILED
+    contains_pii: false
+    pii_decision_ref: null   # obligatorio si contains_pii es true
+    contains_secrets: false  # debe ser siempre false
+exceptions: []               # [{tdr_ref: TDR-00X, decision_ref: HI-00X}] solo con decisión humana

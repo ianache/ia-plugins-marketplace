@@ -1,0 +1,20 @@
+{
+  "initiative_id": "<id>",
+  "scenario": "<scenario>",
+  "selected_concept_id": "<concept-id>",
+  "sol_path": "design/ideation/<run-id>/<file>.md",
+  "evidence_refs": [],
+  "hypotheses": [],
+  "experiment_results": [],
+  "open_questions": [],
+  "constraints": [],
+  "stakeholders": [],
+  "success_metrics": [],
+  "rejected_alternatives": [],
+  "human_decision": {
+    "approved": false,
+    "actor": null,
+    "at": null
+  },
+  "requested_next_skill": "af-requirements-orchestrator"
+}

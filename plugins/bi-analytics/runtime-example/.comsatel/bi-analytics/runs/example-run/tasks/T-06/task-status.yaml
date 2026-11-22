@@ -1,0 +1,6 @@
+run_id: example-run
+task_id: T-06
+status: PENDING
+gate_status: PENDING
+authorization: null
+evidence_refs: []

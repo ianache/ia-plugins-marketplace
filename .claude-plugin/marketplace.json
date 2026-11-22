@@ -1,0 +1,112 @@
+{
+  "name": "comsatel-skills-catalog",
+  "owner": {
+    "name": "COMSATEL Engineering"
+  },
+  "metadata": {
+    "description": "Catálogo COMSATEL de plugins y skills para ingeniería de software: requisitos, negocio, arquitectura, DDD, datos, microservicios, web, mobile, UX/UI, QA, gestión de entrega y calidad de KB.",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "courses",
+      "source": "./plugins/courses",
+      "description": "Asistente para el diseño y generación de cursos"
+    },
+    {
+      "name": "architecture-design",
+      "source": "./plugins/architecture-design",
+      "description": "Governed architecture engineering with 6 specialized skills and an orchestrator, OKF v0.2 COMSATEL"
+    },
+    {
+      "name": "bi-analytics",
+      "source": "./plugins/bi-analytics",
+      "description": "Business Intelligence y analítica con 6 skills especializados y orchestrator: contexto de decisiones, KPI, fuentes de datos, modelo dimensional, dashboards e informes, calidad y gobierno, con gates G0-G6"
+    },
+    {
+      "name": "business-knowledge",
+      "source": "./plugins/business-knowledge",
+      "description": "Conocimiento de negocio con 6 skills especializados y orchestrator: contexto y objetivos, actores y capacidades, glosario (TRM), reglas (BR), modelo de información (IMD), validación y handoff"
+    },
+    {
+      "name": "data-modeling-database-design",
+      "source": "./plugins/data-modeling-database-design",
+      "description": "DTC DB: Diseño de datos con DDD, reconstrucción, evolución y gates"
+    },
+    {
+      "name": "ddd-domain-design",
+      "source": "./plugins/ddd-domain-design",
+      "description": "DDD-first domain design with auditable orchestration, validation and human gates"
+    },
+    {
+      "name": "infra-architecture-design",
+      "source": "./plugins/infra-architecture-design",
+      "description": "Specialized infrastructure skills and a single orchestrator, supporting greenfield, brownfield and evolution"
+    },
+    {
+      "name": "kb-quality-consistency-assurance",
+      "source": "./plugins/kb-quality-consistency-assurance",
+      "description": "KB: Auditoría y aseguramiento de calidad y consistencia de KB OKF v0.2, con gates y revisión semántica asistida por Claude; Mod de observabilidad y Quality Gate Monitor"
+    },
+    {
+      "name": "microservice-api-design",
+      "source": "./plugins/microservice-api-design",
+      "description": "DTC API: Microservice & API Design: Greenfield, Brownfield, Evolution, FDT and Codebase Handoff (6+1)"
+    },
+    {
+      "name": "mobile-application-design",
+      "source": "./plugins/mobile-application-design",
+      "description": "DTC Mobile: diseño técnico gobernado de aplicaciones Flutter para Android/iOS, 6 skills y orchestrator"
+    },
+    {
+      "name": "project-management",
+      "source": "./plugins/project-management",
+      "description": "Gestión de entrega con 6 skills especializados y orchestrator: acta y roadmap, backlog e iteraciones, publicación en GitLab, riesgos y cambios, avance e informes, cierre"
+    },
+    {
+      "name": "qa-design",
+      "source": "./plugins/qa-design",
+      "description": "Diseño detallado de planes, estrategias, casos de prueba, revisión independiente, Surface Targets, automatización y gates gobernados."
+    },
+    {
+      "name": "requirements-engineering",
+      "source": "./plugins/requirements-engineering",
+      "description": "Ingeniería de requisitos con 5 skills especializados y orchestrator, contratos, gates y trazabilidad"
+    },
+    {
+      "name": "solution-ideation",
+      "source": "./plugins/solution-ideation",
+      "description": "Ideación e innovación de soluciones con 6 skills especializados y orchestrator; handoff gobernado a requirements-engineering"
+    },
+    {
+      "name": "uow-development-design",
+      "source": "./plugins/uow-development-design",
+      "description": "Unidades de Trabajo (UOW) para desarrollo asistido por agente IA, con 6 skills especializados y orchestrator: contexto de la US, slice, contratos API y BD, mapa de código, plan del agente (Claude Code y Superpowers) y revisión de readiness"
+    },
+    {
+      "name": "ux-ui-design",
+      "source": "./plugins/ux-ui-design",
+      "description": "Diseño UX/UI gobernado y multiplataforma con 6 skills especializados y un orchestrator"
+    },
+    {
+      "name": "web-platform-design",
+      "source": "./plugins/web-platform-design",
+      "description": "DTC Web: diseño técnico Web Angular Shell MicroUIs BFF, gobernado por gates y contratos OKF."
+    },
+    {
+      "name": "comsatel-desarrollo",
+      "description": "Orquestador de desarrollo y sus cinco especialistas (DS, producto, UX a código, construcción y verificación), con el guardia de GitLab incluido",
+      "source": "./plugins/comsatel-desarrollo"
+    },
+    {
+      "name": "comsatel-desarrollo-movil",
+      "description": "Desarrollo móvil en Flutter: un orquestador y tres especialistas (biblioteca de componentes, app y verificación en el emulador). Se instala junto a comsatel-desarrollo, que trae el guardia de GitLab",
+      "source": "./plugins/comsatel-desarrollo-movil"
+    },
+    {
+      "name": "ux-design",
+      "description": "Documentación de UX/UI de punta a punta: un orquestador y nueve especialistas, de las User Stories al handoff DESIGN_READY_FOR_DEV",
+      "source": "./plugins/ux-design"
+    }
+  ]
+}

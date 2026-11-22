@@ -1,0 +1,29 @@
+﻿{
+  "pathmap_version": "1.0.0",
+  "plugin": "ux-design",
+  "workspace_relative": true,
+  "document_types": {
+    "UXR": "design/ux-requirements/",
+    "FLW": "design/user-flows/",
+    "SCR": "design/screens/",
+    "CMP": "design/components/",
+    "TKN": "design/tokens/",
+    "ADR": "design/decisions/",
+    "CFR": "design/reports/",
+    "HOF": "design/handoff/"
+  },
+  "catalog_role_routes": {
+    "design-traceability-map": {"type": "CTLG", "path": "design/traceability/", "indexes": "SCR"},
+    "component-inventory": {"type": "CTLG", "path": "design/components/", "indexes": "CMP"}
+  },
+  "operational_artifacts": {
+    "orchestrator_root": ".comsatel/ux-design/runs/",
+    "run_contents": ["run-manifest.json", "execution-plan.json", "plan-status.json", "gate-register.json", "task-results/", "evidence/"],
+    "okf": false
+  },
+  "read_only_inputs": {
+    "US": "requirements/context-packs/user-stories/",
+    "RCP": "requirements/context-packs/"
+  },
+  "approved_types": ["ADR", "CFR", "CMP", "CTLG", "FLW", "HOF", "SCR", "TKN", "UXR"]
+}

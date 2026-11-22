@@ -1,0 +1,6 @@
+{
+  "description": "KB QCA governance observation and quality gate monitor",
+  "modules": [
+    "./register.js"
+  ]
+}

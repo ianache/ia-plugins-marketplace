@@ -1,0 +1,16 @@
+schema_version: '2.0'
+run_id: REPLACE
+gates:
+  - id: G0
+    status: PENDING_APPROVAL
+    approver: null
+    decided_at: null
+    evidence: []
+  - id: G1
+    status: NOT_READY
+  - id: G2
+    status: NOT_READY
+  - id: G3
+    status: NOT_READY
+  - id: G4
+    status: NOT_READY

@@ -1,0 +1,9 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "kb-quality-consistency-assurance",
+  "workspace_relative": true,
+  "orchestrator_root": ".comsatel/kb-quality-consistency-assurance/runs/",
+  "notes": {
+    "orchestrator_root": "Los artefactos operativos de cada ejecución (findings, gates, run-summary, remediation-plan) viven en <orchestrator_root>/<run_id>/. Los documentos Markdown conceptuales (QAR) siguen STD-OKF-001 v1.11.0-stable."
+  }
+}

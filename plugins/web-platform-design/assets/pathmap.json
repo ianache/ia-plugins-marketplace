@@ -1,0 +1,33 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "web-platform-design",
+  "workspace_relative": true,
+  "deliverable_root": "design/web/{run_id}/",
+  "orchestrator_root": ".comsatel/web-platform-design/runs/",
+  "output_files": {
+    "as-is/application-inventory.md": "web-application-reconstruction-analyzer",
+    "as-is/architecture.md": "web-application-reconstruction-analyzer",
+    "as-is/dependency-map.md": "web-application-reconstruction-analyzer",
+    "as-is/evidence-register.yaml": "web-application-reconstruction-analyzer",
+    "integration/bff-api-contracts.md": "web-bff-api-integration-designer",
+    "integration/security-session.md": "web-bff-api-integration-designer",
+    "integration/error-handling.md": "web-bff-api-integration-designer",
+    "integration/integration-matrix.yaml": "web-bff-api-integration-designer",
+    "composition/component-mapping.md": "web-component-composition-designer",
+    "composition/routing-navigation.md": "web-component-composition-designer",
+    "composition/state-management.md": "web-component-composition-designer",
+    "composition/interaction-states.md": "web-component-composition-designer",
+    "handoff/development-context-pack.md": "web-development-handoff",
+    "handoff/implementation-map.yaml": "web-development-handoff",
+    "handoff/test-strategy.md": "web-development-handoff",
+    "handoff/codebase-handoff.yaml": "web-development-handoff",
+    "evolution/impact-analysis.md": "web-evolution-planner",
+    "evolution/migration-plan.md": "web-evolution-planner",
+    "evolution/rollback-plan.md": "web-evolution-planner",
+    "evolution/compatibility-matrix.yaml": "web-evolution-planner",
+    "architecture/web-platform-architecture.md": "web-platform-architecture-designer",
+    "architecture/shell-microui-boundaries.md": "web-platform-architecture-designer",
+    "architecture/deployment-topology.md": "web-platform-architecture-designer",
+    "architecture/architecture-decisions.md": "web-platform-architecture-designer"
+  }
+}

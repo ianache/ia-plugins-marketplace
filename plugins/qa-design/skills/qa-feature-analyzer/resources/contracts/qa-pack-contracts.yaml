@@ -1,0 +1,68 @@
+contract_version: "5.4"
+gate_report_path: ".comsatel/qa-design/runs/<run-id>/evidence/{GATE}/gate-report-{TASK_ID}.yaml"   # los skills especialistas escriben aquí su gate_proposal; no en testing
+packs:
+  QFA:
+    produced_by: qa-feature-analyzer
+    minimum_entities: [DSP, US, RISK]
+  QTD:
+    produced_by: qa-test-design
+    required_artifacts:
+      - qa-test-strategy.md
+      - qa-test-plan.md
+      - coverage-matrix.yaml
+      - test-prioritization.md
+      - requirements-test-traceability.yaml
+      - test-data-plan.md
+      - TSN
+      - TC
+      - TDR
+      - test-design-gate.md
+      - gate-report.yaml
+    invariants:
+      - every critical RISK has at least one TSN
+      - every TSN has at least one TC
+      - every approved TC has an explicit oracle and test data/preconditions
+      - TC does not imply automation
+      - every approved TC declares automation_status and tdr_refs (or data_required false)
+      - every TDR references at least one TC and declares source_type and privacy
+      - no real PII without REAL_AUTHORIZED and decision_ref
+      - no TC with readiness BLOCKED_CLARIFICATION stays in scope without deferred_items[].decision_ref
+      - every TC with tc_contract 1.4 declares intent, oracle Pass/Fail, evidence per mode, execution constraints, cleanup/idempotence and traceability consistent with frontmatter, without placeholders
+  QTE:
+    produced_by: qa-agentic-test-engineer
+    required_artifacts:
+      - test-execution-plan.md
+      - test-data-generation-plan.md
+      - test-data-manifest.yaml
+      - test-data/
+      - AT
+      - EXEC
+      - EVD
+      - gate-report.yaml
+    conditional_artifacts:
+      AUTOMATED_CICD: [cicd/ci-test-execution.yaml, gitlab-ci fragments]
+    minimum_entities: [TC, TDA, EXEC, EVD]
+    invariants:
+      - every AT references exactly one primary TC
+      - no AT may exist without an approved TC; AT is never generated from a TSN
+      - manual TC is valid without AT
+      - MANUAL needs no AT; AUTOMATED_STANDALONE and AUTOMATED_CICD require AT
+      - every TDA references at least one TDR and every TDR a TC
+      - a data-dependent EXEC is not READY without TDR/TDA READY or an approved exception
+      - every re-run creates a new EXEC (rerun_of) and keeps the history
+      - AUTOMATED_CICD EXEC records GITLAB pipeline and job provenance
+      - no secrets persisted; no unauthorized real PII
+      - every AT carries testcase_ref to an approved TC
+  QQI:
+    produced_by: qa-quality-intelligence
+    minimum_entities: [EVD, QUALITY_DECISION]
+    segmentation: [execution_mode, automation_status, test_surface, environment, pipeline, suite, risk, requirement]
+    invariants:
+      - pipeline or job failure is not counted as functional failure without failure_class
+legacy_aliases:   # nombres v5.1 -> siglas del catálogo
+  QA_FEATURE_ANALYSIS_PACK: QFA
+  QA_TEST_DESIGN_PACK: QTD
+  QA_TEST_ENGINEERING_PACK: QTE
+  QA_QUALITY_INTELLIGENCE_PACK: QQI
+traceability:
+  canonical: "DSP → US → RISK → TSN → TC → AT → EXEC → EVD → DEFECT → QUALITY_DECISION"

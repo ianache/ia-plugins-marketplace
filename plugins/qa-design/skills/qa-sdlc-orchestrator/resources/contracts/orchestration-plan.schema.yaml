@@ -1,0 +1,13 @@
+plan:
+  required: [plan_id, dsp_ref, gitlab_id, objective, tasks, state]
+  task:
+    required: [task_id, skill, capability, depends_on, inputs, expected_outputs, gate, scheduling_mode, state]
+    scheduling_mode: [SEQUENTIAL, PARALLEL_ELIGIBLE]
+    state: [PLANNED, READY, RUNNING, BLOCKED, NEEDS_CLARIFICATION, NEEDS_HUMAN_REVIEW, COMPLETED, FAILED, SKIPPED]
+    runtime_fields: [attempt, started_at, completed_at, result_refs, blockers, gate_decision]
+  scheduling_rules:
+    - A task is READY only when required inputs exist and all dependency gates permit continuation.
+    - Tasks with satisfied dependencies and no resource/data conflict may run in parallel.
+    - BLOCKED/REWORK gates prevent dependent activation.
+    - Human gates pause dependent tasks until an explicit decision is recorded.
+    - Every state transition is appended to execution_history; never overwrite history.

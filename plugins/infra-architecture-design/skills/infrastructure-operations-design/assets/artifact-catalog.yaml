@@ -1,0 +1,9 @@
+skill: infrastructure-operations-design
+artifacts:
+- observability
+- reliability
+- slo-dr-plan
+types:
+  observability: IOB
+  reliability: IRL
+  slo-dr-plan: ISD

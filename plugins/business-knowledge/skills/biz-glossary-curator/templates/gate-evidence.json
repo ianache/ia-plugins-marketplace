@@ -1,0 +1,9 @@
+{
+  "gate": "G3",
+  "skill": "biz-glossary-curator",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

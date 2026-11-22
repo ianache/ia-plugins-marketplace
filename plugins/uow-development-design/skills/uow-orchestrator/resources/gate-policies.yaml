@@ -1,0 +1,99 @@
+# Política de gates del pack uow-development-design (gate-governance v1.0).
+# Fuente única para el orquestador. Cada especialista conserva en resources/gates/ los mismos checks;
+# tests/test_uow_orchestrator.py verifica que coinciden.
+# Verificadores (`runners`): scripts que el orquestador ejecuta por su cuenta en `gate` (`--pack`; `{uow}` sale de la tarea).
+# Su resultado manda sobre cualquier PASS declarado. Un check `script` sin verificador solo pasa con `attested_by: human:<id>`;
+# un `independent-review` solo pasa con `reviewer` (human:<id> | agent:<skill>) distinto del autor de la tarea.
+schema_version: "1.0"
+gates:
+  CONTEXT_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 2
+    waiver_allowed: false
+    runners:
+      - script: uow-context-assembler/scripts/check_uow_package.py
+        args: [--root, "{pack}", --profile, context]
+    checks:
+      - {id: sources-versioned, evaluator: script, required: true}
+      - {id: claims-separated, evaluator: script, required: true}
+      - {id: unknowns-listed, evaluator: script, required: true}
+      - {id: mode-baseline-consistent, evaluator: script, required: true}
+      - {id: conflicts-reported, evaluator: independent-review, required: true}
+  SLICE_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 2
+    waiver_allowed: false
+    runners:
+      - script: uow-slice-designer/scripts/check_uow_package.py
+        args: [--root, "{pack}", --profile, slice]
+    checks:
+      - {id: criteria-assigned-to-uow, evaluator: script, required: true}
+      - {id: uow-boundaries-defined, evaluator: script, required: true}
+      - {id: dependencies-acyclic, evaluator: script, required: true}
+      - {id: uow-traces-to-us, evaluator: script, required: true}
+      - {id: uow-fits-single-assignment, evaluator: independent-review, required: true}
+  BINDING_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 2
+    waiver_allowed: false
+    runners:
+      - script: uow-contract-binder/scripts/check_uow_package.py
+        args: [--root, "{pack}", --profile, binding, --uow, "{uow}"]
+    checks:
+      - {id: api-operations-resolved, evaluator: script, required: true}
+      - {id: db-objects-resolved, evaluator: script, required: true}
+      - {id: api-db-consistent, evaluator: script, required: true}
+      - {id: contract-versions-pinned, evaluator: script, required: true}
+      - {id: no-invented-contracts, evaluator: independent-review, required: true}
+  CODEBASE_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 2
+    waiver_allowed: false
+    runners:
+      - script: uow-codebase-mapper/scripts/check_uow_package.py
+        args: [--root, "{pack}", --profile, codebase, --uow, "{uow}"]
+    checks:
+      - {id: repo-ref-pinned, evaluator: script, required: true}
+      - {id: allowed-paths-defined, evaluator: script, required: true}
+      - {id: forbidden-zones-defined, evaluator: script, required: true}
+      - {id: baseline-analysis-present, evaluator: script, required: true}
+      - {id: compat-and-rollback-present, evaluator: script, required: true}
+      - {id: adr-compliance-referenced, evaluator: independent-review, required: true}
+  AGENT_PLAN_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 2
+    waiver_allowed: false
+    runners:
+      - script: uow-agent-execution-planner/scripts/check_uow_package.py
+        args: [--root, "{pack}", --profile, agent-plan, --uow, "{uow}"]
+    checks:
+      - {id: steps-verifiable, evaluator: script, required: true}
+      - {id: tests-before-code, evaluator: script, required: true}
+      - {id: stop-conditions-defined, evaluator: script, required: true}
+      - {id: deviation-protocol-present, evaluator: script, required: true}
+      - {id: no-secrets, evaluator: script, required: true}
+      - {id: dod-measurable, evaluator: script, required: true}
+      - {id: no-destructive-or-unauthorized-prod, evaluator: independent-review, required: true}
+  READINESS_GATE:
+    mode: CONDITIONAL_HIL
+    max_retries: 1
+    waiver_allowed: false
+    runners:
+      - script: uow-readiness-reviewer/scripts/check_uow_package.py
+        args: [--root, "{pack}", --profile, readiness, --uow, "{uow}"]
+    checks:
+      - {id: package-complete, evaluator: script, required: true}
+      - {id: traceability-complete, evaluator: script, required: true}
+      - {id: reviewer-independent-of-author, evaluator: script, required: true}
+      - {id: open-questions-handled, evaluator: script, required: true}
+      - {id: no-invented-scope, evaluator: independent-review, required: true}
+  UOW_READY_GATE:
+    mode: MANDATORY_HIL
+    max_retries: 0
+    waiver_allowed: false
+    runners:
+      - script: uow-readiness-reviewer/scripts/check_uow_package.py
+        args: [--root, "{pack}", --profile, ready, --uow, "{uow}"]
+    checks:
+      - {id: package-digest-matches, evaluator: script, required: true}
+      - {id: review-recommendation-ready, evaluator: script, required: true}

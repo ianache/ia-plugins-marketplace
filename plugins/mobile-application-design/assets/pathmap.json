@@ -1,0 +1,32 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "mobile-application-design",
+  "workspace_relative": true,
+  "deliverable_root": "design/mobile/{run_id}/",
+  "orchestrator_root": ".comsatel/mobile-application-design/runs/",
+  "output_files": {
+    "integration/mobile-api-contracts.md": "mobile-api-offline-integration-designer",
+    "integration/offline-sync-design.md": "mobile-api-offline-integration-designer",
+    "integration/local-storage-design.md": "mobile-api-offline-integration-designer",
+    "integration/security-and-observability.md": "mobile-api-offline-integration-designer",
+    "as-is/mobile-as-is-assessment.md": "mobile-application-reconstruction-analyzer",
+    "as-is/mobile-dependency-inventory.md": "mobile-application-reconstruction-analyzer",
+    "as-is/mobile-risk-register.md": "mobile-application-reconstruction-analyzer",
+    "architecture/mobile-architecture.md": "mobile-architecture-designer",
+    "architecture/feature-module-boundaries.md": "mobile-architecture-designer",
+    "architecture/platform-capabilities.md": "mobile-architecture-designer",
+    "architecture/mobile-adr-register.md": "mobile-architecture-designer",
+    "handoff/mobile-development-context-pack.md": "mobile-development-handoff",
+    "handoff/mobile-implementation-backlog.md": "mobile-development-handoff",
+    "handoff/mobile-contract-traceability.md": "mobile-development-handoff",
+    "handoff/mobile-readiness-report.md": "mobile-development-handoff",
+    "evolution/change-impact-analysis.md": "mobile-evolution-release-planner",
+    "evolution/mobile-migration-plan.md": "mobile-evolution-release-planner",
+    "evolution/release-rollout-rollback.md": "mobile-evolution-release-planner",
+    "evolution/mobile-test-strategy.md": "mobile-evolution-release-planner",
+    "composition/navigation-routing-spec.md": "mobile-navigation-state-designer",
+    "composition/state-management-spec.md": "mobile-navigation-state-designer",
+    "composition/ui-technical-mapping.md": "mobile-navigation-state-designer",
+    "composition/accessibility-implementation.md": "mobile-navigation-state-designer"
+  }
+}

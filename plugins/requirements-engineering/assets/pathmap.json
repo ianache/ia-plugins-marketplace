@@ -1,0 +1,35 @@
+{
+  "pathmap_version": "1.5.0",
+  "plugin": "requirements-engineering",
+  "workspace_relative": true,
+  "document_types": {
+    "RCP": "requirements/context-packs/",
+    "US": "requirements/context-packs/user-stories/",
+    "EPC": "requirements/context-packs/epics/",
+    "DSP": "requirements/scope-packs/",
+    "IMP": "requirements/impact-analysis/"
+  },
+  "artifacts": {
+    "RCP": {
+      "name": "Requirements Context Pack",
+      "basis": "Propuesta; coherente con ruta existente"
+    },
+    "US": {
+      "name": "User Story",
+      "basis": "Ruta existente explícita"
+    },
+    "EPC": {
+      "name": "Épica",
+      "basis": "Tipo aprobado por el responsable (sigla EPC) para agrupar historias funcionalmente relacionadas de un RCP; salida de G3 junto con las US. Un archivo RCP-NNN-EPC-NNN-<slug>.md por épica. Registrado en STD-OKF-001 v1.7.0"
+    },
+    "DSP": {
+      "name": "Development Scope Pack",
+      "basis": "Salida de G6 (handoff). Un archivo DSP-NNN-<slug>.md por paquete de alcance. Lo consumen qa-design y project-management (SSP)"
+    },
+    "IMP": {
+      "name": "Impact and Evolution Analysis",
+      "basis": "Tipo aprobado en v1.3.0; salida de G5"
+    }
+  },
+  "orchestrator_root": ".comsatel/requirements-engineering/runs/"
+}

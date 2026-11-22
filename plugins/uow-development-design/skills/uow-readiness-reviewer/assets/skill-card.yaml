@@ -1,0 +1,4 @@
+name: uow-readiness-reviewer
+role: specialist
+artifact: UWR
+gate: READINESS_GATE

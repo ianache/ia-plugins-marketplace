@@ -1,0 +1,4 @@
+name: uow-codebase-mapper
+role: specialist
+artifact: UCM
+gate: CODEBASE_GATE

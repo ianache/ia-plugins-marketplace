@@ -1,0 +1,19 @@
+# Fragmento de .gitlab-ci.yml para pruebas (plantilla). Adaptar al proyecto; sin secretos en el archivo.
+.qa-test-job:
+  stage: test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+  artifacts:
+    when: always
+    paths: [reports/]
+    reports:
+      junit: reports/junit.xml
+
+<job>:
+  extends: .qa-test-job
+  needs: []
+  variables:
+    QA_ENVIRONMENT: "<entorno autorizado>"
+  script:
+    - <comando de ejecución del AT; el framework se resuelve desde el contexto>

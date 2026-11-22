@@ -1,0 +1,11 @@
+skill: infrastructure-assessment
+artifacts:
+- discovery
+- requirements
+- baseline
+- impact-assessment
+types:
+  discovery: IDS
+  requirements: IRQ
+  baseline: IBL
+  impact-assessment: IIA

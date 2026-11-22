@@ -1,0 +1,8 @@
+{
+  "name": "data-modeling-database-design",
+  "version": "2.1.0",
+  "description": "Diseño de datos DTC-102 con DDD, reconstrucción, evolución y gates",
+  "author": {
+    "name": "COMSATEL"
+  }
+}

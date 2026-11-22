@@ -1,0 +1,9 @@
+skill: infrastructure-delivery-design
+artifacts:
+- iac-specification
+- deployment-plan
+- rollback-plan
+types:
+  iac-specification: IAC
+  deployment-plan: IDP
+  rollback-plan: IRB

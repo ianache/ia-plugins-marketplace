@@ -1,0 +1,77 @@
+contract_version: "5.4"
+# Vocabularios (STD-HANDOFF-001 §4). Cada objeto usa SOLO sus estados.
+plan_states: [PLANNED, IN_PROGRESS, BLOCKED, COMPLETED, FAILED]
+task_states: [PENDING, AUTHORIZED, IN_PROGRESS, COMPLETED, BLOCKED, FAILED, CANCELLED]
+gate_states: [PENDING, PASS, FAIL, BLOCKED, WAIVED, NOT_APPLICABLE]
+document_status: [draft, stable, deprecated]
+# Operativo, vive en coverage-matrix.yaml (nunca en el frontmatter OKF).
+test_case_readiness: [READY, BLOCKED_CLARIFICATION, DEFERRED]
+test_surfaces: [API, WEB, MOBILE, CROSS_SURFACE, DATABASE, EVENT, BATCH, INTEGRATION]
+# Modo de ejecución de una EXEC (no es propiedad inmutable del TC).
+execution_modes: [MANUAL, AUTOMATED_STANDALONE, AUTOMATED_CICD]
+# Estado de automatización del TC; independiente de execution_mode.
+automation_status: [MANUAL_ONLY, AUTOMATION_CANDIDATE, PARTIALLY_AUTOMATED, AUTOMATED]
+test_data_entities: [TDR, TDA]
+test_data_source_types: [SYNTHETIC, FIXTURE, REFERENCE, MASKED_COPY, GENERATED, SEEDED]
+test_data_pii: [NONE, SYNTHETIC, MASKED, REAL_AUTHORIZED]   # REAL_AUTHORIZED exige decision_ref humano
+exec_result: [PASSED, FAILED, ERROR, BLOCKED]
+failure_class: [FUNCTIONAL, PIPELINE, ENVIRONMENT, TEST_DATA, TOOLING, UNCLASSIFIED]   # falla de pipeline/job != falla funcional
+cicd_provider: [GITLAB]
+# Planificación del orquestador (antes execution_mode / execution_modes del plan).
+scheduling_modes: [SEQUENTIAL, PARALLEL_ELIGIBLE]
+workflow_modes: [GREENFIELD, BROWNFIELD, EVOLUTION]
+traceability_chain: [DSP, US, RISK, TSN, TC, AT, EXEC, EVD, DEFECT, QUALITY_DECISION]
+cardinality:
+  RISK_to_TSN: "1:N"
+  TSN_to_TC: "1:N"
+  TC_to_AT: "1:0..N"
+  TC_to_TDR: "1:N"
+  TDR_to_TDA: "1:1..N"
+  TC_to_EXEC: "1:0..N"
+  AT_to_TDA: "N:N"
+  AT_to_EXEC: "1:0..N"
+traceability_test_data:
+  forward: "TC → TDR → TDA → EXEC → EVD"
+  backward: "TDA → TDR → TC → TSN → RISK → US → DSP"
+vocabulary_migration_v5_4:
+  TC.execution: "reemplazado por TC.automation_status y EXEC.execution_mode"
+  plan.execution_modes: "renombrado a workflow_modes (GREENFIELD, BROWNFIELD, EVOLUTION)"
+  task.execution_mode: "renombrado a scheduling_mode (SEQUENTIAL, PARALLEL_ELIGIBLE)"
+vocabulary_migration:   # v5.1 -> v5.2
+  RUNNING: IN_PROGRESS
+  PLANNED: PENDING
+  READY: "derivado, no se almacena: tarea PENDING con dependencias COMPLETED y gate PASS"
+  NEEDS_CLARIFICATION: "BLOCKED con human_intervention"
+  NEEDS_HUMAN_REVIEW: "BLOCKED con human_intervention"
+  SKIPPED: "CANCELLED con justificación y evidencia"
+  PARTIAL: "prohibido; el alcance parcial se declara en deferred_items con decision_ref humano"
+  PASS_WITH_OBSERVATIONS: "gate PASS con observations[] en la evidencia"
+  REWORK: "gate FAIL con AUTO_RETRY o reopen"
+rules:
+  scope_authority: Development Scope Pack (DSP)
+  scope_mutation: forbidden downstream; changes require a new DSP version and selective invalidation
+  scenario_semantics: "TSN defines what situation or behavior is validated at high level"
+  testcase_semantics: "TC defines a concrete verification with preconditions, data, actions and oracle"
+  automated_test_semantics: "AT is an executable implementation of an approved TC; automation is optional"
+  secrets: references only; never persist credentials or GITLAB_PAT
+  provenance: every generated assertion must cite source/evidence refs
+  markdown_artifacts: Google OKF v0.2 con perfil STD-OKF-001 (type = sigla de pack.yaml)
+  state_authority: "Solo el orquestador escribe plan-status.yaml, task-status.yaml y evalúa gates. Un especialista que intente cambiar estado o autoaprobar un gate es rechazado."
+  gate_proposals: "Un especialista entrega gate_proposal {gate, checks[{id,result,evidence_ref}]}. Nunca emite decision/PASS. COMPLETED técnico != gate PASS."
+  partial_scope: "No existe PASS parcial. Lo que no está listo se saca del alcance con deferred_items y decisión humana registrada, o el gate falla."
+  human_decisions: "Una decisión humana no convierte FAIL/BLOCKED en PASS: obliga a reevaluar el gate."
+  test_data_semantics: "TDR define QUÉ datos se necesitan (qa-test-design, sin elegir mecanismo de provisión); TDA materializa un TDR (qa-agentic-test-engineer). Se prefieren datos SYNTHETIC; sin secretos persistidos; PII real solo REAL_AUTHORIZED con decision_ref."
+  execution_semantics: "EXEC es una ejecución concreta de un TC. MANUAL no requiere AT; AUTOMATED_STANDALONE y AUTOMATED_CICD exigen AT aprobado. Un re-run crea una EXEC nueva con rerun_of y conserva el historial."
+  exec_data_readiness: "Ninguna EXEC que dependa de datos pasa a READY sin los TDR/TDA obligatorios en estado READY o una excepción con decision_ref humano."
+  cicd_provenance: "En AUTOMATED_CICD la EXEC registra provider, pipeline_id/url, job_id/name y commit_sha reales; nunca se inventan identificadores."
+  failure_classification: "Toda EXEC FAILED o ERROR declara failure_class; una falla de pipeline, entorno o datos no se contabiliza como falla funcional."
+  at_from_tsn: forbidden
+  testcase_execution_neutral: true
+  execution_mode_owner: EXEC
+  automated_test_requires_approved_testcase: true
+  tc_contract_1_3: "TC con tc_contract 1.4 exige Intención, oracle Pass/Fail, evidencia por modo, restricciones de ejecución, cleanup e idempotencia, trazabilidad coherente con el frontmatter y sin placeholders"
+testcase_vocabulary:
+  test_level: [unit, integration, system, e2e, security, performance]
+  test_type: [positivo, negativo, seguridad, rendimiento, regresion]
+  priority: [P0, P1, P2, P3]
+  criticality: [CRITICAL, HIGH, MEDIUM, LOW]

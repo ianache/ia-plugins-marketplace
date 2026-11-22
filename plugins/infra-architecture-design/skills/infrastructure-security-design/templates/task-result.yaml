@@ -1,0 +1,8 @@
+task_id: ""
+execution_id: ""
+skill: "infrastructure-security-design"
+status: ""            # IN_REVIEW | BLOCKED | FAILED (a specialist never reports COMPLETED)
+artifacts: []         # - {path: <file>, sha256: <hex>}  required when status is IN_REVIEW
+evidence: []          # - {path: <file>, sha256: <hex>}
+errors: []
+blocked_reason: ""   # required when status is BLOCKED or FAILED and errors is empty

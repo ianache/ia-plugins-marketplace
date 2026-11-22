@@ -1,0 +1,31 @@
+{
+  "gitlab_url": "https://project.comsatel.com.pe",
+  "gitlab_id": "<provided-project-id>",
+  "human_approval": {
+    "approved": false,
+    "actor": "<human:id>",
+    "evidence_ref": "<ruta o URL de la aprobación>",
+    "artifact_revision": "<sha256 del conjunto de TC aprobado>"
+  },
+  "test_cases": [
+    {
+      "testcase_id": "TC-001",
+      "testcase_title": "Un usuario sin permiso no mantiene el catálogo de roles",
+      "approved": false,
+      "short_purpose": "Verificar que la API rechaza crear roles a un usuario sin perfil ADMIN ni Jefe de Ingeniería.",
+      "test_surface": "API",
+      "scenario_refs": [
+        "TSN-014"
+      ],
+      "dsp_ref": "DSP-001@1.0",
+      "requirement_refs": [
+        "US-001"
+      ],
+      "risk_refs": [
+        "RISK-007"
+      ],
+      "kb_local_path": "knowledge/products/p3m/testing/test-cases/TC-001.md",
+      "kb_gitlab_url": "https://project.comsatel.com.pe/<group>/<kb-project>/-/blob/main/knowledge/products/p3m/testing/test-cases/TC-001.md"
+    }
+  ]
+}

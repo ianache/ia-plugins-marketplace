@@ -1,0 +1,27 @@
+# type: HCB
+# Contrato del tipo HCB (Codebase Handoff Contract). Reemplazar todo valor entre << >>.
+# Un valor sin reemplazar, o un commit que no sea un SHA real, invalida el handoff.
+handoff:
+  service_id: "<<SERVICE_ID>>"                     # OBLIGATORIO. Id del microservicio.
+  scenario: "<<greenfield|brownfield|evolution>>"  # OBLIGATORIO. Uno de los tres escenarios.
+  knowledge_base:
+    target: "codebase/<<SERVICE_ID>>"              # OBLIGATORIO. Debe empezar por codebase/.
+    design_ref: "<<BC-ID o SVC-ID>>"               # OBLIGATORIO. Diseño del que procede el handoff.
+  source_repository:
+    project: "<<grupo/proyecto>>"                  # OBLIGATORIO.
+    target_branch: "<<rama destino>>"              # OBLIGATORIO.
+    source_ref: "<<refs/heads/...>>"               # OBLIGATORIO.
+    source_commit: "<<SHA completo de 40 caracteres>>"  # OBLIGATORIO. Sin SHA real no hay handoff.
+  architecture:
+    adr_refs: ["<<ADR-ID>>"]                       # OBLIGATORIO. Al menos un ADR.
+  artifacts:                                       # OBLIGATORIO. Al menos un artefacto.
+    - id: "<<ARTEFACTO-ID>>"
+      source: "<<ruta del diseño dentro de design/microservices/<<SERVICE_ID>>/>>"
+      target: "<<ruta relativa dentro de codebase/<<SERVICE_ID>>/, sin ..>>"
+      action: "<<create|update|replace>>"
+      validation: "<<cómo se verifica el artefacto>>"
+  controls:
+    require_human_approval: true                   # OBLIGATORIO. Debe ser true.
+    publish_via_merge_request: true                # OBLIGATORIO. Debe ser true.
+    require_adr_compliance: true                   # OBLIGATORIO. Debe ser true.
+    require_backward_compatibility: true           # OBLIGATORIO. Debe ser true.

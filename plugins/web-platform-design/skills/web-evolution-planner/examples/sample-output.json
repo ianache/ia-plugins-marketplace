@@ -1,0 +1,11 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "skill": "web-evolution-planner",
+  "status": "awaiting_human_gate",
+  "artifacts": [
+    "evolution/evolution-plan.md",
+    "evolution/rollback-plan.md"
+  ],
+  "gate": "G5",
+  "approved": false
+}

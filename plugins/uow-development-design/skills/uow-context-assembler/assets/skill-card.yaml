@@ -1,0 +1,4 @@
+name: uow-context-assembler
+role: specialist
+artifact: UCX
+gate: CONTEXT_GATE

@@ -1,0 +1,9 @@
+{
+  "producer": "architecture-design-orchestrator",
+  "inputs": [],
+  "outputs": [],
+  "sources": [],
+  "open_questions": [],
+  "gate": "G0\u2013G6",
+  "status": "pending_human_review"
+}

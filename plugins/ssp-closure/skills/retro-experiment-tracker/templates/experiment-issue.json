@@ -1,0 +1,11 @@
+{
+  "title": "<experimento acordado>",
+  "description": "<acción e hipótesis acordada>",
+  "owner_person": "<persona>",
+  "success_metric": "<qué se medirá>",
+  "due_date": "<AAAA-MM-DD anterior al siguiente SSP>",
+  "source_ssp": "<SSP-ID>",
+  "source_retrospective": "<referencia a decisión/acta>",
+  "label": "retrospective-experiment",
+  "publication_status": "NOT_PUBLISHED"
+}

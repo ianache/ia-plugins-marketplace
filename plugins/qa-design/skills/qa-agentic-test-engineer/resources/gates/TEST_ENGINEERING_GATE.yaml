@@ -1,0 +1,63 @@
+gate: TEST_ENGINEERING_GATE
+owner_skill: qa-agentic-test-engineer
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 0
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: at-references-approved-tc
+  evaluator: script
+  required: true
+- id: tda-traces-to-tdr-and-tc
+  evaluator: script
+  required: true
+- id: test-data-ready
+  evaluator: script
+  required: true
+- id: exec-evaluates-tc-oracle
+  evaluator: script
+  required: true
+- id: execution-mode-requirements
+  evaluator: script
+  required: true
+- id: cicd-provenance-complete
+  evaluator: script
+  required: true
+- id: evidence-reproducible
+  evaluator: independent-review
+  required: true
+- id: environment-authorized
+  evaluator: script
+  required: true
+- id: no-secrets-or-scope-drift
+  evaluator: script
+  required: true
+- id: no-unauthorized-pii
+  evaluator: script
+  required: true
+- id: no-destructive-or-unauthorized-prod
+  evaluator: script
+  required: true
+  on_trigger: REQUEST_HIL
+- id: api-automation-subordinate-traceable
+  evaluator: script
+  required: true
+- id: load-automation-subordinate-traceable
+  evaluator: script
+  required: true
+- id: web-automation-subordinate-traceable
+  evaluator: script
+  required: true
+- id: ssp-scope-respected
+  evaluator: script
+  required: true
+evidence:
+  required: true
+  path: .comsatel/qa-design/runs/<run-id>/evidence/TEST_ENGINEERING_GATE/
+  gate_report: .comsatel/qa-design/runs/<run-id>/evidence/TEST_ENGINEERING_GATE/gate-report-T05-<SURFACE>.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador
+  decide el gate.

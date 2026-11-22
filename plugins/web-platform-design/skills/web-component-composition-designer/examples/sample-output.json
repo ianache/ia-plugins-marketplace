@@ -1,0 +1,11 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "skill": "web-component-composition-designer",
+  "status": "awaiting_human_gate",
+  "artifacts": [
+    "composition/component-composition.md",
+    "composition/routing-state-design.md"
+  ],
+  "gate": "G3",
+  "approved": false
+}

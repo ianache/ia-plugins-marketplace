@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": [
+    "execution_id",
+    "task_id",
+    "authorization",
+    "inputs"
+  ],
+  "properties": {
+    "execution_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "authorization": {
+      "type": "object",
+      "required": [
+        "id",
+        "token"
+      ]
+    },
+    "inputs": {
+      "type": "array"
+    }
+  }
+}

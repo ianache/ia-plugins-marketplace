@@ -1,0 +1,17 @@
+{
+  "name": "web-platform-design",
+  "version": "1.4.0",
+  "description": "COMSATEL DTC-104: diseño técnico Web Angular Shell MicroUIs BFF, gobernado por gates y contratos OKF.",
+  "author": {
+    "name": "COMSATEL Architecture"
+  },
+  "keywords": [
+    "web",
+    "angular",
+    "microfrontend",
+    "micro-ui",
+    "architecture",
+    "bff",
+    "dtc-104"
+  ]
+}

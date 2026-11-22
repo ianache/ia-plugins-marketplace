@@ -1,0 +1,7 @@
+schema_version: "1.1"
+traceability:
+  - dsp_ref: DSP-XXX@<versión>
+    requirement_ref: US-XXX
+    risk_refs: [RISK-XXX]
+    scenario_refs: [TSN-XXX]
+    testcase_refs: [TC-XXX]

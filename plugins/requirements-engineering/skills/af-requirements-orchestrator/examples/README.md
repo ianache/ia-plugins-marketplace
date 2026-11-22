@@ -1,0 +1,1 @@
+Ejemplo: Evolution de CL2. G1 reconstruye evidencia, G2 aprueba la línea base de negocio (BR/IMD/TRM de `business-knowledge`), G3 refina HU existentes, G4 revisa criterios, G5 identifica impactos, G6 prepara handoff. Bloqueo de G2 impide G3/G4 hasta aprobación humana.

@@ -1,0 +1,2 @@
+# El digest de uow-package.yaml depende de los bytes exactos: forzar LF en todo el ejemplo.
+* text eol=lf

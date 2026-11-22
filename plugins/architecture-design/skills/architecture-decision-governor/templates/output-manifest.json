@@ -1,0 +1,9 @@
+{
+  "producer": "architecture-decision-governor",
+  "inputs": [],
+  "outputs": [],
+  "sources": [],
+  "open_questions": [],
+  "gate": "G3",
+  "status": "pending_human_review"
+}

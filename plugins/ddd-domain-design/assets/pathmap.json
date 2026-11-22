@@ -1,0 +1,36 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "ddd-domain-design",
+  "workspace_relative": true,
+  "document_types": {
+    "ACP": "architecture/domain-discovery",
+    "BC": "architecture/bounded-contexts",
+    "CFR": "architecture/domain-contracts",
+    "CTX": "architecture/context-maps",
+    "CTLG": "architecture/domain-model",
+    "AGG": "architecture/domain-model/aggregates",
+    "ENT": "architecture/domain-model/entities",
+    "VO": "architecture/domain-model/value-objects",
+    "EVT": "architecture/domain-events"
+  },
+  "auxiliary": {
+    "domain-design-contract.yaml": "architecture/domain-contracts",
+    "domain-design-pack.md": "architecture/domain-contracts",
+    "domain-discovery.md": "architecture/domain-discovery",
+    "bounded-contexts.md": "architecture/bounded-contexts",
+    "context-map.md": "architecture/context-maps",
+    "tactical-model.md": "architecture/domain-model",
+    "domain-events.md": "architecture/domain-events",
+    "CFR-domain-validation.md": "architecture/domain-contracts",
+    "domain-validation.md": "architecture/domain-contracts"
+  },
+  "orchestrator_root": ".comsatel/ddd-domain-design/runs",
+  "typed_outputs": {
+    "domain-discovery.md": "ACP",
+    "bounded-contexts.md": "CTLG",
+    "context-map.md": "CTX",
+    "tactical-model.md": "CTLG",
+    "domain-events.md": "CTLG",
+    "CFR-domain-validation.md": "CFR"
+  }
+}

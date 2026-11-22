@@ -1,0 +1,9 @@
+{
+  "gate": "G6",
+  "skill": "mgt-release-closure-auditor",
+  "readiness": "NOT_READY",
+  "evidence_paths": [],
+  "reviewer": null,
+  "approved": false,
+  "blocking_questions": []
+}

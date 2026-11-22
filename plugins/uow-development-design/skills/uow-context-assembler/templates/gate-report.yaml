@@ -1,0 +1,13 @@
+# Destino: .comsatel/uow-development-design/runs/evidence/CONTEXT_GATE/gate-report-T01.yaml (carpeta de evidencia del orquestador)
+schema_version: "1.1"
+gate: CONTEXT_GATE
+proposal_only: true   # el especialista propone; solo el orquestador decide el gate
+produced_by: uow-context-assembler/1.1.0
+checks:
+  - {id: sources-versioned, result: UNCERTAIN, evidence_ref: null}
+  - {id: claims-separated, result: UNCERTAIN, evidence_ref: null}
+  - {id: unknowns-listed, result: UNCERTAIN, evidence_ref: null}
+  - {id: mode-baseline-consistent, result: UNCERTAIN, evidence_ref: null}
+  - {id: conflicts-reported, result: UNCERTAIN, evidence_ref: null}
+observations: []
+deferred_items: []

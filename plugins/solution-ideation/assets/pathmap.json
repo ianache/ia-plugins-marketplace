@@ -1,0 +1,15 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "solution-ideation",
+  "workspace_relative": true,
+  "deliverable_root": "design/ideation/{run_id}/",
+  "orchestrator_root": ".comsatel/solution-ideation/runs/",
+  "output_files": {
+    "concept-portfolio.md": "creative-concept-explorer",
+    "experiment-plan.md": "innovation-experiment-designer",
+    "opportunity-map.md": "innovation-opportunity-scout",
+    "requirements-handoff.md": "innovation-requirements-handoff",
+    "problem-framing.md": "problem-framing-researcher",
+    "solution-concepts.md": "solution-concept-architect"
+  }
+}

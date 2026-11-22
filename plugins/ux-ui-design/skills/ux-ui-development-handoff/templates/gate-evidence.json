@@ -1,0 +1,10 @@
+{
+  "run_id": "<run-id>",
+  "skill": "ux-ui-development-handoff",
+  "gate": "G6",
+  "status": "pending_review",
+  "evidence_paths": [],
+  "blocking_findings": [],
+  "reviewer": null,
+  "decision_at": null
+}

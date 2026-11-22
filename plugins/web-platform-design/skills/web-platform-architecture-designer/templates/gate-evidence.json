@@ -1,0 +1,16 @@
+{
+  "skill": "web-platform-architecture-designer",
+  "gate": "G2",
+  "run_id": "<run-id>",
+  "status": "pending_review",
+  "artifacts": [],
+  "sources": [],
+  "checks": {
+    "traceability": "pending",
+    "contracts": "pending",
+    "okf": "pending"
+  },
+  "open_issues": [],
+  "reviewer": null,
+  "approved_at": null
+}

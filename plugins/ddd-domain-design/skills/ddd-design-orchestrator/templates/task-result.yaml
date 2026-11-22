@@ -1,0 +1,9 @@
+task_id: REPLACE
+run_id: REPLACE
+document_type: REPLACE
+output_path: REPLACE
+actual_output_path: REPLACE
+pathmap_version: 1.0.0
+validation_result: PENDING
+evidence: []
+open_questions: []

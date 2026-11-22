@@ -1,0 +1,11 @@
+{
+  "run_id": "CL2-WEB-LAB-001",
+  "skill": "web-development-handoff",
+  "status": "awaiting_human_gate",
+  "artifacts": [
+    "handoff/development-context-pack.md",
+    "handoff/implementation-readiness.md"
+  ],
+  "gate": "G6",
+  "approved": false
+}

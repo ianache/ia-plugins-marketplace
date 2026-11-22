@@ -1,0 +1,10 @@
+# Destino: .comsatel/qa-design/runs/<run-id>/evidence/<GATE>/gate-report-<TASK_ID>.yaml (carpeta de evidencia del orquestador; no se guarda en testing\)
+# Plantilla común de gate-report de los skills especialistas de qa-design. Los checks salen de resources/gates/<GATE>.yaml del skill productor.
+schema_version: "1.1"
+gate: <GATE>
+proposal_only: true   # el especialista propone; solo el orquestador decide el gate
+produced_by: <skill>/<version>
+checks:
+  - {id: <check-id>, result: UNCERTAIN, evidence_ref: null}   # una línea por check del gate; sin evidencia el resultado es UNCERTAIN o FAIL
+observations: []   # notas no bloqueantes (equivalen al antiguo PASS_WITH_OBSERVATIONS)
+deferred_items: []

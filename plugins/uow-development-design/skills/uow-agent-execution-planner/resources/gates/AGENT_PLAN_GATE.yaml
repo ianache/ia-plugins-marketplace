@@ -1,0 +1,37 @@
+gate: AGENT_PLAN_GATE
+owner_skill: uow-agent-execution-planner
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 2
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: steps-verifiable
+  evaluator: script
+  required: true
+- id: tests-before-code
+  evaluator: script
+  required: true
+- id: stop-conditions-defined
+  evaluator: script
+  required: true
+- id: deviation-protocol-present
+  evaluator: script
+  required: true
+- id: no-secrets
+  evaluator: script
+  required: true
+- id: dod-measurable
+  evaluator: script
+  required: true
+- id: no-destructive-or-unauthorized-prod
+  evaluator: independent-review
+  required: true
+evidence:
+  required: true
+  path: .comsatel/uow-development-design/runs/evidence/AGENT_PLAN_GATE/
+  gate_report: .comsatel/uow-development-design/runs/evidence/AGENT_PLAN_GATE/gate-report-T05.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador decide el gate.

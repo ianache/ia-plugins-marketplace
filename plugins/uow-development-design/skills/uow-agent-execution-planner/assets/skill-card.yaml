@@ -1,0 +1,4 @@
+name: uow-agent-execution-planner
+role: specialist
+artifact: UAP
+gate: AGENT_PLAN_GATE

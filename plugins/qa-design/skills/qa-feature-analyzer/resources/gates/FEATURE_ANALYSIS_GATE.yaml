@@ -1,0 +1,32 @@
+gate: FEATURE_ANALYSIS_GATE
+owner_skill: qa-feature-analyzer
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 0
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: dsp-valid-and-verified
+  evaluator: script
+  required: true
+- id: scope-complete
+  evaluator: script
+  required: true
+- id: critical-risks-evidenced
+  evaluator: independent-review
+  required: true
+- id: surfaces-declared
+  evaluator: script
+  required: true
+- id: no-scope-conflict
+  evaluator: independent-review
+  required: true
+evidence:
+  required: true
+  path: .comsatel/qa-design/runs/<run-id>/evidence/FEATURE_ANALYSIS_GATE/
+  gate_report: .comsatel/qa-design/runs/<run-id>/evidence/FEATURE_ANALYSIS_GATE/gate-report-T01.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador
+  decide el gate.

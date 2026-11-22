@@ -1,0 +1,50 @@
+gate: TEST_DESIGN_GATE
+owner_skill: qa-test-design
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 0
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: tc-detail-complete
+  evaluator: script
+  required: true
+- id: strategy-plan-consistent
+  evaluator: independent-review
+  required: true
+- id: critical-risk-has-tsn
+  evaluator: script
+  required: true
+- id: tsn-has-tc
+  evaluator: script
+  required: true
+- id: approved-tc-has-oracle-and-data
+  evaluator: script
+  required: true
+- id: test-data-requirements-defined
+  evaluator: script
+  required: true
+- id: test-data-safe
+  evaluator: script
+  required: true
+- id: traceability-complete
+  evaluator: script
+  required: true
+- id: critical-surfaces-covered
+  evaluator: script
+  required: true
+- id: coverage-prioritization-defined
+  evaluator: script
+  required: true
+- id: no-pending-clarification-in-scope
+  evaluator: script
+  required: true
+evidence:
+  required: true
+  path: .comsatel/qa-design/runs/<run-id>/evidence/TEST_DESIGN_GATE/
+  gate_report: .comsatel/qa-design/runs/<run-id>/evidence/TEST_DESIGN_GATE/gate-report-T02.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador
+  decide el gate.

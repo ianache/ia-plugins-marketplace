@@ -1,0 +1,82 @@
+{
+  "pathmap_version": "2.0.0",
+  "plugin": "business-knowledge",
+  "workspace_relative": true,
+  "document_types": {
+    "BCP": "business/context-packs/",
+    "BO": "business/objectives/",
+    "STK": "business/stakeholders/",
+    "BCAP": "business/capabilities/",
+    "TRM": "business/terms/",
+    "BR": "business/rules/",
+    "IMD": "business/information-model/",
+    "BSN": "business/scenarios/"
+  },
+  "artifacts": {
+    "BCP": {
+      "name": "Business Context Pack",
+      "file": "BCP-NNN-<slug>.md",
+      "skill": "biz-context-objectives-analyst"
+    },
+    "BO": {
+      "name": "Business Objective",
+      "file": "BO-NNN-<slug>.md",
+      "skill": "biz-context-objectives-analyst"
+    },
+    "STK": {
+      "name": "Stakeholder",
+      "file": "STK-NNN-<slug>.md",
+      "skill": "biz-stakeholder-capability-mapper"
+    },
+    "BCAP": {
+      "name": "Business Capability",
+      "file": "BCAP-NNN-<slug>.md",
+      "skill": "biz-stakeholder-capability-mapper"
+    },
+    "TRM": {
+      "name": "Business Term",
+      "file": "TRM-NNN-<slug>.md",
+      "skill": "biz-glossary-curator"
+    },
+    "BR": {
+      "name": "Business Rule",
+      "file": "BR-NNN.md",
+      "skill": "biz-rules-modeler"
+    },
+    "IMD": {
+      "name": "Information Model",
+      "file": "IMD-NNN-<slug>.md",
+      "skill": "biz-information-model-designer"
+    },
+    "CTLG-TRM": {
+      "name": "Catálogo de términos",
+      "file": "CTLG-TRM.md",
+      "skill": "biz-glossary-curator"
+    },
+    "CTLG-BR": {
+      "name": "Catálogo de reglas de negocio",
+      "file": "CTLG-BR.md",
+      "skill": "biz-rules-modeler"
+    },
+    "BSN": {
+      "name": "Business Scenario",
+      "file": "BSN-NNN-<slug>.md",
+      "skill": "biz-scenario-modeler"
+    }
+  },
+  "catalogs": {
+    "CTLG-TRM": {
+      "indexes": "TRM",
+      "dir": "business/terms/"
+    },
+    "CTLG-BR": {
+      "indexes": "BR",
+      "dir": "business/rules/"
+    }
+  },
+  "orchestrator_root": ".comsatel/business-knowledge/runs/",
+  "indexed_types": [
+    "BR",
+    "TRM"
+  ]
+}

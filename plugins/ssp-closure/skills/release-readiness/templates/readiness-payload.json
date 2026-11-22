@@ -1,0 +1,14 @@
+{
+  "ssp_id": "<SSP-ID>",
+  "period": "<periodo>",
+  "evidence_cutoff": "<ISO-8601-CON-ZONA>",
+  "quality_intelligence_ref": "<id/ruta o null si no disponible>",
+  "signals": [
+    {"criterion": "<criterio>", "result": "<READY|NOT_READY|UNCERTAIN>", "evidence_ref": "<ruta o issue>", "residual_risk": "<riesgo o N/A justificado>"}
+  ],
+  "open_defects": [
+    {"issue_ref": "#<iid>", "severity": "<severidad>", "risk": "<impacto>", "decision_owner": "<persona>"}
+  ],
+  "deployment_decision": "NOT_MADE_BY_PLUGIN",
+  "gate_proposal": "<checks con resultado y evidence_ref>"
+}

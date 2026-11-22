@@ -1,0 +1,34 @@
+gate: CODEBASE_GATE
+owner_skill: uow-codebase-mapper
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 2
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: repo-ref-pinned
+  evaluator: script
+  required: true
+- id: allowed-paths-defined
+  evaluator: script
+  required: true
+- id: forbidden-zones-defined
+  evaluator: script
+  required: true
+- id: baseline-analysis-present
+  evaluator: script
+  required: true
+- id: compat-and-rollback-present
+  evaluator: script
+  required: true
+- id: adr-compliance-referenced
+  evaluator: independent-review
+  required: true
+evidence:
+  required: true
+  path: .comsatel/uow-development-design/runs/evidence/CODEBASE_GATE/
+  gate_report: .comsatel/uow-development-design/runs/evidence/CODEBASE_GATE/gate-report-T04.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador decide el gate.

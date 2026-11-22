@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "required": [
+    "task_id",
+    "artifacts",
+    "evidence_refs",
+    "gate_proposal"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array"
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "gate_proposal": {
+      "type": "object",
+      "required": [
+        "gate",
+        "checks"
+      ],
+      "properties": {
+        "gate": {
+          "type": "string"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "result",
+              "evidence_ref"
+            ],
+            "properties": {
+              "result": {
+                "enum": [
+                  "PASS",
+                  "FAIL",
+                  "UNCERTAIN"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "not": {
+    "anyOf": [
+      {
+        "required": [
+          "decision"
+        ]
+      },
+      {
+        "required": [
+          "gate_status"
+        ]
+      }
+    ]
+  }
+}

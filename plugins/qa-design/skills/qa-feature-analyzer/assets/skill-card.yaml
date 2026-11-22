@@ -1,0 +1,9 @@
+name: qa-feature-analyzer
+purpose: QA Feature Analysis Pack
+scope_authority: DSP
+test_surfaces:
+- API
+- WEB
+- MOBILE
+- CROSS_SURFACE
+gate: FEATURE_ANALYSIS_GATE

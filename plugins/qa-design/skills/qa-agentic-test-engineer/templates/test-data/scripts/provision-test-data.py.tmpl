@@ -1,0 +1,11 @@
+"""Provisión de Test Data (plantilla). Determinista, idempotente, sin secretos embebidos."""
+# Credenciales: leer de variables de entorno o del gestor de secretos; nunca escribirlas aquí.
+
+def setup():
+    """Crea o carga los datos del TDA (semilla fija para determinismo)."""
+    raise NotImplementedError
+
+
+def cleanup():
+    """Revierte lo creado por setup() para evitar contaminación entre pruebas."""
+    raise NotImplementedError

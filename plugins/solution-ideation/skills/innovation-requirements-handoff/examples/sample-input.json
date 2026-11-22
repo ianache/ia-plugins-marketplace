@@ -1,0 +1,15 @@
+{
+  "initiative_id": "CL2-IDEATION-LAB",
+  "scenario": "evolution",
+  "objective": "Explorar mejoras innovadoras en monitoreo de flotas",
+  "target_users": [
+    "operador",
+    "supervisor"
+  ],
+  "evidence_refs": [],
+  "constraints": [
+    "privacidad",
+    "integración con APIs existentes"
+  ],
+  "preceding_gate_refs": []
+}

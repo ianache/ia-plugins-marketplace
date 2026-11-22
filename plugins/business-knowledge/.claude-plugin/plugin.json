@@ -1,0 +1,8 @@
+{
+  "name": "business-knowledge",
+  "version": "3.0.0",
+  "description": "Conocimiento de negocio con 7 skills especializados y orchestrator: contexto y objetivos, actores y capacidades, glosario (TRM), reglas (BR), modelo de información (IMD), escenarios de negocio (BSN), validación y handoff",
+  "author": {
+    "name": "COMSATEL"
+  }
+}

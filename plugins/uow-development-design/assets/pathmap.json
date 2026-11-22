@@ -1,0 +1,81 @@
+{
+  "pathmap_version": "1.0.0",
+  "plugin": "uow-development-design",
+  "workspace_relative": true,
+  "document_types": {
+    "UCX": "management/uows/",
+    "UOW": "management/uows/",
+    "UCB": "management/uows/UOW-{NNN}/",
+    "UCM": "management/uows/UOW-{NNN}/",
+    "UAP": "management/uows/UOW-{NNN}/",
+    "UWR": "management/uows/UOW-{NNN}/"
+  },
+  "artifacts": {
+    "UCX": {
+      "name": "UOW Context Pack",
+      "file": "UCX-NNN-<slug>.md"
+    },
+    "UOW": {
+      "name": "Unit of Work",
+      "file": "UOW-NNN-<slug>.md"
+    },
+    "UCB": {
+      "name": "UOW Contract Binding",
+      "file": "UCB-NNN-<slug>.md"
+    },
+    "UCM": {
+      "name": "UOW Codebase Map",
+      "file": "UCM-NNN-<slug>.md"
+    },
+    "UAP": {
+      "name": "UOW Agent Execution Plan",
+      "file": "UAP-NNN-<slug>.md"
+    },
+    "UWR": {
+      "name": "UOW Readiness Review",
+      "file": "UWR-NNN-<slug>.md"
+    }
+  },
+  "manifest": {
+    "file": "uow-package.yaml",
+    "dir": "management/uows/UOW-{NNN}/"
+  },
+  "inputs_read_only": {
+    "US,RCP,BR,DSP": [
+      "requirements/"
+    ],
+    "SSP": [
+      "management/sprints/"
+    ],
+    "FDT,API,EVT,SVC,HCB": [
+      "design/microservices/{service}/"
+    ],
+    "ADR,ASR": [
+      "architecture/"
+    ],
+    "LDM,PDM,DBM,DBR,data-handoff.yaml": [
+      "design/database/"
+    ],
+    "HOF": [
+      "design/ux-ui/"
+    ],
+    "WEB": [
+      "design/web/"
+    ],
+    "MOB": [
+      "design/mobile/"
+    ]
+  },
+  "orchestrator_root": ".comsatel/uow-development-design/runs/",
+  "orchestrator_files": [
+    "plan.yaml",
+    "plan-status.yaml",
+    "events.jsonl",
+    "tasks/",
+    "evidence/"
+  ],
+  "notes": {
+    "code_paths": "Las rutas de código del repositorio no se fijan aquí: las resuelve cada ADR y el UCM.",
+    "run_id": "Los documentos del pack no llevan run-id en su ruta canónica."
+  }
+}

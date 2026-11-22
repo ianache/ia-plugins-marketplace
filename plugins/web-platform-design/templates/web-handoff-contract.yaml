@@ -1,0 +1,14 @@
+contract_version: "0.1.0"
+producer: web-development-handoff
+consumer: development-context-pack
+scenario: ""
+web_application: ""
+ux_ui_handoff:
+  resource: ""
+  approved: false
+  refs: {uxr: [], flw: [], scr: [], cmp: [], tkn: []}
+architecture: {shell: "", microuis: [], routing: "", state: ""}
+integrations: {openapi: [], fdt: [], bff: [], security: ""}
+implementation: {repository: "", branch: "", source_commit: "", components: []}
+quality: {asr: [], tests: [], risks: [], unresolved: []}
+publication: {kb_target: "", merge_request: "", human_approval: ""}

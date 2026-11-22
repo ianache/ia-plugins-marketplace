@@ -1,0 +1,6 @@
+skill: qa-agentic-test-engineer
+dsp_ref: DSP-EXAMPLE@1.0
+intent: <intent>
+inputs:
+- <local paths or artifact refs>
+expected_output: QA Test Engineering Pack

@@ -1,0 +1,20 @@
+skill: infrastructure-orchestrator
+version: 4.1.0
+artifacts:
+- execution-plan
+- execution-log
+- gate-register
+result_file: task-result.yaml
+must_validate:
+- frontmatter
+- mandatory_sections
+- source_provenance
+- traceability
+may_write_execution_plan: true
+result_status_values:
+- IN_REVIEW
+- BLOCKED
+- FAILED
+evidence_entry_requires:
+- path
+- sha256

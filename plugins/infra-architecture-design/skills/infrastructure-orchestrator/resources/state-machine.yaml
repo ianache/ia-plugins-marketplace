@@ -1,0 +1,31 @@
+states:
+- PENDING
+- READY
+- IN_PROGRESS
+- IN_REVIEW
+- COMPLETED
+- BLOCKED
+- FAILED
+- SKIPPED
+transitions:
+  PENDING: [READY, BLOCKED, SKIPPED]
+  READY: [IN_PROGRESS, BLOCKED, SKIPPED]
+  IN_PROGRESS: [IN_REVIEW, FAILED, BLOCKED]
+  IN_REVIEW: [COMPLETED, FAILED, BLOCKED]
+  BLOCKED: [READY, SKIPPED]
+  FAILED: [READY, SKIPPED]
+  COMPLETED: []
+  SKIPPED: []
+owner: infrastructure-orchestrator
+completed_requires:
+- verified_evidence
+- valid_execution_id
+ready_requires:
+- dependencies_completed
+- required_gates_approved
+gates_require: human approval evidence (actor must be human:<id>) and every task in the gate's "after" list COMPLETED
+specialist_result_statuses:
+- IN_REVIEW
+- BLOCKED
+- FAILED
+specialist_result_note: A specialist never reports COMPLETED; only the orchestrator completes a task after validating the evidence.

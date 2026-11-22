@@ -1,0 +1,129 @@
+pack_name: bi-analytics
+version: 1.2.0
+purpose: Diseñar y gobernar la línea base de Business Intelligence y analítica (decisiones
+  y preguntas de negocio, KPI, fuentes, modelo dimensional, dashboards e informes
+  y calidad de gobierno) con gates humanos G0-G6 y trazabilidad OKF.
+artifact_types:
+  BIC: BI Decision Context
+  KPI: KPI Definition
+  CTLG: Catalog
+  DSM: Data Source Map
+  DMD: Dimensional Model Design
+  DSH: Dashboard and Report Specification
+  BIQ: BI Quality and Governance Report
+skills:
+- name: bi-analytics-orchestrator
+  role: orchestrator
+  description: Planifica, coordina y controla los seis skills de BI y analítica, sus
+    contratos, dependencias, gates y entregables de dominio bajo ./bi; la gestion operativa de cada ejecucion vive en .comsatel/bi-analytics/runs/<run-id>.
+- name: bi-decision-context-analyst
+  role: specialist
+  description: Define preguntas de negocio, decisiones soportadas, audiencias y alcance
+    analítico. Produce BIC.
+- name: bi-kpi-definition-designer
+  role: specialist
+  description: Define KPI con fórmula, grano, dimensiones, owner, umbrales y trazabilidad
+    a decisiones. Produce un documento KPI por indicador y un catálogo CTLG ordenado
+    alfabéticamente.
+- name: bi-data-source-mapper
+  role: specialist
+  description: Inventaría fuentes de datos, sistemas origen, linaje, frecuencia y
+    calidad esperada sin conectarse a sistemas. Produce DSM.
+- name: bi-dimensional-model-designer
+  role: specialist
+  description: Diseña hechos, dimensiones, grano, jerarquías y reglas de cambio histórico
+    a partir de KPI y DSM. Produce DMD.
+- name: bi-dashboard-report-designer
+  role: specialist
+  description: Especifica dashboards e informes con audiencia, visualizaciones, filtros,
+    drill-down y KPI mostrados. Produce DSH.
+- name: bi-quality-governance-validator
+  role: specialist
+  description: Valida trazabilidad KPI-modelo-dashboard, calidad de datos, acceso
+    por rol y completitud del handoff. Produce BIQ.
+gates:
+- id: G0
+  criteria:
+  - Objetivo, alcance y producto identificados
+  - Fuentes autorizadas y owner declarados
+  - DAG válido y sin ciclos
+- id: G1
+  criteria:
+  - BIC documentado con preguntas de negocio y decisiones
+  - Audiencias y alcance analítico aprobados por persona
+- id: G2
+  criteria:
+  - KPI con fórmula, grano y owner completos
+  - Trazabilidad de cada KPI a una decisión de BIC
+  - Un documento KPI por indicador y un catálogo CTLG cuyos campos de índice coinciden con cada KPI
+  - El catálogo CTLG no repite definiciones
+- id: G3
+  criteria:
+  - DSM con sistemas origen, linaje y frecuencia
+  - Cada elemento de KPI con fuente identificada o marcado como gap
+- id: G4
+  criteria:
+  - DMD con grano explícito por tabla de hechos
+  - Tablas, columnas, claves, constraints e índices documentados según fact-dim-modelling-standard.md
+  - Cada KPI calculable desde el modelo
+- id: G5
+  criteria:
+  - DSH con KPI, filtros y audiencia por dashboard
+  - Cada visualización referencia un KPI o métrica del catálogo
+- id: G6
+  criteria:
+  - Trazabilidad completa KPI-DMD-DSH sin huérfanos
+  - Calidad de datos y control de acceso documentados
+  - Aprobación humana del handoff
+tasks:
+- id: T-01
+  skill: bi-decision-context-analyst
+  depends_on: []
+  gate: G1
+  outputs:
+  - BIC
+- id: T-02
+  skill: bi-kpi-definition-designer
+  depends_on:
+  - T-01
+  gate: G2
+  outputs:
+  - KPI
+  - CTLG
+- id: T-03
+  skill: bi-data-source-mapper
+  depends_on:
+  - T-01
+  gate: G3
+  outputs:
+  - DSM
+- id: T-04
+  skill: bi-dimensional-model-designer
+  depends_on:
+  - T-02
+  - T-03
+  gate: G4
+  outputs:
+  - DMD
+- id: T-05
+  skill: bi-dashboard-report-designer
+  depends_on:
+  - T-02
+  - T-04
+  gate: G5
+  outputs:
+  - DSH
+- id: T-06
+  skill: bi-quality-governance-validator
+  depends_on:
+  - T-02
+  - T-03
+  - T-04
+  - T-05
+  gate: G6
+  outputs:
+  - BIQ
+execution_modes:
+- GREENFIELD
+- BROWNFIELD
+- EVOLUTION

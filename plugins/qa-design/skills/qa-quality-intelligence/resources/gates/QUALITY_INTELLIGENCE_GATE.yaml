@@ -1,0 +1,35 @@
+gate: QUALITY_INTELLIGENCE_GATE
+owner_skill: qa-quality-intelligence
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 0
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: provenance-and-scope-established
+  evaluator: script
+  required: true
+- id: traceability-chain-evaluated
+  evaluator: script
+  required: true
+- id: results-segmented-by-mode
+  evaluator: script
+  required: true
+- id: failures-classified-by-cause
+  evaluator: script
+  required: true
+- id: recommendation-issued
+  evaluator: script
+  required: true
+- id: evidence-sufficiency-declared
+  evaluator: independent-review
+  required: true
+evidence:
+  required: true
+  path: .comsatel/qa-design/runs/<run-id>/evidence/QUALITY_INTELLIGENCE_GATE/
+  gate_report: .comsatel/qa-design/runs/<run-id>/evidence/QUALITY_INTELLIGENCE_GATE/gate-report-T07.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador
+  decide el gate.

@@ -1,0 +1,14 @@
+schema_version: 1
+policy_id: KB-QCA-GOV-001
+mode: observe
+risk_signals:
+  - force_push
+  - git_history_rewrite
+  - destructive_shell_command
+  - direct_push_protected_branch
+publication_authority: gitlab_ci_and_human_approval
+mod_may_auto_approve: false
+mod_may_publish: false
+notes: >
+  Signals are heuristic and non-authoritative. Future enforce mode requires
+  explicit policy mapping, scoped repository configuration and integration tests.

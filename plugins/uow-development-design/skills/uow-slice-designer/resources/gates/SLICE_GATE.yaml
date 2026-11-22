@@ -1,0 +1,31 @@
+gate: SLICE_GATE
+owner_skill: uow-slice-designer
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 2
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: criteria-assigned-to-uow
+  evaluator: script
+  required: true
+- id: uow-boundaries-defined
+  evaluator: script
+  required: true
+- id: dependencies-acyclic
+  evaluator: script
+  required: true
+- id: uow-traces-to-us
+  evaluator: script
+  required: true
+- id: uow-fits-single-assignment
+  evaluator: independent-review
+  required: true
+evidence:
+  required: true
+  path: .comsatel/uow-development-design/runs/evidence/SLICE_GATE/
+  gate_report: .comsatel/uow-development-design/runs/evidence/SLICE_GATE/gate-report-T02.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador decide el gate.

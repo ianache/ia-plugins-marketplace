@@ -1,0 +1,15 @@
+schema_version: '2.0'
+run_id: REPLACE
+source_refs: []
+domains: []
+subdomains: []
+bounded_contexts: [] # each: {id, name, ownership, source_refs}
+context_relationships: [] # each: {upstream, downstream, pattern, contract_ref}
+aggregates: [] # each: {id, bounded_context_id, root_entity_id, invariants}
+entities: []
+value_objects: []
+domain_events: []
+integration_contract_candidates: []
+decisions: []
+open_questions: []
+approval: {status: PENDING, actor: null, evidence: null}

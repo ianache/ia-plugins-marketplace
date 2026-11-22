@@ -1,0 +1,37 @@
+{
+  "initiative_id": "<id>",
+  "scenario": "greenfield",
+  "objective": "<objetivo>",
+  "steps": [
+    {
+      "skill": "innovation-opportunity-scout",
+      "gate": "G1",
+      "status": "pending"
+    },
+    {
+      "skill": "problem-framing-researcher",
+      "gate": "G2",
+      "status": "pending"
+    },
+    {
+      "skill": "creative-concept-explorer",
+      "gate": "G3",
+      "status": "pending"
+    },
+    {
+      "skill": "solution-concept-architect",
+      "gate": "G4",
+      "status": "pending"
+    },
+    {
+      "skill": "innovation-experiment-designer",
+      "gate": "G5",
+      "status": "pending"
+    },
+    {
+      "skill": "innovation-requirements-handoff",
+      "gate": "G6",
+      "status": "pending"
+    }
+  ]
+}

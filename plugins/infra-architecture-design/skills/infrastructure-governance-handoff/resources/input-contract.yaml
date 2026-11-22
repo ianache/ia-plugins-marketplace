@@ -1,0 +1,12 @@
+skill: infrastructure-governance-handoff
+version: 3.0.0
+required:
+- task_id
+- execution_id
+- mode
+- inputs
+modes:
+- greenfield
+- brownfield
+- evolution
+inputs_policy: No fabricated sources; missing mandatory inputs block task

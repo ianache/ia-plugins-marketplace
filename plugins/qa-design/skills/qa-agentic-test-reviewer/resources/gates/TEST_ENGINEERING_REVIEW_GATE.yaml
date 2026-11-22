@@ -1,0 +1,48 @@
+gate: TEST_ENGINEERING_REVIEW_GATE
+owner_skill: qa-agentic-test-reviewer
+proposal_only: true
+policy:
+  mode: CONDITIONAL_HIL
+  on_pass: AUTO_ADVANCE
+  max_retries: 0
+  on_retries_exhausted: REQUEST_HIL
+  on_uncertainty: REQUEST_HIL
+  waiver_allowed: false
+checks:
+- id: at-to-tc-traceable
+  evaluator: script
+  required: true
+- id: test-data-traceable
+  evaluator: script
+  required: true
+- id: exec-against-oracle
+  evaluator: script
+  required: true
+- id: execution-mode-explicit
+  evaluator: script
+  required: true
+- id: manual-execution-evidence-complete
+  evaluator: script
+  required: true
+- id: standalone-execution-reproducible
+  evaluator: script
+  required: true
+- id: cicd-provenance-verified
+  evaluator: script
+  required: true
+- id: evidence-sufficient
+  evaluator: independent-review
+  required: true
+- id: security-clean
+  evaluator: script
+  required: true
+  on_trigger: REQUEST_HIL
+- id: manual-and-automated-coverage-reported
+  evaluator: script
+  required: true
+evidence:
+  required: true
+  path: .comsatel/qa-design/runs/<run-id>/evidence/TEST_ENGINEERING_REVIEW_GATE/
+  gate_report: .comsatel/qa-design/runs/<run-id>/evidence/TEST_ENGINEERING_REVIEW_GATE/gate-report-T06.yaml
+note: El especialista entrega gate_proposal con estos checks; solo el orquestador
+  decide el gate.

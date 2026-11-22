@@ -1,0 +1,10 @@
+{
+  "gate": "G0-G6",
+  "skill": "mobile-design-orchestrator",
+  "status": "pending_human_review",
+  "artifacts": [],
+  "sources": [],
+  "checks": [],
+  "reviewer": null,
+  "reviewed_at": null
+}

@@ -1,0 +1,12 @@
+# Esquema del plan (uow-development-design)
+plan:
+  required: [plan_id, us_ref, mode, objective, tasks, uows, expanded]
+  task:
+    required: [id, skill, executor, depends_on, gate, expected_outputs, acceptance_criteria]
+    state: [PENDING, AUTHORIZED, IN_PROGRESS, COMPLETED, BLOCKED, FAILED, CANCELLED]
+    scheduling_mode: [SEQUENTIAL, PARALLEL_ELIGIBLE]
+  rules:
+    - A task is eligible only when G0 is PASS and every dependency is COMPLETED with gate PASS or WAIVED.
+    - Tasks T03 and T04 of the same UOW run in parallel; T05 waits for both.
+    - Human gates pause dependent tasks until an explicit decision is recorded.
+    - Every state transition is appended to events.jsonl; history is never overwritten.
