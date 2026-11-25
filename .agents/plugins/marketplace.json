@@ -1,7 +1,7 @@
 {
-  "name": "comsatel-skills-catalog",
+  "name": "IA-plugins-catalog",
   "interface": {
-    "displayName": "COMSATEL Skills Catalog"
+    "displayName": "IA Plugins Catalog"
   },
   "plugins": [
     {
